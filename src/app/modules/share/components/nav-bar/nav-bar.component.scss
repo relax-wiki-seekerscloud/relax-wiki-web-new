@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
+.nav-bar{
+  width: 100%;
+  //height: 140px;
+  //position: absolute;
+  background-color: rgba(26, 34, 56, 1);
+  padding:2rem 0;
+}
+
+.nav-bar-inner-top{
+  height: 40px;
+  //margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-bar-inner{
+  margin-left: 80px;
+  margin-right: 80px;
+  height:100%;
+}
+.logo{
+  width: 250px;
+  height: 40px;
+  margin-top: 0px;
+  color: white;
+  font-weight: bold;
+}
+
+
+.signup-outer{
+  width: 320px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup, .login{
+  margin-top: 5px;
+  width:80px;
+  height: 70%;
+}
+.list-properties{
+  margin-left: 10px;
+  margin-top: 5px;
+  width:130px;
+  height: 70%;
+}
+
+.list-properties-button{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 34, 56, 1);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.list-properties-button:hover{
+  border-width: 2px;
+}
+
+.signup-button, .Login-button{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.signup-button:hover, .Login-button:hover{
+  background-color: rgba(12, 140, 233, 1);
+  color: white;
+}
+.nav-bar-inner-bottom-outer{
+  width:100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.nav-bar-inner-bottom-outer-inner{
+  width: 700px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.resturent,.hotel,.carrental,.entertainment,.airport{
+  width: 120px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 30px;
+}
+.resturent:hover,.hotel:hover,.carrental:hover,.entertainment:hover,.airport:hover{
+  border:3px solid rgba(12, 140, 233, 1);
+}
+
+.icon1{
+  height: 70%;
+  width: 23px;
+  margin-left: 23px;
+  margin-top: 4px;
+  display: flex;
+}
+.icon-text1{
+  height: 60%;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 23px;
+}
+
+.icon2{
+  height: 70%;
+  width: 23px;
+  margin-left: 15px;
+  margin-top: 4px;
+  display: flex;
+}
+.icon-text2{
+  height: 60%;
+  width: 60px;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.icon3{
+  height: 70%;
+  width: 23px;
+  margin-left: 7px;
+  margin-top: 4px;
+  display: flex;
+}
+.icon-text3{
+  height: 60%;
+  width: 80px;
+  margin-top: 5px;
+  margin-right: 7px;
+}
+
+.icon4{
+  height: 70%;
+  width: 23px;
+  margin-left: 15px;
+  margin-top: 4px;
+  display: flex;
+}
+.icon-text4{
+  height: 60%;
+  width: 60px;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.icon5{
+  height: 70%;
+  width: 23px;
+  margin-left: 12px;
+  margin-top: 4px;
+  display: flex;
+}
+
+.icon-text5{
+  height: 60%;
+  width: 65px;
+  margin-top: 5px;
+  margin-right: 12px;
+}
+
+.p1{
+  font-size: 12px;
+  font-weight: bold;
+}
+.signup-block-img,.other-img{
+  display: none;
+}
+.signup-block{
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .signup, .login{
+    display: none;
+  }
+  .nav-bar{
+    overflow: hidden;
+  }
+
+  .signup-block-img,.other-img{
+    margin-top: 5px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    padding-left: 10px;
+  }
+  .signup-block-img{
+    margin-right: 10px;
+  }
+  .signup-outer{
+    margin-top: 0px;
+    display: flex;
+    justify-content: right;
+  }
+  .signup-block{
+    background-color: white;
+  }
+  .nav-bar-inner{
+    margin-left: 40px;
+    margin-right: 40px;
+    height:100%;
+  }
+  .nav-bar-inner-bottom-outer-inner{
+    overflow: hidden;
+  }
+
+  .resturent,.carrental,.entertainment,.airport{
+    margin-left: 20px;
+  }
+
+  .nav-bar-inner-bottom-outer{
+    margin-top: 20px;
+  }
+  .list-properties{
+    display:none;
+  }
+
+}
+
+@media screen and (max-width: 770px) {
+
+  .nav-bar-inner{
+    margin-left: 50px;
+    margin-right: 50px;
+    height:100%;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+
+  .nav-bar{
+    overflow: hidden;
+    height: 125px;
+  }
+
+  .nav-bar-inner{
+    margin-left: 20px;
+    margin-right: 20px;
+    height:100%;
+  }
+
+  .signup-block-img,.other-img{
+    margin-top: 6px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding-left: 10px;
+  }
+  .nav-bar-inner-bottom-outer{
+    margin-top: 12px;
+  }
+  .list-properties{
+    display:none;
+  }
+  .icon-text1,.icon-text2,.icon-text3,.icon-text4,.icon-text5{
+    margin-top: 3px;
+  }
+  .icon1,.icon2,.icon3,.icon4,.icon5{
+    height: 60%;
+  }
+  .resturent,.carrental,.entertainment,.airport{
+    margin-left: 12px;
+  }
+  .resturent,.hotel,.carrental,.entertainment,.airport{
+    height: 85%;
+    width: 110px;
+    font-size: 10px;
+  }
+
+}
+
+@media only screen and (max-width : 520px) {
+
+  .signup-block-img,.other-img{
+    margin-top: 10px;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    padding-left: 10px;
+  }
+  .signup-outer{
+    margin-top: 0px;
+    display: flex;
+    justify-content: right;
+  }
+  .signup-block{
+    background-color: white;
+  }
+  .nav-bar-inner{
+    margin-left: 20px;
+    margin-right: 20px;
+    height:100%;
+  }
+  .nav-bar-inner-bottom-outer-inner{
+    overflow: auto;
+  }
+
+  .resturent,.carrental,.entertainment,.airport{
+    margin-left: 12px;
+  }
+
+  .nav-bar-inner-bottom-outer-inner::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .nav-bar-inner-bottom-outer-inner::-webkit-scrollbar-track {
+    background: #888;
+    border-radius:5px;
+  }
+}
+
+

@@ -1,0 +1,131 @@
+.parent{
+  overflow-x: hidden;
+}
+
+.head_details {
+  position: absolute;
+  margin-top: 20px;
+  left: 50px;
+}
+
+.stars {
+  position: absolute;
+  color: gold;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  top: 40px;
+}
+
+.address {
+  position: absolute;
+  color: black;
+  font-size: 12px;
+  left: 120px;
+  white-space: nowrap;
+}
+
+.gallery {
+  position: absolute;
+  align-items: center;
+  margin-top: 130px;
+  left: 50px;
+  width: calc(100vw - 70px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px,290px));
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+img {
+  width: 290px;
+  height: 290px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer_two{
+  position:relative;
+  top:1400px;
+}
+
+.facility_type {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid dimgrey;
+  width:250px;
+}
+
+.facilities{
+  position:absolute;
+  top:900px;
+  left:100px;
+}
+
+.facility_label{
+  position:absolute;
+  top:15px;
+}
+
+.facilities_linetwo{
+  position:absolute;
+  left:0px;
+  top:100px;
+}
+
+.room_table{
+  position:absolute;
+  top:1150px;
+  left:180px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  padding: 10px;
+  width:200px;
+}
+tr.big-row {
+  height: 100px;
+}
+
+.numof_people{
+  padding:10px;
+  font-size: 20px;
+  font-weight: bolder;
+
+}
+th{
+  padding:10px;
+}
+
+ul {
+  margin-top: 10px;
+  margin-left:-30px;
+  list-style-type: none;
+}
+li:before {
+  content: "\2713";
+  color: black;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.price{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.check{
+  left: 20px;
+}
+
+button{
+
+  width:200px;
+  height:40px;
+  font-size: 14px;
+
+}

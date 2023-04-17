@@ -1,0 +1,126 @@
+/* *********************** payment success **************************/
+/*mid main wrap danna*/
+*{
+  font-family: Roboto;
+}
+.mid-main-wrap2{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /*border: 1px solid red;*/
+
+}
+
+.right-success {
+  width: 60%;
+  height: auto;
+  float: right;
+  /*border: 1px solid blue;*/
+  background-color: #EBEDEF;
+}
+
+.left-success {
+  width: 40%;
+  float: left;
+  height: auto;
+  /*border: 1px solid black;*/
+  /*background-color: darkcyan;*/
+}
+
+.success-img{
+  width:  100%;
+  margin-top: 10%;
+}
+.right-success-content-main{
+  background-color: #ffffff;
+  display: flex;
+  margin: 10% 15% 10% 15%;
+  /*border: 1px solid black;*/
+  height: 75%;
+}
+
+.right-success-content{
+  display: flex;
+  margin: 2% 10% 2% 10%;
+  /*border: 1px solid black;*/
+  width:100%;
+
+}
+
+.right-success-content-upper{
+  /*border: 1px solid black;*/
+  margin: 2% 10% 2% 10%;
+  width: 100%;
+  height: 50%;
+}
+
+.success-tick{
+  /*border: 1px solid black;*/
+  margin: 2% 30% 2% 30% ;
+  display: flex;
+  height: 60%;
+  width: 40%;
+  align-items: center;
+}
+
+.success-tick-img{
+  height: 100%;
+  width: 100%;
+}
+
+.success-upper-text{
+  /*border: 1px solid black;*/
+  border-bottom: 4px solid #669999;
+  margin: 2% 5% 2% 5% ;
+  height: 30%;
+  width: auto;
+  font-family: Roboto;
+  text-align: center;
+}
+.success-text{
+  font-size: 24px;
+  margin: 1% 3%;
+  font-weight: bold;
+}
+.id-text{
+  color: #669999;
+  font-size: 20px;
+  margin:3% 3%;
+}
+
+.right-bottom-text-main{
+  /*border: 1px solid black;*/
+  margin: 5% 0% 5% 0%;
+  width: 100%;
+  height: 90%;
+}
+.right-bottom-text-box{
+  /*border: 1px solid black;*/
+  margin:2% 10% 2% 10%;
+  width: 80%;
+  height: 60%;
+}
+.right-bottom-text{
+  margin-top: 10%;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+}
+.button-outer{
+ /* border: 1px solid black;*/
+  margin: 5% 10% 5% 10%;
+  width: 80%;
+  height: 25%;
+  align-items: center;
+}
+.button{
+  margin: 1% 15% 15%;
+  height: 70%;
+  width: 70%;
+  align-items: center;
+  background-color: #34495E;
+  color: #ffffff;
+  border: none;
+}
+
+

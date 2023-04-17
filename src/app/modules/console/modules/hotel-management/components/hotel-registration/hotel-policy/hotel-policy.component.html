@@ -1,0 +1,90 @@
+<app-status-bar></app-status-bar>
+<div class="name-area">
+  <h1>Policies</h1>
+</div>
+<app-content-box-fill>
+  <div class="policy-container">
+    <div class="policy-container-inner-left">
+      <h2>Booking Cancellation</h2>
+      <p>If the customer wants to cancel the booking free of charge,
+        how many days before the check in day should he cancel it?</p>
+      <mat-form-field appearance="fill">
+        <mat-label>1 day</mat-label>   <!--here too-->
+        <mat-select>
+          <mat-option *ngFor="let day of days" [value]="day.value">
+            {{day.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p><br>Or else the guest would have to pay.</p>
+      <mat-form-field appearance="fill">
+        <mat-label>100% of the full stay</mat-label>   <!--here too-->
+        <mat-select>
+          <mat-option *ngFor="let pay of stays" [value]="pay.value">
+            {{pay.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="policy-container-inner-right">
+      <img src="../../../../../../../../assets/Images/policy-photo.png">
+    </div>
+  </div>
+
+</app-content-box-fill>
+
+<app-content-box-fill>
+  <div class="policy-container">
+    <div class="policy-container-inner-left">
+      <h2>Pets</h2>
+      <p>Do you allow guests to bring pets at the hotel premises?</p>
+      <mat-form-field appearance="fill">
+        <mat-label>Yes</mat-label>   <!--here too-->
+        <mat-select>
+          <mat-option *ngFor="let pet of pets" [value]="pet.value">
+            {{pet.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p><br>Is there any additional charges to</p>
+      <mat-form-field appearance="fill">
+        <mat-label>100% of the full stay</mat-label>   <!--here too-->
+        <mat-select>
+          <mat-option *ngFor="let pay of stays" [value]="pay.value">
+            {{pay.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>   <!--what this question is all about?-->
+    </div>
+    <div class="policy-container-inner-right">
+      <img src="../../../../../../../../assets/Images/policy-pets.png">
+    </div>
+  </div>
+</app-content-box-fill>
+
+<div class="time-box">
+  <div class="checkin-time">
+    <h2>Check In</h2>
+    <div class="time-container">
+      <div class="time-selector">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout-time">
+    <h2>Check Out</h2>
+    <div class="time-container">
+      <div class="time-selector">
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="button-container">
+  <button class="button" color="primary" mat-flat-button>Continue</button>
+</div>

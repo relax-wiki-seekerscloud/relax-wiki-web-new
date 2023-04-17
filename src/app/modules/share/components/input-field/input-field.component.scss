@@ -1,0 +1,14 @@
+.form-group{
+  display:flex;
+  flex:1;
+  width:100%;
+  flex-direction: column;
+  h4{
+    margin: 0;
+  }
+}
+.required::after{
+  content: " *";
+  color: red;
+  font-size: 20px;
+}

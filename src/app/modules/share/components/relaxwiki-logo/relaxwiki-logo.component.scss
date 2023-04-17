@@ -1,0 +1,25 @@
+.relaxwiki-logo{
+  font-size: 32px;
+  font-weight: bold;
+}
+@media screen and (max-width: 992px){
+  .relaxwiki-logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .relaxwiki-logo{
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width : 520px){
+  .relaxwiki-logo{
+    font-size: 22px;
+    font-weight: bold;
+  }
+}

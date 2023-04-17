@@ -1,0 +1,286 @@
+.footer-main{
+  width: 100%;
+  height: 360px;
+  position: absolute;
+  background-color: rgba(26, 34, 56, 1);
+  //border: 1px solid red;
+  color: white;
+}
+.footer-inner-main{
+  // border: 1px solid red;
+  height: 200px;
+  margin-top: 40px;
+  margin-left: 150px;
+  margin-right: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-inner-main-first,.footer-inner-main-second,.footer-inner-main-third,.footer-inner-main-forth{
+  width: 25%;
+  height: 100%;
+  //border: 1px solid red;
+}
+
+.relaxwiki-logo{
+  font-size: 32px;
+  font-weight: bold;
+  //border: 1px solid red;
+}
+
+.contact-details-main{
+  //border: 1px solid red;
+  width: 100%;
+  height: auto;
+  margin-top: 0px;
+}
+.footer-inner-main-second{
+  //border: 1px solid red;
+  margin-left: 60px;
+  width: 30px;
+}
+.footer-inner-main-third{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  font-size: 12px;
+}
+.p1{
+  font-size:14px;
+}
+.footer-inner-main-third-icon{
+  //border: 1px solid red;
+  height: 25px;
+  width: 25px;
+  margin-top: 7px;
+}
+.call{
+  height: 100%;
+  width: 100%;
+}
+
+.footer-inner-main-third-contact,.contact-one, .contact-two{
+  //border: 1px solid red;
+}
+
+.contact-one, .contact-two{
+  height: 20px;
+  margin-left: 10px;
+}
+
+hr{
+  color: white;
+}
+.footer-inner-main-forth{
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  font-size: 12px;
+}
+.footer-inner-main-forth-icon{
+  //border: 1px solid red;
+  height: 25px;
+  width: 25px;
+}
+.contact-mail{
+  //border: 1px solid red;
+  height: 20px;
+  margin-top: 2.5px;
+  margin-left: 10px;
+}
+
+.mail{
+  width: 100%;
+  height: 100%;
+}
+.footer-inner-quick-links,.footer-inner-about{
+  //border: 1px solid red;
+  width: 17%;
+  height: 100%;
+}
+.footer-inner-news-letter{
+  //border: 1px solid red;
+  width: 20%;
+  height: 100%;
+}
+.footer-inner-quick-links-header{
+  //border: 1px solid red;
+  height: 20px;
+  margin-top: 10px;
+}
+.footer-hedears{
+  font-size: 14px;
+  font-weight: bold;
+}
+.footer-inner-quick-links-hr{
+  //border: 1px solid red;
+  width: 40px;
+  height: 20px;
+}
+.hr2{
+  margin-top: 7px;
+  height: 3px;
+  background-color: white;
+}
+.footer-inner-quick-links-list{
+  margin-top: 5px;
+  //border: 1px solid red;
+  height: 100px;
+}
+.footer-inner-quick-links-list p{
+  padding: 0;
+  margin-top: 0;
+  font-size: 12px;
+  line-height:16px;
+  font-weight: lighter;
+}
+.footer-inner-news-letter-inputs{
+  margin-top: 10px;
+  font-size: 12px;
+}
+.email-input{
+  background-color:rgba(26, 34, 56, 1) ;
+  border-color: white;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  width: 200px;
+}
+.subscribe-button{
+  margin-top: 10px;
+  border-radius: 2px;
+  border-color: rgba(12, 140, 233, 1);
+  background-color:rgba(12, 140, 233, 1);
+  width: 200px;
+  color: white;
+}
+
+.footer-inner-sub{
+  //border: 1px solid red;
+  height: 50px;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 30px;
+
+}
+.footer-inner-sub-inner-1{
+  //border: 1px solid red;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-inner-sub-inner-2{
+  //border: 1px solid red;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.register-icons{
+  margin-top: 5px;
+  height: 10px;
+  width: 10px;
+  //border: 1px solid red;
+  display: flex;
+}
+.footer-inner-sub-inner-2 p{
+  margin-left: 5px;
+  font-size: 10px;
+}
+.footer-inner-sub-inner-1-sub{
+  //border: 1px solid red;
+  height: 100%;
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+.social-media-icon{
+  //border: 1px solid red;
+  width: 23px;
+  height: 23px;
+  display: flex;
+}
+
+@media screen and (max-width: 992px) {
+  .footer-inner-main{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+}
+
+@media screen and (max-width: 770px) {
+
+  .footer-main{
+    height: 360px;
+  }
+  .footer-inner-quick-links{
+    display: none;
+  }
+  .footer-inner-quick-links-list{
+    margin-top: 0;
+  }
+  .footer-inner-about{
+    height: 120px;
+    margin-left: 50px;
+    width: 130px;
+  }
+  .footer-inner-news-letter-inputs{
+    margin-top: 0px;
+  }
+
+  .footer-inner-news-letter{
+    //border: 1px solid red;
+    margin-left: 20px;
+    width: 200px;
+  }
+  .relaxwiki-logo{
+    font-size: 25px;
+    font-weight: bold;
+    //border: 1px solid red;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .footer-main{
+    height: 650px;
+  }
+  .footer-inner-main{
+    display: block;
+  }
+
+  .footer-inner-sub{
+    //border: 1px solid red;
+    margin-top: 300px;
+  }
+  .contact-details-main{
+    width: 150px;
+  }
+
+  .footer-inner-about{
+    margin-left: 0;
+    width: 200px;
+  }
+  .footer-inner-news-letter{
+    width: 200px;
+    margin-left: 0;
+  }
+  .footer-inner-main-first{
+    width: 200px;
+  }
+  .footer-inner-main{
+    width: 200px;
+    margin-left: 200px;
+  }
+
+}
+
+@media only screen and (max-width : 520px) {
+  .footer-inner-main{
+    margin-left: 100px;
+  }
+
+}

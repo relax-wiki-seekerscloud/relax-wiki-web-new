@@ -1,0 +1,215 @@
+basic-information-main{
+  //position: absolute;
+  top: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 100px);
+  //height: 2000px;
+  //border: 1px solid red;
+}
+
+
+.restaurant-name {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.restaurant-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //border: 1px solid red;
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  height: 280px;
+  top: 50px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-main-image {
+  //border: 1px solid red;
+  width: 250px;
+  height: 250px;
+  margin-left: 5px;
+}
+.restaurant-main-image img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.other-images {
+  //border: 1px solid red;
+  width: calc(100% - 280px - 100px); /* calculate remaining width */
+  height: 250px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.other-images img {
+  width: 100%;
+  height: 125px;
+  padding: 2px;
+  object-fit: cover;
+}
+
+.main-image-label-box{
+  //border: 1px solid red;
+  width: 280px;
+  margin-left: 150px;
+  margin-top: 5px;
+}
+
+.main-image-label {
+  text-align: center;
+  font-size: small;
+
+}
+
+.material-icons {
+  font-size: 20px;
+  color: #999;
+  background-color: white;
+  margin-left: 5px;
+  border: white;
+}
+
+.material-icons:hover {
+  color: #333;
+}
+.restaurant-details{
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 250px;
+  margin-right: 250px;
+  //height: 100%;
+  top: 50px;
+  background-color:#f8f8f8 ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-details-title, .features-and-amenities-title,  {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.display-name, .address, .phone-number, .email-address, .password {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-name-title, .address-title, .phone-number-title, .email-address-title,.password-title, .languages-title,
+.payment-title, .atmosphere-title, .additional-title, .rest-description-title, .meals-title, .parking-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 10px;
+  //width: 150px;
+}
+
+
+input[type=text], input[type=password]{
+  width: 300px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.save, .cancel {
+  background-color: #0C8CE9;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.save:hover, .cancel:hover {
+  background-color: #0066ff;
+}
+
+
+.edit-link a{
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.rest-description, .languages, .meals{
+
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  //height: 100%;
+
+}
+
+/////rest description/////
+
+.rest-description {
+  position: relative;
+  margin-top: 40px;
+}
+
+.edit-link-rest-des{
+  position: absolute;
+  top: 0;
+  right: 15px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.rest-description-content {
+  //border: 1px solid red;
+  //width: 1300px;
+  min-height: 100px;
+  border-radius: 5px;
+  background-color:#f8f8f8 ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  align-content: center;
+
+}
+
+.rest-description-content textarea {
+  width: 96%;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+.viewed-rest-description{
+  margin-left: 5px;
+}
+
+//features and amenities
+
+.features-and-amenities,  {
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  //height: 100%;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.payment, .parking, .atmosphere, .additional{
+  margin-top: 30px;
+}
+

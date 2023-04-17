@@ -1,0 +1,252 @@
+<app-activity-navbar></app-activity-navbar>
+
+<div class="basic-information-main">
+  <div class="activity-name">Activity Name</div>
+
+  <div class="activity-images">
+    <div class="activity-main-image">
+      <img src="https://checkyeti.imgix.net/images/optimized/hossegor-surf-center-hero1.jpg" alt="main-image">
+    </div>
+
+    <div class="other-images">
+      <img src="https://checkyeti.imgix.net/images/prod/products/15927/private-surfing-lessons-plage-des-culs-nus-all-levels-hossegor-surf-center9?auto=format,compress&dpr=1&q=45" alt="">
+      <img src="https://checkyeti.imgix.net/images/prod/products/11493/private-surf-lessons-from-6-y-on-graviere-beach-in-hossegor-with-escf-hossegor-darrigood-surf-school-5?auto=format,compress&dpr=1&q=45" alt="">
+      <img src="https://checkyeti.imgix.net/images/prod/products/15926/surfing-lessons-plage-des-culs-nus-all-levels-hossegor-surf-center-hero.jpg?auto=format,compress&dpr=1&q=45" alt="">
+      <img src="https://checkyeti.imgix.net/images/prod/products/15925/surfing-lessons-for-kids-6-11-years-plage-des-culs-nus-hossegor-surf-center-hero.jpg?auto=format,compress&dpr=1&q=45" alt="">
+      <img src="https://checkyeti.imgix.net/images/prod/products/15925/surfing-lessons-for-kids-6-11-years-plage-des-culs-nus-hossegor-surf-center5?auto=format,compress&dpr=1&q=45" alt="">
+      <img src="https://checkyeti.imgix.net/images/prod/products/15925/surfing-lessons-for-kids-6-11-years-plage-des-culs-nus-hossegor-surf-center7?auto=format,compress&dpr=1&q=45" alt="">
+      <img src="https://checkyeti.imgix.net/images/prod/products/15925/surfing-lessons-for-kids-6-11-years-plage-des-culs-nus-hossegor-surf-center-cover?auto=format,compress&dpr=1&q=45" alt="">
+      <img src="https://checkyeti.imgix.net/images/prod/products/15925/surfing-lessons-for-kids-6-11-years-plage-des-culs-nus-hossegor-surf-center6?auto=format,compress&dpr=1&q=45" alt="">
+    </div>
+  </div>
+
+  <div class="main-image-label-box">
+    <div class="main-image-label">
+      Main Image
+      <button class="material-icons" onclick="document.getElementById('file-input').click()">mode_edit</button>
+      <input type="file" id="file-input" name="edit-image" style="display: none" />
+
+    </div>
+  </div>
+
+  <div class="activity-details">
+    <p class="activity-details-title"> Activity Details</p><br>
+
+    <!--display name-->
+
+    <div class="display-name">
+      <div class="display-name-title">
+        <p>Display Name</p>
+      </div>
+
+      <div class="display-name-content" (focusout)="onFocusOutDisplayName($event)">
+        <ng-container *ngIf="editModeDisplayName; else displayModeDisplayName">
+          <input #displayNameInput type="text" [(ngModel)]="DisplayName">
+
+          <button #saveButton class="save" (mousedown)="onSaveDisplayName()">Save</button>
+          <button #cancelButton class="cancel" (mousedown)="onCancelDisplayName()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModeDisplayName>
+          <p>{{ DisplayName }}</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModeDisplayName($event)">Edit</a>
+      </div>
+    </div>
+
+<!--address-->
+     <div class="address">
+      <div class="address-title">
+        <p>Address</p>
+      </div>
+
+      <div class="address-content" (focusout)="onFocusOutAddress($event)">
+        <ng-container *ngIf="editModeAddress; else displayModeAddress">
+          <input #addressInput type="text" [(ngModel)]="Address">
+
+          <button #saveAddressButton class="save" (mousedown)="onSaveAddress()">Save</button>
+          <button #cancelAddressButton class="cancel" (mousedown)="onCancelAddress()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModeAddress>
+          <p>{{ Address }}</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModeAddress($event)">Edit</a>
+      </div>
+    </div>
+
+
+    <!-- Phone Number -->
+    <div class="phone-number">
+      <div class="phone-number-title">
+        <p>Phone Number</p>
+      </div>
+
+      <div class="phone-number-content" (focusout)="onFocusOutPhoneNumber($event)">
+        <ng-container *ngIf="editModePhoneNumber; else displayModePhoneNumber">
+          <input #phoneNumberInput type="text" [(ngModel)]="PhoneNumber" (keypress)="onPhoneNumberKeyPress($event)" maxlength="10">
+
+          <button #savePhoneNumberButton class="save" (mousedown)="onSavePhoneNumber()">Save</button>
+          <button #cancelPhoneNumberButton class="cancel" (mousedown)="onCancelPhoneNumber()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModePhoneNumber>
+          <p>{{ PhoneNumber }}</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModePhoneNumber($event)">Edit</a>
+      </div>
+    </div>
+
+
+    <!-- Email Address -->
+    <div class="email-address">
+      <div class="email-address-title">
+        <p>Email Address</p>
+      </div>
+
+      <div class="email-address-content" (focusout)="onFocusOutEmailAddress($event)">
+        <ng-container *ngIf="editModeEmailAddress; else displayModeEmailAddress">
+          <input #emailInput type="text" [(ngModel)]="EmailAddress">
+
+          <button #saveButton class="save" (click)="onSaveEmailAddress()">Save</button>
+          <button #cancelButton class="cancel" (click)="onCancelEmailAddress()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModeEmailAddress>
+          <p>{{ EmailAddress }}</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModeEmailAddress($event)">Edit</a>
+      </div>
+    </div>
+
+
+
+    <!-- Password -->
+    <div class="password">
+      <div class="password-title">
+        <p>Password</p>
+      </div>
+
+      <div class="password-content">
+        <ng-container *ngIf="editModePassword; else displayModePassword">
+          <div>
+            <label for="old-password">Old Password:</label><br>
+            <input id="old-password" type="password" [(ngModel)]="oldPassword" (blur)="toggleEditModePassword($event)">
+          </div>
+          <div>
+            <label for="new-password">New Password:</label><br>
+            <input id="new-password" type="password" [(ngModel)]="newPassword" (blur)="toggleEditModePassword($event)">
+          </div>
+          <div>
+            <label for="confirm-password">Confirm New Password:</label><br>
+            <input id="confirm-password" type="password" [(ngModel)]="confirmPassword" (blur)="toggleEditModePassword($event)">
+          </div><br>
+
+          <button class="save"(click)="onSavePassword()">Save</button>
+          <button class="cancel" (click)="onCancelPassword()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModePassword>
+          <p>**********</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModePassword($event)">Edit</a>
+      </div>
+    </div>
+  </div><br>
+
+  <!--activity description-->
+  <div class="activity-description">
+    <div class="edit-link">
+      <a href="#" class="edit-link-activity-des" (click)="toggleEditModeActivityDescription($event)">Edit</a>
+    </div>
+    <div class="activity-description-title">
+      <p>Activity Description</p>
+    </div>
+    <div class="activity-description-content">
+      <ng-container *ngIf="editModeActivityDescription; else displayModeActivityDescription">
+        <textarea [(ngModel)]="activityDescription">{{ ActivityDescription }}</textarea>
+        <button class="save" (click)="onSaveActivityDescription()">Save</button>
+        <button class="cancel" (click)="onCancelActivityDescription()">Cancel</button>
+      </ng-container>
+      <ng-template #displayModeActivityDescription>
+        <p class="viewed-activity-description">{{ ActivityDescription }}</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <!--  languages-->
+  <div class="languages">
+    <p class="languages-title"> Languages Spoken</p><br>
+    <app-chip-list [chips]="languages"  (chipsChange)="languages = $event"></app-chip-list>
+  </div>
+
+  <!--facilities and services-->
+  <div class="facilities-and-services">
+    <p class="facilities-and-services-title">Facilities & Services</p><br>
+
+    <!--    services-->
+    <div class="services">
+      <p class="services-title">Services</p>
+      <app-chip-list [chips]="chips"  (chipsChange)="chips = $event"></app-chip-list>
+    </div>
+
+    <!--  meals-->
+    <div class="meals">
+      <p class="meals-title"> Meals Served</p><br>
+      <app-chip-list [chips]="meals"  (chipsChange)="meals = $event"></app-chip-list>
+    </div>
+
+    <!--    transportation-->
+    <div class="transport">
+      <p class="transport-title"> Transportation Methods </p><br>
+      <app-chip-list [chips]="transport"  (chipsChange)="transport = $event"></app-chip-list>
+    </div>
+  </div>
+
+<!--  payment details-->
+  <div class="payment">
+    <div class="payment-title">Payment Details</div>
+
+    <div class="rate">
+      <div class="rate-title">
+        <p>Lowest rate for one person</p>
+      </div>
+
+      <div class="rate-content">
+        <ng-container *ngIf="editModeRate; else displayModeRate">
+          <input type="text" [(ngModel)]="Rate" (blur)="toggleEditModeRate($event)">
+
+          <button class="save" (click)="onSaveRate()">Save</button>
+          <button class="cancel" (click)="onCancelRate()">Cancel</button>
+
+        </ng-container>
+        <ng-template #displayModeRate>
+          <p>{{ Rate }}</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModeRate($event)">Edit</a>
+      </div>
+    </div>
+
+    <div class="payment-methods">
+      <div class="payment-methods-title">Accepted Payment Methods</div>
+      <app-chip-list [chips]="payment"  (chipsChange)="payment = $event"></app-chip-list>
+
+    </div>
+
+  </div>
+
+
+</div>

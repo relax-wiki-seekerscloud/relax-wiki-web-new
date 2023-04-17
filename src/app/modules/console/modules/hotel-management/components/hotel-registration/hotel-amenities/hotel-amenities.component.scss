@@ -1,0 +1,16 @@
+.name-area{
+  text-align: center;
+  h1{
+    font-weight: 500;
+    margin: 0;
+  }
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 2rem auto;
+  .button{
+    width: 100%;
+  }
+}

@@ -1,0 +1,64 @@
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+li {
+  margin: 0 10px;
+}
+
+a {
+  background-color: #ecedef;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  border-color: white;
+  display: inline-block;
+  width: 450px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Add this to make active button font weight bold */
+a.active {
+  font-weight: bold;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 770px) {
+  nav {
+    padding: 20px;
+  }
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  li {
+    margin: 10px;
+  }
+  a {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  li {
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  li {
+    margin: 3px;
+  }
+}

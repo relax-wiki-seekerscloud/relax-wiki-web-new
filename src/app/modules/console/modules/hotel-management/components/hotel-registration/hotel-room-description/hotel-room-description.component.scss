@@ -1,0 +1,83 @@
+.name-area{
+  text-align: center;
+  h1{
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+h4{
+  margin: 0;
+}
+.room-description-container{
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  gap:  4rem;
+  width: 100%;
+  p{
+    font-size: small;
+    color: gray;
+  }
+}
+.input-field{
+  width: 100%;
+}
+
+.container-right-inner-one{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+}
+.radio-input{
+  justify-content: space-between;
+
+  display:flex;
+}
+.container-below-questions-area{
+  gap: 4rem;
+}
+.container-below-questions{
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+.container-below-answers{
+  max-width: 15%;
+}
+
+.inner-question{
+  max-width: 300px;
+  width: 100%;
+}
+
+.bed-info{
+  display: grid;
+  grid-template-columns:3fr 2fr;
+  gap: 2rem;
+}
+.other-details-container{
+  display: flex;
+  justify-content: space-between;
+}
+.price-container{
+  max-width: 450px;
+  margin: auto;
+}
+.price-container-inner{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  p{
+    margin: 0;
+  }
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 2rem auto;
+  .button{
+    width: 100%;
+  }
+}

@@ -1,0 +1,144 @@
+<div class="feedback-main">
+  <div class="header">
+        <app-nav-bar-two></app-nav-bar-two>
+  </div>
+  <div class="feedback-main-inner">
+
+    <!----------------left side---------------------------->
+
+    <div class="feedback-main-inner-left">
+
+      <!--hotel image and description-->
+      <div class="hotel">
+        <div class="hotel-image">
+          <img src="https://www.planetware.com/wpimages/2019/08/south-carolina-best-beach-resorts-ocean-oak-resort-hilton-grand-vacations.jpg" alt="Hotel Image">
+        </div>
+        <div class="hotel-description">
+          <h2 class="hotel-name">Hotel Name</h2>
+          <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.
+        </div>
+      </div>
+
+      <!-----feedback form------>
+      <div class="feedback-form">
+
+        <!-- Star Rating -->
+        <h2 class="star-rating">Rate Your Experience <span class="required"> (required)</span></h2>
+
+        <div class="stars">
+
+          <!-- Star Template with ngFor Loop -->
+          <span *ngFor="let star of stars; let i = index" class="star" (click)="onStarClick(i)" [ngClass]="{'selected': i < selectedIndex}">
+
+            <!-- Star Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="icon">
+              <path [attr.fill]="i < selectedIndex ? '#FDCC0D' : 'white'" d="M12 2l3.09 6.26L22 9.27l-4.91 4.78L18.18 22 12 19.25 5.82 22l1.08-8.95L2 9.27l6.91-1.01L12 2z"/>
+              <path fill="none" stroke="#FDCC0D" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-4.91 4.78L18.18 22 12 19.25 5.82 22l1.08-8.95L2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+
+          </span>
+
+          <p class="rating-text">{{ratingText}}</p>
+        </div><br>
+
+        <label>Leave a review <span class="required"> (required)</span></label><br><br>
+        <textarea rows="10" cols="146" placeholder="How should this experience be improved "></textarea><br><br>
+
+        <label>Give your review a title<span class="required"> (required)</span></label><br><br>
+        <input type="text" placeholder="Summarize your experience">
+        <br><br>
+
+        <label>When did you go?<span class="required"> (required)</span></label><br><br>
+        <input type="date" id="date-picker" name="date-picker">
+        <br><br>
+
+        <label>Who was with you?<span class="required"> (required)</span></label><br><br>
+        <select id="members" name="members">
+          <option value="" disabled selected class="select-one">Select one</option>
+          <option value="Couples">Couples</option>
+          <option value="Family">Family</option>
+          <option value="Friends">Friends</option>
+          <option value="Business">Business</option>
+        </select>
+        <br><br>
+
+        <label>Upload a photo</label><br><br>
+        <div class="upload-btn-wrapper">
+          <button class="upload-btn" onclick="document.getElementById('file-input').click()">
+            <img src="https://icones.pro/wp-content/uploads/2021/02/icono-de-camara-gris.png" alt="camera-icon"><br>
+          </button>
+          <input type="file" id="file-input" name="myfile" style="display: none" />
+        </div>
+
+        <label>
+          <input type="checkbox" name="certify" id="certify" required>
+          I certify that this review is based on my own experience and is my genuine opinion of this establishment and that I have no personal or business relationship with this establishment, and have not been offered any incentive or payment originating from the establishment to write this review.
+          I understand that Relaxwiki has a zero-tolerance policy on fake reviews.
+        </label>
+
+        <label>
+          <button type="button" class="submit-button" (click)="onSubmit()">Submit</button>
+        </label>
+
+      </div>
+    </div>
+
+
+
+    <!--------------right side-------------------->
+
+    <div class="feedback-main-inner-right">
+
+      <div class="recent-reviews">
+        <h2 class="title">Recent reviews of this activity</h2>
+        <br>
+
+        <!-- Scrollable container for recent reviews -->
+        <div class="recent-reviews-scrollbar">
+          <div class="recent-reviews-content">
+
+            <!-- Loop through the reviews and display each review -->
+            <div *ngFor="let review of reviews" class="review">
+              <div class="profile-image">
+                <img src="https://www.clipartmax.com/png/middle/434-4349876_profile-icon-vector-png.png">
+              </div>
+
+              <div class="review-description">
+
+                <div class="review-header">
+                  <p class="name">{{ review.userName }}</p>
+                  <div class="recent-riview-stars">
+                    <img [src]="review.starImageUrl" alt="stars">
+                  </div>
+                </div>
+
+                <p class="written-review">{{ review.reviewText.slice(0, 150) }}
+                  <span *ngIf="review.showMore">{{ review.reviewText.slice(150) }}</span>
+                  <span class="more-link">
+                    <a href="#" (click)="toggleMoreLess(review.id, $event)" *ngIf="!review.showMore">more</a>
+                  <a href="#" (click)="toggleMoreLess(review.id, $event)" *ngIf="review.showMore">less</a>
+                  </span>
+
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="feedback-footer">
+        <app-footer-two></app-footer-two>
+  </div>
+</div>
+
+
+
+
+
+
+

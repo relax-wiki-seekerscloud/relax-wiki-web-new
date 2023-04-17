@@ -1,0 +1,22 @@
+<app-status-bar></app-status-bar>
+<div class="title-area">
+  <p>Tell us about the rooms you have </p>
+  <app-content-box-fill (click)="print()">
+    <div class="room-container">
+
+      <app-hotel-room-container-box></app-hotel-room-container-box>
+<!--      <app-hotel-room-container-box></app-hotel-room-container-box>-->
+<!--      <app-hotel-room-container-box></app-hotel-room-container-box>-->
+<!--      <app-hotel-room-container-box></app-hotel-room-container-box>-->
+    </div>
+    <p class="box-desc">No rooms have been added yet</p>
+    <div class="button-container">
+      <div class="button-inner">
+        <button class="button" color="primary" (click)="addRooms()" mat-flat-button>Add Rooms</button>
+      </div>
+      <div class="button-inner" *ngIf="numberOfRooms>0">
+        <button class="button" color="primary"     mat-flat-button>Continue</button>
+      </div>
+    </div>
+  </app-content-box-fill>
+</div>

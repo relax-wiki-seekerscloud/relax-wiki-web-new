@@ -1,0 +1,60 @@
+.header-area{
+  text-align: center;
+  h1{
+    font-weight: bold;
+    margin: 0;
+  }
+  p{
+    margin: 0;
+  }
+}
+.title-area{
+  text-align: center;
+  h1{
+    font-weight: 500;
+    margin: 2rem auto;
+  }
+}
+.payment-selection-container{
+  max-width: 800px;
+  width:100%;
+  padding: 2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #bfbfbf;
+  margin: 2rem auto;
+}
+.payments{
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  //width: 100%;
+  margin: auto;
+}
+.rules-container{
+  max-width: 800px;
+  width:100%;
+  padding: 1rem;
+  //border: 1px solid black;
+  border-radius: 5px;
+  //box-shadow: 1px 1px 1px #bfbfbf;
+  margin: 2rem auto;
+}
+.rules{
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  a{
+    text-decoration: none;
+  }
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 2rem auto;
+  .button{
+    width: 100%;
+  }
+}

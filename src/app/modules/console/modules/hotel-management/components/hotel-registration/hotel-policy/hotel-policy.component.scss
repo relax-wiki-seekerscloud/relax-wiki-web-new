@@ -1,0 +1,62 @@
+.name-area{
+  text-align: center;
+  h1{
+    font-weight: 500;
+    margin: 0;
+  }
+}
+.policy-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  p{
+    font-weight: 400;
+  }
+}
+.policy-container-inner-left{
+  grid-column:span 3;
+}
+
+.policy-container-inner-right{
+  display:grid;
+  align-content:flex-end;
+  justify-items: right;
+  img{
+    height: 175px;
+    width: 175px;
+  }
+}
+.time-box{
+  max-width: 800px;
+  width:100%;
+  padding: 2rem 2rem;
+  //border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 1px 3px 3px #bfbfbf;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+.time-container{
+  max-width: 400px;
+  width:100%;
+  padding: 1rem 1rem;
+  border: 1px solid black;
+  h2{
+    margin: 0;
+  }
+}
+.checkin-time,.checkout-time{
+  max-width: 400px;
+  width:100%;
+  padding: 1rem 1rem;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 2rem auto;
+  .button{
+    width: 100%;
+  }
+}

@@ -1,0 +1,162 @@
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.left-image {
+  max-width: 480px; /* adjust as needed */
+  left: 0px;
+  top:149px;
+  position:absolute;
+  min-height:520px;
+}
+
+button{
+  width:200px;
+  position:absolute;
+  left:35%;
+}
+
+form {
+  position: absolute;
+  width: 709px;
+  min-height: 450px;
+  left:40%;
+  top:255px;
+  background: #FFFFFF;
+  border-radius: 30px;
+
+
+}
+.form-group{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.form-control{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border:3px solid #EBEDEF;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+  outline: none;
+  border: 1px solid #1A2238;
+}
+
+.location-input:focus {
+  background-color: white;
+}
+
+@media screen and (max-width: 1115px) {
+  .left-image {
+    width: 380px;
+    height: auto;
+
+  }
+
+  .form-group{
+    width:80%;
+  }
+
+  button{
+    left:25%;
+  }
+
+
+}
+
+@media screen and (max-width:992px){
+  .left-image {
+    width: 330px;
+    height: auto;
+
+  }
+
+  .form-group{
+    width:70%;
+  }
+
+  button{
+    left:20%;
+  }
+}
+
+@media screen and (max-width:840px){
+  .left-image {
+    width: 280px;
+    height: auto;
+  }
+
+  .form-group{
+    width:60%;
+  }
+
+  button{
+    left:15%;
+  }
+}
+
+@media screen and (max-width:770px){
+  .left-image {
+    width: 0px;
+    height: 0px;
+
+  }
+
+  form{
+    left:5%;
+  }
+}
+
+@media screen and (max-width:769px){
+  .form-group{
+    width:80%;
+    left:3%;
+  }
+
+  button{
+    left:28%;
+  }
+}
+
+@media screen and (max-width:520px){
+  .form-group{
+    width:50%;
+  }
+
+  button{
+    left:15%;
+  }
+}
+
+@media screen and (max-width:450px){
+  .form-group{
+    width:50%;
+  }
+
+  button{
+    left:15%;
+  }
+}

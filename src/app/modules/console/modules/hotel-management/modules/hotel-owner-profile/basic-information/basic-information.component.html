@@ -1,0 +1,229 @@
+<app-hotel-profile-navbar></app-hotel-profile-navbar>
+<div class="basic-information-main">
+
+  <div class="hotel-name">Hotel Name</div>
+
+  <div class="hotel-images">
+
+    <div class="hotel-main-image">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/24/48/ac/e4/aerial-view.jpg" alt="main-image">
+    </div>
+
+    <div class="other-images">
+      <img src="https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg" alt="">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb4_LdSl7Vy5mE8f_a1EqIWlccpk5HsceAnfFYH_OV7YCYtqUTWC68IxKrlN8ikBRgU5c&usqp=CAU" alt="">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWx8ZW58MHx8MHx8&w=1000&q=80" alt="">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPB67c_KaGySAje9dJXdCcsfPFZ5fJWslhb7uL0L0Rk0eoOIIo6GVpo6jx2NaBwWmVB3w&usqp=CAU" alt="">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYc9bj8sf_9Ho4sBimEw-gOvDwNjrBcDZiSw&usqp=CAU" alt="">
+      <img src="https://i.pinimg.com/originals/e7/1f/be/e71fbe3b0a9f786cbdaf4804aa7a3ed5.jpg" alt="">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb5S1OpSjiWtDzFV4SI9VgnXd6L4xizhh3lQ&usqp=CAU" alt="">
+      <img src="https://media.cntraveler.com/photos/53dad07e6dec627b14a04855/master/w_320%2Cc_limit/four-seasons-bali-at-jimbaran-bay-bali-jimbaran-indonesia-108728-2.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="main-image-label-box">
+    <div class="main-image-label">
+      Main Image
+      <button class="material-icons" onclick="document.getElementById('file-input').click()">mode_edit</button>
+      <input type="file" id="file-input" name="edit-image" style="display: none" />
+
+    </div>
+  </div>
+
+  <div class="hotel-details">
+    <p class="hotel-details-title"> Hotel Details</p><br>
+
+    <!--------------display name------------->
+    <div class="display-name">
+      <div class="display-name-title">
+        <p>Display Name</p>
+      </div>
+
+      <div class="display-name-content" (focusout)="onFocusOutDisplayName($event)">
+
+        <!-- Edit Mode for Display Name -->
+        <ng-container *ngIf="editModeDisplayName; else displayModeDisplayName">
+          <input #displayNameInput type="text" [(ngModel)]="DisplayName">
+
+          <button #saveButton class="save" (mousedown)="onSaveDisplayName()">Save</button>
+          <button #cancelButton class="cancel" (mousedown)="onCancelDisplayName()">Cancel</button>
+        </ng-container>
+
+        <!-- Display Mode for Display Name -->
+        <ng-template #displayModeDisplayName>
+          <p>{{ DisplayName }}</p>
+        </ng-template>
+      </div>
+
+      <!-- Edit Link for Display Name -->
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModeDisplayName($event)">Edit</a>
+      </div>
+    </div>
+
+    <!----------address---------->
+    <div class="address">
+      <div class="address-title">
+        <p>Address</p>
+      </div>
+
+      <div class="address-content" (focusout)="onFocusOutAddress($event)">
+        <ng-container *ngIf="editModeAddress; else displayModeAddress">
+          <input #addressInput type="text" [(ngModel)]="Address">
+
+          <button #saveAddressButton class="save" (mousedown)="onSaveAddress()">Save</button>
+          <button #cancelAddressButton class="cancel" (mousedown)="onCancelAddress()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModeAddress>
+          <p>{{ Address }}</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModeAddress($event)">Edit</a>
+      </div>
+    </div>
+
+
+    <!---------- Phone Number ----------->
+    <div class="phone-number">
+      <div class="phone-number-title">
+        <p>Phone Number</p>
+      </div>
+
+      <div class="phone-number-content" (focusout)="onFocusOutPhoneNumber($event)">
+        <ng-container *ngIf="editModePhoneNumber; else displayModePhoneNumber">
+          <input #phoneNumberInput type="text" [(ngModel)]="PhoneNumber" (keypress)="onPhoneNumberKeyPress($event)" maxlength="10">
+
+          <button #savePhoneNumberButton class="save" (mousedown)="onSavePhoneNumber()">Save</button>
+          <button #cancelPhoneNumberButton class="cancel" (mousedown)="onCancelPhoneNumber()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModePhoneNumber>
+          <p>{{ PhoneNumber }}</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModePhoneNumber($event)">Edit</a>
+      </div>
+    </div>
+
+
+    <!------------ Email Address --------------->
+    <div class="email-address">
+      <div class="email-address-title">
+        <p>Email Address</p>
+      </div>
+
+      <div class="email-address-content" (focusout)="onFocusOutEmailAddress($event)">
+        <ng-container *ngIf="editModeEmailAddress; else displayModeEmailAddress">
+          <input #emailInput type="text" [(ngModel)]="EmailAddress">
+
+          <button #saveButton class="save" (click)="onSaveEmailAddress()">Save</button>
+          <button #cancelButton class="cancel" (click)="onCancelEmailAddress()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModeEmailAddress>
+          <p>{{ EmailAddress }}</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModeEmailAddress($event)">Edit</a>
+      </div>
+    </div>
+
+    <!------------- Password ------------>
+    <div class="password">
+      <div class="password-title">
+        <p>Password</p>
+      </div>
+
+      <div class="password-content">
+        <ng-container *ngIf="editModePassword; else displayModePassword">
+          <div>
+            <label for="old-password">Old Password:</label><br>
+            <input id="old-password" type="password" [(ngModel)]="oldPassword" (blur)="toggleEditModePassword($event)">
+          </div>
+          <div>
+            <label for="new-password">New Password:</label><br>
+            <input id="new-password" type="password" [(ngModel)]="newPassword" (blur)="toggleEditModePassword($event)">
+          </div>
+          <div>
+            <label for="confirm-password">Confirm New Password:</label><br>
+            <input id="confirm-password" type="password" [(ngModel)]="confirmPassword" (blur)="toggleEditModePassword($event)">
+          </div><br>
+
+          <button class="save"(click)="onSavePassword()">Save</button>
+          <button class="cancel" (click)="onCancelPassword()">Cancel</button>
+        </ng-container>
+        <ng-template #displayModePassword>
+          <p>**********</p>
+        </ng-template>
+      </div>
+
+      <div class="edit-link">
+        <a href="#" (click)="toggleEditModePassword($event)">Edit</a>
+      </div>
+    </div>
+
+  </div><br>
+
+<!------------hotel description--------------->
+   <div class="hotel-description">
+    <div class="edit-link">
+      <a href="#" class="edit-link-hotel-des" (click)="toggleEditModeHotelDescription($event)">Edit</a>
+    </div>
+    <div class="hotel-description-title">
+      <p>Hotel Description</p>
+    </div>
+    <div class="hotel-description-content">
+      <ng-container *ngIf="editModeHotelDescription; else displayModeHotelDescription">
+        <textarea [(ngModel)]="hotelDescription">{{ HotelDescription }}</textarea>
+        <button class="save" (click)="onSaveHotelDescription()">Save</button>
+        <button class="cancel" (click)="onCancelHotelDescription()">Cancel</button>
+      </ng-container>
+      <ng-template #displayModeHotelDescription>
+        <p class="viewed-hotel-description">{{ HotelDescription }}</p>
+      </ng-template>
+    </div>
+  </div>
+
+
+<!--  languages-->
+  <div class="languages">
+    <p class="languages-title"> Languages Spoken</p><br>
+    <app-chip-list [chips]="languages"  (chipsChange)="languages = $event"></app-chip-list>
+  </div>
+
+<!--facilities and services-->
+  <div class="facilities-and-services">
+    <p class="facilities-and-services-title">Facilities & Services</p><br>
+
+    <div class="facilities">
+      <p class="facilities-title">Facilities</p>
+      <app-chip-list [chips]="chips"  (chipsChange)="chips = $event"></app-chip-list>
+    </div>
+
+    <div class="services">
+      <p class="services-title">Services</p>
+      <app-chip-list [chips]="services"  (chipsChange)="services = $event"></app-chip-list>
+    </div>
+  </div><br>
+
+<!--  amenities-->
+  <div class="amenities">
+    <p class="amenities-title">Amenities</p>
+
+    <div class="common-amenities">
+      <p class="common-amenities-title">Most Common Amenities</p>
+      <app-chip-list [chips]="amenities" (chipsChange)="amenities = $event"></app-chip-list>
+    </div>
+
+    <div class="other-amenities">
+      <p class="other-amenities-title">Other Amenities</p>
+      <app-chip-list [chips]="oamenities"  (chipsChange)="oamenities = $event"></app-chip-list>
+    </div>
+
+  </div>
+
+</div>

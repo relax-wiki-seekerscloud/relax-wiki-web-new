@@ -1,0 +1,190 @@
+.signUpPageContainer{
+  display: flex;
+  min-height: 100vh;
+  //font-family: Roboto;
+}
+.imageAreaSignUp{
+  background-image: url("../../../../../assets/images/sign-up-page.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  flex:4;
+}
+.passwordError{
+  color: red;
+  text-align: center;
+}
+.contentAreaSignUp{
+  flex:5;
+}
+
+.header {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+
+  &.mobile {
+    display: none;
+    color: black;
+    background-color: #1b2236;
+
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+.inputHeader{
+  margin: 0;
+  font-weight: 590;
+}
+.bodyHeading{
+  text-align: center;
+  padding-top: 2rem;
+  margin: 0;
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+
+.signUpBox{
+  background-color: #ecedef;
+  width: 40rem;
+  margin: 1rem auto;
+  align-items: center;
+  display: grid;
+}
+
+.form{
+  padding: 2rem;
+}
+.form h4{
+  margin: 0;
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap:3rem;
+  justify-content: space-between;
+}
+.form-group {
+  flex:1;
+  display:flex;
+  flex-direction: column;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.error-message{
+  color: red;
+  margin-top: -1.4rem;
+  //text-align: center;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color:  #0C8CE9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 20rem;
+  text-align: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #0066ff;
+}
+
+.button{
+  text-align: center;
+  //width: 21rem;
+}
+.signUpButtonContainer{
+  display: flex;
+  justify-content: center
+}
+
+.footer{
+  //padding-top: 3rem;
+  height: 4rem;
+  margin:auto;
+  border-top: 2px solid lightgray;
+  padding:1rem;
+  text-align: center;
+}
+
+.description{
+  text-align: center;
+}
+
+.orIcon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.orIcon h3{
+  margin: 0;
+}
+
+.orLine{
+  height: 2px;
+  background-color: black;
+  width: 6rem;
+}
+
+.signUpExtra{
+  padding: 1rem 14rem;
+  width: 100%;
+  //height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.icon img{
+  width: 45px;
+  height: 45px;
+}
+
+.policy{
+  padding: 0.2rem 0;
+  a{
+    text-decoration: none;
+    color: red;
+  }
+}
+
+.haveAccount{
+  padding-top: 1rem;
+  a{
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .imageAreaSignUp{
+    display: none;
+  }
+  .header{
+    &.mobile{
+      display:flex;
+    }
+  }
+
+}

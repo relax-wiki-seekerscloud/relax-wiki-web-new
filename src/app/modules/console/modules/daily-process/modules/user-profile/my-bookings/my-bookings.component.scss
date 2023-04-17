@@ -1,0 +1,93 @@
+.my-bookings-main {
+  width: 100%;
+}
+
+.my-bookings-content {
+  //border: 1px solid red;
+  width: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.16);
+  position: fixed;
+  margin-top: 200px;
+  margin-left: 100px;
+  bottom: 200px;
+  background-color: #f8f8f8;
+}
+
+mat-nav-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-list-item {
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+  //font-weight: 500;
+  color: #4a4a4a;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-item-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 30px; /* Add this property to move the buttons down */
+}
+
+mat-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #0C8CE9;
+}
+
+mat-list-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.20); /* Add a border to create a divider */
+}
+
+mat-sidenav-container {
+  display: flex;
+  margin-right: 100px;
+  background-color: white;
+}
+
+mat-sidenav-content {
+  //border: 1px solid red;
+  width: 100%;
+  margin-top: 40px;
+  margin-right: 100px;
+  //display: flex;
+  //flex: 1; /* This makes the content take up the remaining space */
+  left: 200px; /* This moves the content to the right of the side navigation bar */
+}
+
+.demo-table {
+  width: 100%;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.add-review{
+  background-color: #3d8de8;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.add-review:hover {
+  background-color: #0066ff;
+}
+
+
+

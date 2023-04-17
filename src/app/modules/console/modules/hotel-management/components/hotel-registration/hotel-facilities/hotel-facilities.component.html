@@ -1,0 +1,64 @@
+<app-status-bar></app-status-bar>
+<div class="name-area">
+  <h1>Facilities and Services you provide</h1>
+</div>
+<app-form-selection-box titleName="Facilities">
+  <section class="example-section" [formGroup]="facilities">
+    <h3><mat-checkbox formControlName="wifi">Free WI-FI</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="spaAndWellness">Spa & Wellness center</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="swimmingPool">Swimming Pool</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="parking">Parking </mat-checkbox></h3>
+  </section>
+
+  <section class="example-section" [formGroup]="facilities">
+    <h3><mat-checkbox formControlName="breakfast">Breakfast</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="sauna">Sauna</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="tennisCourt">Tennis court </mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="banquetFacilities">Banquet Facilities </mat-checkbox></h3>
+  </section>
+
+  <section class="example-section" [formGroup]="facilities">
+    <h3><mat-checkbox formControlName="bar">Bar</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="fitnessCenter">Fitness Center</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="laundry">Laundry</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="lounge">Lounge</mat-checkbox></h3>
+  </section>
+</app-form-selection-box>
+
+<app-form-selection-box titleName="Services">
+  <section class="example-section" [formGroup]="services">
+    <h3><mat-checkbox formControlName="petFriendly">Pet friendly, at a surcharge</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="ironingService">Ironing service</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="babysitting">Babysitting on request</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="courier">Courier services</mat-checkbox></h3>
+  </section>
+
+  <section class="example-section" [formGroup]="services">
+    <h3><mat-checkbox formControlName="turnDownService">Turn-down service</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="security">24 Hour security</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="roomService">24 Room service</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="banquet">Banquet Facilities</mat-checkbox></h3>
+  </section>
+
+  <section class="example-section" [formGroup]="services">
+    <h3><mat-checkbox formControlName="shoeshine">Shoeshine service</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="conference">conference room</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="laundry">Laundry</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="lounge">Lounge</mat-checkbox></h3>
+  </section>
+</app-form-selection-box>
+
+<app-form-selection-box titleName="Language Spoken">
+  <mat-form-field appearance="fill">
+    <mat-label>Select a language</mat-label>
+    <mat-select [(ngModel)]="selectedLanguage">
+      <mat-option *ngFor="let language of languages" [value]="language.code">{{language.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</app-form-selection-box>
+
+
+<div class="button-container">
+  <button class="button" color="primary" mat-flat-button>Continue</button>
+</div>
+

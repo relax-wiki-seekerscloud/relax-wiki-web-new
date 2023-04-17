@@ -1,0 +1,22 @@
+.container{
+  height: 60%;
+}
+.header{
+  margin: 3rem auto;
+  padding-left: 4rem;
+  h1{
+    font-weight: 500;
+  }
+}
+.category-container{
+  display: flex;
+  justify-content: center;
+  max-width:1024px;
+  width:100%;
+  column-gap: 3rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+

@@ -1,0 +1,142 @@
+<div class="signUpPageContainer">
+  <section class="imageAreaSignUp">
+    <section class="header">
+      <a href=""><h1>RelaxWiki.com</h1></a>
+    </section>
+  </section>
+
+  <section class="contentAreaSignUp">
+    <section class="header mobile">
+      <a href=""><h1>RelaxWiki.com</h1></a>
+    </section>
+    <section class="body">
+      <h1 class="bodyHeading"><b>Sign Up</b></h1>
+
+      <div class="signUpBox">
+        <div class="form">
+          <form [formGroup]="signUpForm">
+            <div class="form-row">
+              <div class="form-group">
+                <h4>First Name</h4>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <input matInput placeholder="John" formControlName="userFirstName" >
+                </mat-form-field>
+
+                <div *ngIf="signUpForm.get('userFirstName')?.invalid && signUpForm.get('userFirstName')?.touched">
+                  <div *ngIf="signUpForm.get('userFirstName')?.errors?.['required']" class="error-message">
+                    <small>First name is required.</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <h4>Last Name</h4>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <input matInput placeholder="John" formControlName="userLastName">
+                </mat-form-field>
+
+                <div *ngIf="signUpForm.get('userLastName')?.invalid && signUpForm.get('userLastName')?.touched">
+                  <div *ngIf="signUpForm.get('userLastName')?.errors?.['required']" class="error-message">
+                    <small>Last name is required.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <h4>Email Address</h4>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <input matInput placeholder="John@example.com" formControlName="userEmail">
+                </mat-form-field>
+
+                <div *ngIf="signUpForm.get('userEmail')?.hasError('emailExists')" class="error-message">
+                  <small>Email address is already taken.</small>
+                </div>
+                <div *ngIf="signUpForm.get('userEmail')?.invalid && signUpForm.get('userEmail')?.touched">
+                  <div *ngIf="signUpForm.get('userEmail')?.errors?.['required']" class="error-message">
+                    <small>Email address is required.</small>
+                  </div>
+                  <div *ngIf="signUpForm.get('userEmail')?.errors?.['email']" class="error-message">
+                    <small>Email address is invalid.</small>
+                  </div>
+                </div>
+
+              </div>
+              <div class="form-group"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <h4>Password</h4>
+                <mat-form-field appearance="fill">
+                  <input matInput
+                         [type]="hidePassword ? 'password' : 'text'"
+                         name="password"
+                         formControlName="userPassword">
+                  <mat-icon matSuffix
+                            color="primary"
+                            class="eye"
+                            (click)="hidePassword = !hidePassword">
+                    {{ hidePassword ? 'visibility_off' : 'visibility' }}
+                  </mat-icon>
+                </mat-form-field>
+              </div>
+
+              <div class="form-group">
+                <h4>Confirm Password</h4>
+                <mat-form-field appearance="fill">
+                  <input matInput
+                         [type]="hideCPassword ? 'password' : 'text'"
+                         name="cpassword"
+                         formControlName="confirmPassword">
+                  <mat-icon matSuffix
+                            color="primary"
+                            class="eye"
+                            (click)="hideCPassword = !hideCPassword">
+                    {{ hideCPassword ? 'visibility_off' : 'visibility' }}
+                  </mat-icon>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+            <p class="passwordError" *ngIf="signUpForm.getError('passwordNotMatch')&&
+            signUpForm.get('confirmPassword')?.touched">
+              Passwords do not match
+            </p>
+
+            <div class="signUpButtonContainer">
+              <button mat-flat-button color="primary" (click)="addUser()">Create an Account</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="description">
+      <div class="orIcon">
+        <div class="orLine"></div><h3>OR</h3><div class="orLine"></div>
+      </div>
+      <div class="signUpExtra">
+        <div class="icon"><img src="../../../../../assets/Images/facebook2.png" alt="facebook signup"></div>
+        <div class="icon"><img src="../../../../../assets/Images/google.png" alt="google signup"></div>
+        <div class="icon"><img src="../../../../../assets/Images/apple.png" alt="apple signup"></div>
+      </div>
+      <div class="haveAccount">
+        <p>Already have an account? <a href="#">Login</a></p>
+      </div>
+
+      <div class="policy">
+        <p>By creating an account, <br>
+          You agree with our <a href="">Terms and Conditions</a> and <a href="">Privacy Statements</a></p>
+      </div>
+    </section>
+
+    <section class="footer">
+      <h4>&copy; RelaxWiki.com | All rights reserved</h4>
+    </section>
+  </section>
+</div>
+
+

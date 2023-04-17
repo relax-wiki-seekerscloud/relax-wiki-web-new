@@ -1,0 +1,49 @@
+<main>
+  <section class="contentArea">
+      <section class="header">
+        <h1>RelaxWiki.com</h1>
+      </section>
+      <section class="body">
+        <h2 class="bodyHeading">Login</h2>
+
+
+        <form action="" method="post">
+          <div class="loginBox">
+
+            <h4 class="inputHeader">Email address</h4>
+            <mat-form-field class="example-full-width" >
+              <input matInput placeholder="john@example.com" class="input">
+            </mat-form-field>
+
+            <h4 class="inputHeader">Password</h4>
+            <mat-form-field>
+              <!--              <mat-label>Password</mat-label>-->
+              <input matInput
+                     [(ngModel)]="password"
+                     [type]="hide ? 'password' : 'text'"
+                     name="password" />
+              <mat-icon matSuffix
+                        color="primary"
+                        class="eye"
+                        (click)="hide = !hide">
+                {{ hide ? 'visibility_off' : 'visibility' }}
+              </mat-icon>
+            </mat-form-field>
+
+            <a href="" class="forgotPassword">Forgot Password?</a>
+          </div>
+          <div class="loginButtonContainer">
+            <button mat-flat-button color="primary">Login</button>
+          </div>
+        </form>
+
+
+      </section>
+
+      <section class="footer">
+        <h4>&copy; RelaxWiki.com | All rights reserved</h4>
+      </section>
+
+  </section>
+  <section class="imageArea"></section>
+</main>

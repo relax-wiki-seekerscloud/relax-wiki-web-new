@@ -1,0 +1,89 @@
+
+<div class="my-bookings-main">
+  <app-user-profile-nav-bar></app-user-profile-nav-bar>
+  <div class="my-bookings-content">
+
+    <!-- Side navigation container -->
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened>
+        <mat-nav-list>
+          <mat-list-item (click)="onNavLinkClick('upcoming')">
+            <div class="list-item-wrapper">Upcoming</div>
+          </mat-list-item>
+          <mat-list-item (click)="onNavLinkClick('completed')">
+            <div class="list-item-wrapper">Completed</div>
+          </mat-list-item>
+          <mat-list-item (click)="onNavLinkClick('cancelled')">
+            <div class="list-item-wrapper">Cancelled</div>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <!-- Content area for the bookings -->
+      <mat-sidenav-content [style.margin-left.px]="sidenav.opened ? 250 : 0">
+
+        <!-- upcoming bookings -->
+        <div *ngIf="selectedType === 'upcoming'" class="upcoming-bookings">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+            <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+              <th mat-header-cell *matHeaderCellDef>
+                {{column.header}}
+              </th>
+              <td mat-cell *matCellDef="let row">
+                {{column.cell(row)}}
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+
+        <!-- completed bookings -->
+        <div *ngIf="selectedType === 'completed'" class="completed-bookings">
+          <table mat-table [dataSource]="dataSourceCompleted" class="mat-elevation-z8 demo-table">
+            <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+              <th mat-header-cell *matHeaderCellDef>
+                {{column.header}}
+              </th>
+              <td mat-cell *matCellDef="let row">
+                {{column.cell(row)}}
+              </td>
+            </ng-container>
+
+            <!-- Add Review column -->
+            <ng-container matColumnDef="review">
+              <th mat-header-cell *matHeaderCellDef> Review </th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-button class="add-review" (click)="addReview(row)">Add Review</button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsCompleted"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsCompleted;"></tr>
+          </table>
+        </div>
+
+        <!-- cancelled bookings -->
+        <div *ngIf="selectedType === 'cancelled'" class="cancelled-bookings">
+          <table mat-table [dataSource]="dataSourceCancelled" class="mat-elevation-z8 demo-table">
+            <ng-container *ngFor="let column of cancelledColumns" [matColumnDef]="column.columnDef">
+              <th mat-header-cell *matHeaderCellDef style="width: 120px;">
+                {{column.header}}
+              </th>
+              <td mat-cell *matCellDef="let row" >
+                {{column.cell(row)}}
+              </td>
+
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsCancelled"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsCancelled;"></tr>
+          </table>
+        </div>
+
+
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

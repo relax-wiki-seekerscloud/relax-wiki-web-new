@@ -1,0 +1,92 @@
+main{
+  display: flex;
+  min-height: 100vh;
+}
+.contentArea{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  flex: 5;
+}
+.imageArea{
+  background-image: url("../../../../../assets/images/login-page.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  flex:4;
+}
+.header{
+  height: 7rem;
+  background-color: #1b2236;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.header h1{
+  margin:0;
+}
+.bodyHeading{
+  text-align: center;
+  font-size: 1.8rem;
+}
+.body{
+  padding: 4rem 0;
+
+}
+.loginBox{
+  background-color: #ecedef;
+  padding: 2rem 3rem;
+  margin:2rem auto;
+  display: grid;
+  align-items: center;
+  width:30rem;
+  max-width:calc(100% - 3rem);
+}
+.inputHeader{
+  margin: 0;
+}
+.forgotPassword{
+  text-align: center;
+  text-decoration: none;
+}
+.loginButtonContainer{
+  display: flex;
+  justify-content: center;
+}
+.loginButtonContainer Button{
+  padding: 0 5rem;
+ }
+.footer{
+  height: 5rem;
+  margin:auto;
+  border-top: 2px solid lightgray;
+  padding:2rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 770px) {
+  .imageArea{
+      display: none;
+  }
+  .loginBox{
+    max-width:calc(100% - 3rem);
+  }
+  .contentArea{
+    background-image: url("../../../../../assets/images/login-page-white.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .header{
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .loginBox{
+    width:100%;
+    padding:1rem;
+  }
+}

@@ -1,0 +1,22 @@
+.title-area{
+  text-align: center;
+}
+.room-container{
+  display: flex;
+  justify-content: center;
+  gap:2rem;
+  padding: 1rem 2rem;
+}
+.button-container{
+  max-width: 250px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap:2rem;
+  .button{
+    width: 100%;
+  }
+}
+.box-desc{
+  margin:1rem;
+}

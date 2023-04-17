@@ -1,0 +1,334 @@
+.feedback-main {
+  width: 100%;
+  height: 1500px;
+  //border: 1px solid red;
+}
+.header {
+  width: 100%;
+  height: 70px;
+  //border: 1px solid red;
+}
+
+.feedback-main-inner {
+  //border: 1px solid red;
+  width: 100%;
+  height: 1400px;
+
+  display: flex;
+  position: relative;
+}
+
+.feedback-main-inner-left {
+  //border: 1px solid red;
+  width: 60%;
+  height: 100%;
+  //position: absolute;
+  display: flex;
+}
+
+
+.hotel {
+  //border: 1px solid red;
+  width: 780px;
+  height: 155px;
+  position: absolute;
+  top: 40px;
+  left: 70px;
+  display: flex;
+}
+
+.hotel-image img{
+  width: 150px;
+  height: 150px;
+}
+
+.hotel-description {
+  position: absolute;
+  top: 0;
+  left: 170px;
+  text-align: justify;
+
+}
+.hotel-description.hotel-name {
+  margin-top: 0;
+
+}
+.hotel-description.description {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.feedback-form {
+  //border: 1px solid red;
+  width: 780px;
+  height: 1100px;
+  top: 250px;
+  left: 70px;
+  position: absolute;
+}
+.required {
+  color: darkgray;
+}
+
+.star-rating{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+textarea {
+  width: 780px;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+input[type=text], select {
+  width: 780px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 12px;
+
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.upload-btn {
+  border: 2px solid #ccc;
+
+  background-color: white;
+  font-size: 16px;
+  height: 150px;
+  width: 120px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 4px;
+}
+
+.upload-btn:hover {
+  border-color: #aaa;
+}
+
+.upload-btn img {
+  height: 50px;
+  width: 50px;
+}
+
+.upload-btn:hover i {
+  color: #aaa;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  opacity: 0;
+}
+
+
+
+input::placeholder,textarea::placeholder {
+  font-size: 12px;
+}
+
+input[type=date] {
+  width: 780px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  color: darkgray;
+  font-size: 12px;
+}
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+label[for="certify"] {
+  font-size: 12px;
+  display: block;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: #0C8CE9;
+  color: white;
+  width: 400px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #0074bc;
+}
+
+
+
+
+
+////////right side/////////////////
+
+.feedback-main-inner-right {
+  //border: 1px solid red;
+  width: 40%;
+  height: 100%;
+  display: flex;
+}
+
+
+.recent-reviews{
+  //border: 1px solid red;
+  width: 500px;
+  height: 700px;
+  margin-left: 40px;
+  margin-top: 40px;
+  position: absolute;
+}
+
+.title{
+  font-size:15px;
+  top: 20px;
+}
+
+.recent-riview-stars {
+  margin-top: -8px;
+
+}
+
+.recent-riview-stars img{
+  width: 90px;
+  height: 20px;
+  margin-top: -8px;
+
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-image img  {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-description {
+  margin-left: 70px;
+  margin-top: 10px;
+  height: 100px;
+  width: 420px;
+}
+
+.name{
+  font-size: 15px;
+}
+.written-review{
+  font-size: 12px;
+  text-align: justify;
+  width: 390px;
+}
+
+.more-link a {
+  margin-left: 5px;
+  cursor: pointer;
+  color: red;
+  text-decoration: none;
+}
+
+
+.review-more {
+  text-align: justify;
+}
+
+.recent-reviews-scrollbar {
+  max-height: 500px; /* Adjust this value according to your needs */
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  //border: 1px solid red;
+  background-color:whitesmoke;
+  border-radius: 4px;
+
+}
+
+.recent-reviews-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  //border: 1px solid red;
+}
+
+.review {
+  display: flex;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.review-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-description {
+  margin-left: 10px;
+}
+
+
+
+.stars {
+  display: flex;
+}
+
+.star {
+  cursor: pointer;
+  margin-top: -10px; /* Add "px" to the value */
+}
+
+.star .icon {
+  width: 35px;
+  height: 24px;
+}
+
+.star svg {
+  width: 30px;
+  height: 24px;
+}
+
+.star.selected .icon {
+  fill: #FDCC0D;
+}
+.rating-text{
+  margin-left: 20px;
+  margin-top: -5px;
+  color: red;
+  font-size: 12px;
+}
+
+

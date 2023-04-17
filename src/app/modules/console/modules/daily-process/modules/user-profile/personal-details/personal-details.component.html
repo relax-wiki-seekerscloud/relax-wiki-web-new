@@ -1,0 +1,79 @@
+<app-user-profile-nav-bar></app-user-profile-nav-bar>
+
+<div class="personal-details-main">
+  <div class="personal-details-title">
+    <p>Personal Details</p>
+
+    <!-- Hidden input for profile image file -->
+    <input type="file" #profileImageInput (change)="handleProfileImageChange($event)" style="display: none;" />
+
+    <!-- Container for profile image with click and hover events -->
+    <div class="profile-image-container" (click)="addProfileImage(profileImageInput)" (mouseenter)="onProfileImageMouseEnter()" (mouseleave)="onProfileImageMouseLeave()">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJn663wSmxlrnDAHqvGCRkV8ixEFYy8DSi0wY4S9_l&s" alt="profile-image" />
+
+      <!-- Edit icon, displayed only when profile image is hovered -->
+      <div class="edit-icon" *ngIf="isProfileImageHovered">
+        <mat-icon>edit</mat-icon>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="personal-details">
+    <!-- Field container with hover events and conditional styling -->
+    <div class="field" *ngFor="let field of fields" (mouseover)="onMouseOver(field)" (mouseout)="onMouseOut(field)" [ngClass]="{ 'field-hover': field.isHovered }">
+
+      <div class="field-title">
+        <p>{{field.title}}</p>
+      </div>
+
+      <div class="field-content">
+
+        <!-- Display field content if not in editing mode -->
+        <ng-container *ngIf="!field.isEditing">
+          <span>{{field.content()}}</span>
+        </ng-container>
+
+        <!-- Display input fields and buttons if in editing mode -->
+        <ng-container *ngIf="field.isEditing">
+          <div class="input-container">
+            <div [ngClass]="field.inputWrapperClass">
+
+              <!-- Iterate through input fields -->
+              <ng-container *ngFor="let inputField of field.inputFields">
+                <ng-container *ngTemplateOutlet="inputTemplate; context: { $implicit: inputField }"></ng-container>
+              </ng-container>
+            </div>
+
+            <!-- Container for Save and Cancel buttons -->
+            <div class="button-container">
+              <button class="save" (click)="save(field)">Save</button>
+              <button class="cancel" (click)="cancel(field)">Cancel</button>
+            </div>
+
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- Edit button container, displayed if not in editing mode -->
+      <div class="edit-btn-container" *ngIf="!field.isEditing">
+        <button class="edit-btn" (click)="enableEdit(field)">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template for input and select fields -->
+<ng-template #inputTemplate let-inputField>
+  <div class="input-wrapper" *ngIf="inputField.type !== 'select'">
+    <label [for]="inputField.model">{{inputField.label}}:</label>
+    <input [id]="inputField.model" [ngModel]="getField(inputField.model)" (ngModelChange)="setField(inputField.model, $event)" [type]="inputField.type" [placeholder]="inputField.label">
+  </div>
+  <div class="input-wrapper" *ngIf="inputField.type === 'select'">
+    <label [for]="inputField.model">{{inputField.label}}:</label>
+    <select [id]="inputField.model" [ngModel]="getField(inputField.model)" (ngModelChange)="setField(inputField.model, $event)">
+      <option *ngFor="let option of inputField.options" [value]="option.value">{{option.name}}</option>
+    </select>
+  </div>
+</ng-template>

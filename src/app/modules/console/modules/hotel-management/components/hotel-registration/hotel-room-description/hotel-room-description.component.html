@@ -1,0 +1,123 @@
+<app-status-bar></app-status-bar>
+<div class="name-area">
+  <h1>Room Description</h1>
+</div>
+
+<app-content-box-fill>
+  <form [formGroup]="roomInformation">
+    <div class="room-description-container">
+      <div class="container-left">
+        <h4>Room type</h4>
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Select the room type</mat-label>
+          <mat-select formControlName="roomType">
+            <mat-option *ngFor="let room of roomTypes" [value]="room.value">
+              {{room.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <h4>Room name</h4>
+        <mat-form-field appearance="fill" class="input-field room-name">
+          <mat-label>e.g. Single room with beach view</mat-label>
+          <mat-select formControlName="roomName">
+            <mat-option *ngFor="let room of roomTypes" [value]="room.value">
+              {{room.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p>This name will be displayed to the guests</p>
+
+      </div>
+      <div class="container-right">
+        <div class="container-right-inner-one">
+          <app-input-field name="Room size" [control]="roomInformation.controls.roomSize"></app-input-field>
+          <p>Square meters</p>
+        </div>
+        <h4>Room name / Custom room name</h4>
+        <mat-form-field appearance="fill" class="input-field room-name">
+          <mat-label>e.g. Single room with beach view</mat-label>
+          <mat-select formControlName="customRoomName">
+            <mat-option *ngFor="let room of roomTypes" [value]="room.value">
+              {{room.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p>Only for your preference</p>
+      </div>
+    </div>
+
+    <div class="container-below-questions-area">
+      <div class="container-below-questions">
+        <div class="inner-question">
+          <h4>How many people can stay in this room?</h4>
+        </div>
+        <div class="inner-answer">
+          <app-input-field></app-input-field>
+        </div>
+      </div>
+      <div class="container-below-questions">
+        <div class="inner-question">
+          <h4>Number of rooms you have from this type</h4>
+        </div>
+        <div class="inner-answer">
+          <app-input-field></app-input-field>
+        </div>
+      </div>
+
+    </div>
+    <div class="container-below-radio">
+      <h4>Smoking Policy</h4><br/>
+      <mat-radio-group aria-label="Select an option" class="radio-input">
+        <mat-radio-button color="primary" value="1">Smoking is Allowed</mat-radio-button>
+        <mat-radio-button color="primary" value="2">Smoking is Not Allowed</mat-radio-button>
+        <mat-radio-button color="primary" value="3">Both Options are available</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</app-content-box-fill>
+
+<app-content-box-border boxName="Beds">
+  <div class="bed-info">
+    <div class="one">
+      <h4>Bed type</h4>
+      <mat-form-field appearance="fill" class="input-field">
+        <!--        <mat-label>Select the room type</mat-label>-->
+        <mat-select>
+          <mat-option *ngFor="let room of roomTypes" [value]="room.value">
+            {{room.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="two">
+      <app-input-field name="Number of Beds"></app-input-field>
+    </div>
+  </div>
+</app-content-box-border>
+
+<app-content-box-border boxName="Other Details">
+  <div class="other-details-container">
+    <app-input-field name="Number of Bed rooms"></app-input-field>
+    <app-input-field name="Number of Living rooms"></app-input-field>
+    <app-input-field name="Number of Bath rooms"></app-input-field>
+  </div>
+
+</app-content-box-border>
+
+<div class="price-container">
+  <app-content-box-fill>
+    <div class="price-container-inner">
+      <p>Price per night</p>
+      <app-input-field></app-input-field>
+      <p>USD</p>
+    </div>
+  </app-content-box-fill>
+</div>
+
+
+<div class="button-container">
+  <button class="button" color="primary" mat-flat-button (click)="addRoomInformation()">Continue</button>
+</div>
+

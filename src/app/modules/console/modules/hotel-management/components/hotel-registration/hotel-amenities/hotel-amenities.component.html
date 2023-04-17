@@ -1,0 +1,38 @@
+<app-status-bar></app-status-bar>
+<div class="name-area">
+  <h1>Amenities</h1>
+</div>
+<app-form-selection-box titleName="Most Common Amenities">
+  <section class="example-section" [formGroup]="commonAmenities">
+    <h3><mat-checkbox formControlName="ac">Air conditioning</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="electricKettle">Electric kettle</mat-checkbox></h3>
+  </section>
+  <section class="example-section" [formGroup]="commonAmenities">
+    <h3><mat-checkbox formControlName="bath">Bath</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="balcony">Balcony</mat-checkbox></h3>
+  </section>
+  <section class="example-section" [formGroup]="commonAmenities">
+    <h3><mat-checkbox formControlName="spaBath">Spa bath</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="view">View</mat-checkbox></h3>
+  </section>
+  <section class="example-section" [formGroup]="commonAmenities">
+    <h3><mat-checkbox formControlName="screenTV">Flat-screen TV</mat-checkbox></h3>
+    <h3><mat-checkbox formControlName="terrace">Terrace</mat-checkbox></h3>
+  </section>
+</app-form-selection-box>
+
+<app-form-selection-box titleName="More Amenities">
+<!--  <mat-form-field appearance="fill" class="input-field room-name">-->
+<!--    <mat-label>e.g. Single room with beach view</mat-label>-->
+<!--    <mat-select>-->
+<!--      <mat-option *ngFor="let room of rooms" [value]="room.value">-->
+<!--        {{room.viewValue}}-->
+<!--      </mat-option>-->
+<!--    </mat-select>-->
+<!--  </mat-form-field>-->
+</app-form-selection-box>
+
+<div class="button-container">
+  <button class="button" color="primary" mat-flat-button>Continue</button>
+</div>
+

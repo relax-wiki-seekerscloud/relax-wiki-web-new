@@ -1,0 +1,14 @@
+<mat-form-field class="example-chip-list" appearance="fill">
+  <mat-chip-list [ngClass]="'chip-list-' " class="horizontal-chip-list">
+    <mat-chip *ngFor="let chip of chips" [selected]="chip.selected" (click)="chip.selected = !chip.selected; chipsChange.emit(chips)" (removed)="remove(chip)">
+      {{ chip.value }}
+      <mat-icon matChipRemove *ngIf="!chip.selected">cancel</mat-icon>
+    </mat-chip>
+    <input #chipInput placeholder="Add more..."
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+</mat-form-field>
+

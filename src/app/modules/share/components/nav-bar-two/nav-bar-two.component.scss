@@ -1,0 +1,55 @@
+.nav-bar-two-main{
+  //border: 1px solid red;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(26, 34, 56, 1);
+  display: flex;
+  justify-content: center;
+}
+.nav-bar-two-main-inner{
+  //border: 1px solid red;
+  width: 90%;
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.logo{
+  //border: 1px solid red;
+  width: 250px;
+  height: 40px;
+  margin-top: 4px;
+  color: white;
+  font-weight: bold;
+}
+.my-account{
+  //border: 1px solid red;
+  width: 120px;
+  height: 40px;
+  margin-top: 4px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.my-account-icon{
+  //border: 1px solid red;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  display: flex;
+}
+.my-account-text{
+  // border: 1px solid red;
+  width: 80px;
+  height: 25px;
+  margin-top: 7px;
+}
+@media screen and (max-width: 450px) {
+  .my-account-text{
+    display: none;
+  }
+  .my-account{
+    width: 30px;
+  }
+}

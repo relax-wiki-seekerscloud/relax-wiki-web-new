@@ -1,0 +1,22 @@
+
+<app-user-profile-nav-bar></app-user-profile-nav-bar>
+<div class="add-payment-method">
+  <div class="payment-methods-title">
+    <p>Payment Methods</p>
+  </div>
+
+  <button class="payment-methods">
+    <div class="plus-and-text">
+      <span class="plus-mark">+</span>
+      <p>Add new payment method</p>
+    </div>
+  </button>
+
+  <div class="save-card-details">
+    <p>Save my credit card details</p>
+    <div class="toggle-container">
+      <span>{{isChecked ? 'Yes' : 'No'}}</span>
+      <mat-slide-toggle class="custom-toggle" [(ngModel)]="isChecked"></mat-slide-toggle>
+    </div>
+  </div>
+</div>

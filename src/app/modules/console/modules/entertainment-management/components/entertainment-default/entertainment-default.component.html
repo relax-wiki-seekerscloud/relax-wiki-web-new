@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<img src="assets/entertainmentSearchImage.jpg" alt="Image" class="left-image">
+<form #entertainmentActivitySearchForm="ngForm" (ngSubmit)="searchEntertainmentActivities()">
+  <div class="form-group">
+    <label for="entLocation">Location:</label>
+    <input type="text" class="form-control" id="entLocation" name="entLocation" [(ngModel)]="entLocation" required>
+  </div>
+  <div class="form-group">
+    <div style="display:flex;">
+      <div style="width:50%;">
+        <label for="entDate">Date:</label>
+        <input type="date" class="form-control location-input" id="entDate" name="entDate" [(ngModel)]="entDate" style="width:100%;" required >
+      </div> &nbsp; &nbsp;
+      <div style="width:50%;">
+        <label for="entPeople">Number of people:</label>
+        <input type="number" class="form-control location-input" id="entPeople" name="entPeople" [(ngModel)]="entPeople" style="width:100%;"required min="1" #numberOfEntPeopleInput="ngModel" >
+      </div>
+    </div>
+  </div>
+
+
+  <div style="text-align:center;">
+    <button type="submit" class="btn btn-primary" [disabled]="entertainmentActivitySearchForm.invalid">Search</button>
+  </div>
+</form>
+<div style="top:500px; position:relative;"><app-footer></app-footer></div>

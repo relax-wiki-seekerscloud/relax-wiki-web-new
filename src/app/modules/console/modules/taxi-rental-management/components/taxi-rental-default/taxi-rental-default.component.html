@@ -1,0 +1,41 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="container">
+  <img src="assets/taxiSearchImage.jpg" alt="Image" class="left-image">
+<form #rentalVehicleSearchForm="ngForm" (ngSubmit)="searchRentalVehicles()">
+  <div class="form-group">
+    <label for="carDestination">Destination:</label>
+    <input type="text" class="form-control" id="carDestination" name="carDestination" [(ngModel)]="carDestination" required>
+  </div>
+  <div class="form-group">
+    <div style="display:flex;">
+      <div style="width:50%;">
+        <label for="carDate">Date:</label>
+        <input type="date" class="form-control location-input" id="carDate" name="carDate" [(ngModel)]="carDate" style="width:100%;" required >
+      </div> &nbsp; &nbsp;
+      <div style="width:50%;">
+        <label for="carPeople">Number of people:</label>
+        <input type="number" class="form-control location-input" id="carPeople" name="carPeople" [(ngModel)]="carPeople" style="width:100%;"required min="1" #numberOfCarPeopleInput="ngModel" >
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div style="display:flex;">
+      <div style="width:50%;">
+        <label for="carPickupPoint">Pickup location:</label>
+        <input type="text" class="form-control" id="carPickupPoint" name="carPickupPoint" [(ngModel)]="carPickupPoint" required>
+      </div> &nbsp; &nbsp;
+      <div style="width:50%;">
+        <label for="carPickupTime">Pickup time:</label>
+        <input type="time" class="form-control" id="carPickupTime" name="carPickupTime" [(ngModel)]="carPickupTime" required>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <button type="submit" class="btn btn-primary" [disabled]="rentalVehicleSearchForm.invalid" style="width:200px;">Search</button>
+  </div>
+</form>
+</div>
+<div style="top:500px; position:relative;"><app-footer></app-footer></div>
+
