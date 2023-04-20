@@ -2,37 +2,99 @@
 <div class="name-area">
   <h1>Amenities</h1>
 </div>
-<app-form-selection-box titleName="Most Common Amenities">
-  <section class="example-section" [formGroup]="commonAmenities">
-    <h3><mat-checkbox formControlName="ac">Air conditioning</mat-checkbox></h3>
-    <h3><mat-checkbox formControlName="electricKettle">Electric kettle</mat-checkbox></h3>
-  </section>
-  <section class="example-section" [formGroup]="commonAmenities">
-    <h3><mat-checkbox formControlName="bath">Bath</mat-checkbox></h3>
-    <h3><mat-checkbox formControlName="balcony">Balcony</mat-checkbox></h3>
-  </section>
-  <section class="example-section" [formGroup]="commonAmenities">
-    <h3><mat-checkbox formControlName="spaBath">Spa bath</mat-checkbox></h3>
-    <h3><mat-checkbox formControlName="view">View</mat-checkbox></h3>
-  </section>
-  <section class="example-section" [formGroup]="commonAmenities">
-    <h3><mat-checkbox formControlName="screenTV">Flat-screen TV</mat-checkbox></h3>
-    <h3><mat-checkbox formControlName="terrace">Terrace</mat-checkbox></h3>
-  </section>
-</app-form-selection-box>
+<form [formGroup]="hotelAmenityForm">
+  <app-form-selection-box titleName="Most Common Amenities">
+    <div class="amenity-inner">
+      <mat-checkbox (change)="addToArray($event)" *ngFor="let amenity of Amenity; let i=index"
+                    [value]="amenity.value"
+                    class="checkbox">
+        {{ amenity.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
 
-<app-form-selection-box titleName="More Amenities">
-<!--  <mat-form-field appearance="fill" class="input-field room-name">-->
-<!--    <mat-label>e.g. Single room with beach view</mat-label>-->
-<!--    <mat-select>-->
-<!--      <mat-option *ngFor="let room of rooms" [value]="room.value">-->
-<!--        {{room.viewValue}}-->
-<!--      </mat-option>-->
-<!--    </mat-select>-->
-<!--  </mat-form-field>-->
-</app-form-selection-box>
+  <app-form-selection-box titleName="More Amenities">
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="roomAmenitiesArray" multiple placeholder="Room Amenities">
+        <mat-option *ngFor="let roomAmenity of RoomAmenity"
+                    [value]="roomAmenity.value">
+          {{roomAmenity.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-<div class="button-container">
-  <button class="button" color="primary" mat-flat-button>Continue</button>
-</div>
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="foodAndDrinkArray" multiple placeholder="Food and Drink">
+        <mat-option  *ngFor="let foodAndDrink of FoodAndDrink"
+                     [value]="foodAndDrink.value">
+          {{foodAndDrink.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="entertainmentAndFamilyServicesArray" multiple
+                  placeholder="Entertainment and Family Services">
+        <mat-option *ngFor="let entertainmentAndFamilyService of EntertainmentAndFamilyServices"
+                    [value]="entertainmentAndFamilyService.value">
+          {{entertainmentAndFamilyService.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="mediaAndTechnologyArray" multiple placeholder="Media and Technology">
+        <mat-option
+          *ngFor="let mediaAndTechnology of MediaAndTechnology"
+          [value]="mediaAndTechnology.value">
+          {{mediaAndTechnology.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="servicesAndExtrasArray" multiple placeholder="Services and Extras">
+        <mat-option
+          *ngFor="let servicesAndExtras of ServicesAndExtras" [value]="servicesAndExtras.value">
+          {{servicesAndExtras.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="safetyAndSecurityArray" multiple placeholder="Safety and Security">
+        <mat-option
+          *ngFor="let safetyAndSecurity of SafetyAndSecurity" [value]="safetyAndSecurity.value">
+          {{safetyAndSecurity.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="bathroomArray" multiple placeholder="Bathroom">
+        <mat-option
+          *ngFor="let bathroom of Bathroom" [value]="bathroom.value">
+          {{bathroom.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="outdoorAndViewArray" multiple placeholder="Outdoor and View">
+        <mat-option
+          *ngFor="let outdoorAndView of OutdoorAndView" [value]="outdoorAndView.value">
+          {{outdoorAndView.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="amenity">
+      <mat-select formControlName="accessibilityArray" multiple placeholder="Accessibility">
+        <mat-option
+          *ngFor="let accessibility of Accessibility" [value]="accessibility.value">
+          {{accessibility.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </app-form-selection-box>
+
+  <div class="button-container">
+    <button (click)="submitHotelAmenity()" class="button" color="primary" mat-flat-button>Continue</button>
+  </div>
+
+</form>
+
+
+
 

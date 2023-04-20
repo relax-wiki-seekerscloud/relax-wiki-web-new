@@ -8,7 +8,19 @@
 .example-section {
   margin: 12px 0;
 }
-
+.facility-inner{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  padding: 0 2rem;
+  gap: 1rem;
+  .checkbox{
+    margin: 0 2rem;
+  }
+}
+.languages-inner{
+  max-width: 500px;
+  width: 100%;
+}
 .button-container{
   display: flex;
   justify-content: center;
