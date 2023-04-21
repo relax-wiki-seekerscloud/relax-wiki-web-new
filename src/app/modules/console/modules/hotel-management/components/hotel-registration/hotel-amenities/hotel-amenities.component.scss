@@ -5,6 +5,17 @@
     margin: 0;
   }
 }
+.amenity-inner{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  .checkbox{
+    margin: 0 2rem;
+  }
+}
+.amenity{
+  width: 100%;
+}
 .button-container{
   display: flex;
   justify-content: center;
