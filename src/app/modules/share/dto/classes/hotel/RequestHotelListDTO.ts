@@ -24,7 +24,16 @@ export class Bed {
   ) {
   }
 }
-
+// export class FileObject extends File{
+//   private _url: string = "";
+//   get url(): string {
+//     return this._url;
+//   }
+//
+//   set url(value: string) {
+//     this._url = value;
+//   }
+// }
 export class RequestHotelListDTO {
   public rooms: Array<Room> = [];
   public facilities: Array<string> = [];
@@ -40,7 +49,7 @@ export class RequestHotelListDTO {
   public safetyAndSecurityAmenities: Array<string> = [];
   public outdoorAmenities: Array<string> = [];
   public servicesAndExtrasAmenities: Array<string> = [];
-
+  public photos:Array<string> = [];
 
   constructor(
     public hotelName: string,

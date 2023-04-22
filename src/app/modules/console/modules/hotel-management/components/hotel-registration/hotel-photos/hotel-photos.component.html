@@ -8,32 +8,21 @@
     <p>The photos you add here will displayed to the guests.  </p>
     <p class="condition">Upload at least one photo</p>
   </div>
-  <div class="photo-container-inner">
-   <div class="photo-container-inner-box">
-     <h3>Drag and Drop here <br> Or</h3>
-     <div class="button-container">
-       <button class="button" color="primary" mat-flat-button>Select from the computer</button>
-     </div>
-   </div>
-  </div>
-  <div class="photo-container-inner edit-area">
-    <div class="photo-item">
-      <img src="../../../../../../../../assets/Images/hotel-photo-insert.png">
-    </div>
-    <div class="photo-item">
-      <img src="../../../../../../../../assets/Images/hotel-photo-insert2.png" class="delete-image">
-      <div class="editing-area">
-        <div class="edit-button">
-          <button>Edit</button>
-        </div>
-        <div class="delete-button">
-          <button>Delete</button>
-        </div>
+  <div class="photo-container-inner" dropzone (hovered)="toggleHover($event)"  (dropped)="onDrop($event)">
+    <div class="photo-container-inner-box" [class.hovering]="isHovering">
+      <h3>Drag and Drop here <br> Or</h3>
+      <div class="button-container">
+        <button class="button" color="primary" mat-flat-button >Select from the computer</button>
       </div>
     </div>
-    <div class="photo-item final-step"></div>
+  </div>
+  <div class="photo-container-inner edit-area">
+    <div class="photo-item" *ngFor="let file of files">
+      <upload-task [file]="file" (readyUrl)="addPhoto($event)"  ></upload-task>
+    </div>
+<!--    <div class="photo-item final-step"></div>-->
   </div>
 </div>
 <div class="button-container continue-button">
-  <button class="button" color="primary" mat-flat-button>Continue</button>
+  <button class="button" color="primary" mat-flat-button (click)="addPhotosToHotel()">Continue</button>
 </div>

@@ -32,6 +32,8 @@ import { BookingSummaryBox1Component } from './components/booking-summary-box1/b
 import {MatIconModule} from "@angular/material/icon";
 import { BookingSummaryBox2Component } from './components/booking-summary-box2/booking-summary-box2.component';
 import { BookingSummaryBox3Component } from './components/booking-summary-box3/booking-summary-box3.component';
+import { DropzoneDirective } from './directives/dropzone.directive';
+import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 
 
 @NgModule({
@@ -59,7 +61,9 @@ import { BookingSummaryBox3Component } from './components/booking-summary-box3/b
     BookingSummaryBox1Component,
     BookingSummaryBox2Component,
     BookingSummaryBox3Component,
-    FormSelectionBoxComponent
+    FormSelectionBoxComponent,
+    DropzoneDirective,
+    UploadTaskComponent
   ],
     exports: [
         FooterComponent,
@@ -77,13 +81,15 @@ import { BookingSummaryBox3Component } from './components/booking-summary-box3/b
         HotelRoomContainerBoxComponent,
         FormSelectionBoxComponent,
         HotelRoomContainerBoxComponent,
-      FeedbackFormComponent,
-      PaginatorComponent,
-      BookingSummaryBox1Component,
-      BookingSummaryBox2Component,
-      BookingSummaryBox3Component
+        FeedbackFormComponent,
+        PaginatorComponent,
+        BookingSummaryBox1Component,
+        BookingSummaryBox2Component,
+        BookingSummaryBox3Component,
+        DropzoneDirective,
+        UploadTaskComponent
 
-  ],
+    ],
 
 
   imports: [

@@ -1,0 +1,13 @@
+.image{
+  width: 250px;
+  height: 300px;
+  margin: 1rem auto;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  img{
+    width: 250px;
+    height: 300px;
+    object-fit: contain;
+  }
+}
