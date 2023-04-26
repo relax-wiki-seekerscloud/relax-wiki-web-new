@@ -85,4 +85,9 @@ export class HotelListingService {
   get hotelListDto(){
     return this.hotelListDTO;
   }
+
+  addPhotosToHotel(photos: Array<string>) {
+    if (this.hotelListDTO)
+      this.hotelListDTO.photos = photos;
+  }
 }

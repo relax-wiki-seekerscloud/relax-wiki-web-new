@@ -12,6 +12,11 @@ import {SecurityModule} from "./modules/security/security.module";
 import {ConsoleModule} from "./modules/console/console.module";
 
 import { MatIconModule } from '@angular/material/icon';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import {FIREBASE_OPTIONS} from "@angular/fire/compat";
+
 
 
 
@@ -38,13 +43,17 @@ import { MatIconModule } from '@angular/material/icon';
         SecurityModule,
         ConsoleModule,
         MatIconModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideStorage(() => getStorage()),
 
 
     ],
 
 
 
-  providers: [],
+  providers: [
+    {provide:FIREBASE_OPTIONS, useValue:environment.firebase}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
