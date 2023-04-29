@@ -10,7 +10,7 @@ describe('AdvertisementDefaultComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AdvertisementDefaultComponent ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AdvertisementDefaultComponent);
     component = fixture.componentInstance;

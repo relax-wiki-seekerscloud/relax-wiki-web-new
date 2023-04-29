@@ -1,0 +1,78 @@
+<div class="main-wrap">
+  <br>
+  <div class="form-text">
+    Enter Personal Details
+  </div>
+  <div class="form-table">
+    <table class="table-class">
+      <tr>
+        <td>
+          Are you travelling for work?
+        </td>
+        <td>
+          <input type="radio" id="yesForWork" name="purpose" value="Yes">
+          &nbsp;<label for="Yes">yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" id="noForWork" name="purpose" value="No">
+          &nbsp;<label for="No">No</label>&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          First Name:
+          <br>
+          <mat-form-field appearance="fill">
+            <input matInput type="text" name="fName">
+          </mat-form-field>
+        </td>
+        <td>
+          Last Name:
+          <br>
+          <mat-form-field appearance="fill">
+            <input matInput type="text" name="lName">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Email Address: <br>
+          <mat-form-field appearance="fill">
+            <div class="total-width">
+              <input matInput type="email" name="emailAddress">
+            </div>
+          </mat-form-field>
+        </td>
+        <td>
+          Conform Email Address: <br>
+          <mat-form-field appearance="fill">
+            <div class="total-width">
+              <input matInput type="email" name="conformEmailAddress">
+            </div>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Special Requests (Optional) : <br>
+          <mat-form-field appearance="fill">
+            <div class="total-width">
+              <input matInput type="textarea" name="requests">
+            </div>
+          </mat-form-field>
+        </td>
+        <td>
+          Estimated Arrival Time:
+          <div class="total-width">
+            <mat-form-field appearance="fill">
+              <input matInput type="text" name="arrivalTime">
+            </mat-form-field>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <input type="checkbox" id="parking" name="parkingPreference" value="privatePark">
+    <label for="check"> Private parking will be preferred</label><br>
+    <div class="submit-button">
+      <input type="button" class="button" value="Go to Enter Payment Details >>">
+    </div>
+  </div>
+</div>

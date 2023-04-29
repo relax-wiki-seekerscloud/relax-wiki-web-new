@@ -150,7 +150,7 @@ input[type="text"]:focus, input[type="date"]:focus {
     left:15%;
   }
 }
-
+/*specifies the maximum width of the screen, apply only when the screen width is 450 pixels or less.*/
 @media screen and (max-width:450px){
   .form-group{
     width:50%;

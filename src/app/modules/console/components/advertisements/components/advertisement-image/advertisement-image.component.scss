@@ -1,4 +1,139 @@
-*{
+*{*{
+  font-family: Roboto;
+}
+
+  .main-wrap {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+
+  .step-wrap {
+    border: 1px solid black;
+    margin: 1% 5% 0 5%;
+    height: 8%;
+    width: 90%;
+  }
+
+  .title-wrap {
+    font-size: 20px;
+    font-weight: bold;
+    /*border: 1px solid black;*/
+    margin: 2% 5% 0 5%;
+    height: 8%;
+    width: 90%;
+    text-align: center;
+  }
+
+  .form-main{
+    /*border: 1px solid red;*/
+    margin: 1% 4% 1% 4%;
+    height: auto;
+    width: 92%;
+  }
+  .business-details-wrap{
+    /*border: 1px solid black;*/
+    margin: 0% 1% 1% 1%;
+    height: auto;
+    width: 98%;
+  }
+  .example-full-width {
+    width: 100%;
+  }
+  .business-details-input{
+    align-items: center;
+    display: flex;
+    margin-left:15% ;
+  }
+  table{
+    /*border: 1px solid green;*/
+    width: 70%;
+    align-items: center;
+  }
+  td{
+    width: 40%;
+  }
+  .advertisement-photo-wrap{
+    /*border: 1px solid black;*/
+    margin: 1% 1% 1% 1%;
+    height: 34%;
+    width: 98%;
+    align-items: center;
+  }
+  .advertisement-photo-text{
+    /*border: 1px solid black;*/
+    height: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+  .advertisement-photo-inserter{
+    border: 1px solid black;
+    width: 80%;
+    height: 200px;
+    margin: 5% 10% 0% 10%;
+
+  }
+  .advertisement-photo-dashed-box{
+    border: 1px dashed #d6d5d0;
+    width: 80%;
+    height: 150px;
+    margin: 4% 5% 4% 10%;
+  }
+  .image-insertion-button{
+    /* border: 1px solid black;*/
+    margin: 6% 25% 6% 25%;
+    width: 50%;
+    height: 60%;
+    align-items: center;
+    padding: 7% 2%;
+    text-align: center;
+  }
+  .set-your-budget-wrap{
+    /*border: 1px solid black;*/
+    margin: 1% 1% 1% 1%;
+    height: auto;
+    width: 98%;
+    content: "";
+    display: table;
+    clear: both;
+
+  }
+  .daily-budget{
+    float: left;
+    /*border: 1px solid red;*/
+    height: auto;
+    width:50%;
+
+  }
+  .daily-budget-box{
+    /* border: 1px solid black;*/
+    height: auto;
+    width: 70%;
+    margin: 1% 15% 1% 15%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+  .button-wrap{
+    /*border: 1px solid black;*/
+    margin: 1% 1% 1% 1%;
+    height: 10%;
+    align-items: center;
+  }
+  .button{
+    height: 35px;
+    width: 40%;
+    margin-left: 35% ;
+    align-items: center;
+    background-color: #34495E;
+    color: #ffffff;
+    border: none;
+  }
+
+
+
   font-family: Roboto;
 }
 
