@@ -56,15 +56,16 @@ import {HotelOwnerProfileModule} from "./modules/hotel-owner-profile/hotel-owner
         HotelBookingProcessComponent,
 
     ],
-  exports: [
-    HotelRegistrationComponent,
-    ContentBoxBorderComponent,
-    HotelDefaultComponent,
-    HotelBasicInfoComponent,
-    HotelDefaultComponent,
-    HotelManagementComponent,
+    exports: [
+        HotelRegistrationComponent,
+        ContentBoxBorderComponent,
+        HotelDefaultComponent,
+        HotelBasicInfoComponent,
+        HotelDefaultComponent,
+        HotelManagementComponent,
+        ContentBoxFillComponent,
 
-  ],
+    ],
   imports: [
     CommonModule,
     HotelManagementRoutingModule,

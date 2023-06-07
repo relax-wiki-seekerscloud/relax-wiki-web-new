@@ -1,0 +1,43 @@
+<app-status-bar></app-status-bar>
+<div class="name-area">
+  <h1>Facilities and Activities you provide</h1>
+</div>
+<form [formGroup]="entertainmentFacilityForm">
+  <app-form-selection-box titleName="Facilities">
+    <div class="facility-inner">
+      <mat-checkbox class="checkbox" *ngFor="let facility of Facility; let i=index" [value]="facility.value" (change)="addToArray($event,'facility')">
+        {{ facility.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Activities">
+    <div class="facility-inner">
+      <mat-checkbox class="checkbox" *ngFor="let activity of Activity; let i=index" [value]="activity.value" (change)="addToArray($event,'activity')">
+        {{ activity.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Packages you Offer">
+    <div class="facility-inner">
+      <mat-checkbox class="checkbox" *ngFor="let packages of Package; let i=index" [value]="packages.value" (change)="addToArray($event,'package')">
+        {{ packages.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Languages Spoken">
+    <mat-form-field appearance="fill" class="languages-inner">
+      <mat-select formControlName="languageControl" multiple placeholder="Languages">
+        <mat-option *ngFor="let language of languageOptions" [value]="language">{{language}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </app-form-selection-box>
+
+
+  <div class="button-container">
+    <button (click)="addEntertainmentFacility()" class="button" color="primary" mat-flat-button>Continue</button>
+  </div>
+
+</form>

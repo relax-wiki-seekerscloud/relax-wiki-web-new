@@ -1,0 +1,53 @@
+<app-status-bar-steps4></app-status-bar-steps4>
+<div class="name-area">
+  <p>Tell us more information about your restaurant </p>
+</div>
+
+<form [formGroup]="restaurantMoreInfo">
+  <app-form-selection-box titleName="Category that fits best for this property">
+
+      <mat-radio-group aria-label="Select an option" class="radio-input" formControlName="restaurantCategory">
+        <div class="info-inner">
+        <mat-radio-button color="primary" value="restaurants">Restaurants</mat-radio-button>
+        <mat-radio-button color="primary" value="barsAndPubs">Bars and Pubs</mat-radio-button>
+        <mat-radio-button color="primary" value="quickBites">Quick Bites</mat-radio-button>
+        <mat-radio-button color="primary" value="coffeeAndTea">Coffee and Tea</mat-radio-button>
+        <mat-radio-button color="primary" value="deliveryOnly">Delivery Only</mat-radio-button>
+        <mat-radio-button color="primary" value="specialtyFoodMarket">Specialty Food Market</mat-radio-button>
+        <mat-radio-button color="primary" value="bakeries">Bakeries</mat-radio-button>
+        <mat-radio-button color="primary" value="dessert">Dessert</mat-radio-button>
+        </div>
+      </mat-radio-group>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Offered Cuisine ">
+    <div class="info-inner">
+      <mat-checkbox class="checkbox" *ngFor="let offeredCuisine of OfferedCuisine; let i=index" [value]="offeredCuisine.value" (change)="addToArray($event,'offeredCuisine')">
+        {{ offeredCuisine.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Open Hours">
+    <h4>From</h4>
+    <mat-form-field appearance="fill">
+      <input type="time" matInput formControlName="openTimeFrom" [(ngModel)]="open_from_string">
+    </mat-form-field>
+    <h4>To</h4>
+    <mat-form-field appearance="fill">
+      <input type="time" matInput formControlName="openTimeTo" [(ngModel)]="open_to_string">
+    </mat-form-field>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Meals You Serve">
+    <div class="info-inner">
+      <mat-checkbox class="checkbox" *ngFor="let servedMeals of ServedMeals; let i=index" [value]="servedMeals.value" (change)="addToArray($event,'servedMeals')">
+        {{ servedMeals.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <div class="button-container">
+    <button (click)="addRestaurantMoreInfo()" class="button" color="primary" mat-flat-button>Continue</button>
+  </div>
+</form>
