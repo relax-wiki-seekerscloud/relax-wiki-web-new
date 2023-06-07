@@ -10,7 +10,7 @@ describe('AdvertisementsVideoComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AdvertisementsVideoComponent ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AdvertisementsVideoComponent);
     component = fixture.componentInstance;

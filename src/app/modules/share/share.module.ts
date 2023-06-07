@@ -32,6 +32,7 @@ import { BookingSummaryBox1Component } from './components/booking-summary-box1/b
 import {MatIconModule} from "@angular/material/icon";
 import { BookingSummaryBox2Component } from './components/booking-summary-box2/booking-summary-box2.component';
 import { BookingSummaryBox3Component } from './components/booking-summary-box3/booking-summary-box3.component';
+import { BookingSummaryPersonnalDetailsFormComponent } from './components/booking-summary-personnal-details-form/booking-summary-personnal-details-form.component';
 import { DropzoneDirective } from './directives/dropzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 import { StatusBarSteps4Component } from './components/status-bar-steps4/status-bar-steps4.component';
@@ -62,6 +63,8 @@ import { StatusBarSteps4Component } from './components/status-bar-steps4/status-
     BookingSummaryBox1Component,
     BookingSummaryBox2Component,
     BookingSummaryBox3Component,
+    FormSelectionBoxComponent,
+    BookingSummaryPersonnalDetailsFormComponent,
     FormSelectionBoxComponent,
     DropzoneDirective,
     UploadTaskComponent,

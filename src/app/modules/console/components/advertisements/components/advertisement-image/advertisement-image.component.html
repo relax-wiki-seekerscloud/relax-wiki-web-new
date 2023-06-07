@@ -19,27 +19,27 @@
   <div class="form-main">
     <!--put an action-->
     <form action="" name="image-add">
-    <!--take business details-->
-    <div class="business-details-wrap">
-      <app-content-box-border boxName="Business Details">
+      <!--take business details-->
+      <div class="business-details-wrap">
+        <app-content-box-border boxName="Business Details">
 
 
-        <div class="business-details-input">
-          <!--Name of the Business:
-          <mat-form-field appearance="fill">
-            <input matInput placeholder="Mani Hotel">
-          </mat-form-field>-->
+          <div class="business-details-input">
+            <!--Name of the Business:
+            <mat-form-field appearance="fill">
+              <input matInput placeholder="Mani Hotel">
+            </mat-form-field>-->
 
-          <table>
-            <tr>
-              <td>
-                Name of the Business:
-              </td>
-              <td>
-                <mat-form-field appearance="fill">
-                  <input matInput placeholder="Mani Hotel" name="businessName">
-                </mat-form-field>
-              </td> </tr>
+            <table>
+              <tr>
+                <td>
+                  Name of the Business:
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <input matInput placeholder="Mani Hotel" name="businessName">
+                  </mat-form-field>
+                </td> </tr>
               <tr>
                 <td>
                   Type of the Business:
@@ -66,83 +66,104 @@
                   </mat-form-field>
                 </td>
               </tr>
-            <tr>
-              <td>
-                Hotline Contact Number:
-              </td>
-              <td>
-                <mat-form-field appearance="fill">
-                  <input matInput type="tel" name="businessContactNumber">
-                </mat-form-field>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Insert Caption:
-              </td>
-              <td>
-                <mat-form-field appearance="fill">
-                  <input matInput type="text" name="advertisementCaption">
-                </mat-form-field>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </app-content-box-border>
+              <tr>
+                <td>
+                  Hotline Contact Number:
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <input matInput type="tel" name="businessContactNumber">
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Advertisement Title:
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <input matInput type="text" name="advertisementTitle">
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Address of the Business:
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <input matInput type="text" name="addressOfBusiness">
+                  </mat-form-field>
+                </td>
+              </tr>
 
-    </div>
-
-
-    <!--take advertisement photo-->
-    <div class="advertisement-photo-wrap">
-      <app-content-box-border boxName="Advertisement Photo">
-        <div class="advertisement-photo-text">
-          Add a photo of your advertisement. Make sure to add quality photo at least the 720p resolution. You can add only ONE photo.
-          The photo you add here will displayed to the guests.
-        </div>
-        <!--box-->
-       <div class="advertisement-photo-inserter">
-         <div class="advertisement-photo-dashed-box">
-           <div class="image-insertion-button">
-             <input type="file" id="img" name="img" accept="image/*">
-           </div>
-         </div>
-       </div>
-      </app-content-box-border>
-    </div>
-
-    <!--set your budget-->
-    <div class="set-your-budget-wrap">
-      <app-content-box-border boxName="Set Your Budget">
-
-        <div class="daily-budget">
-          Daily Budget:
-          <mat-form-field appearance="fill">
-            <mat-label>budget</mat-label>
-            <select matNativeControl required>
-              <option value="$1">$1</option>
-              <option value="$2">$2</option>
-              <option value="$3">$3</option>
-              <option value="$4">$4</option>
-            </select>
-          </mat-form-field>
-        </div>
-
-        <div class="daily-budget">
-          <div class="daily-budget-box">
-            $1 - conditions and duration <br>
-            $2 - conditions and duration <br>
-            $3 - conditions and duration <br>
-            $4 - conditions and duration <br>
+              <tr>
+                <td>
+                  Insert Caption:
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <input matInput type="text" name="advertisementCaption">
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
           </div>
-        </div>
-      </app-content-box-border>
-    </div>
+        </app-content-box-border>
 
-    <!--continue button-->
-    <div class="button-wrap">
-      <input type="button" class="button" value="Continue">
-    </div>
+      </div>
+
+
+      <!--take advertisement photo-->
+      <div class="advertisement-photo-wrap">
+        <app-content-box-border boxName="Advertisement Photo">
+          <div class="advertisement-photo-text">
+            Add a photo of your advertisement. Make sure to add quality photo at least the 720p resolution. You can add only ONE photo.
+            The photo you add here will displayed to the guests.
+          </div>
+          <!--box-->
+          <div class="advertisement-photo-inserter">
+            <div class="advertisement-photo-dashed-box">
+              <div class="image-insertion-button">
+                <input type="file" id="img" name="img" accept="image/*">
+              </div>
+            </div>
+          </div>
+        </app-content-box-border>
+      </div>
+
+      <!--set your budget-->
+      <div class="set-your-budget-wrap">
+        <app-content-box-border boxName="Set Your Budget">
+
+          <div class="daily-budget">
+            Daily Budget:
+            <mat-form-field appearance="fill">
+              <mat-label>budget</mat-label>
+              <select matNativeControl required>
+                <option value="$1">$1</option>
+                <option value="$2">$2</option>
+                <option value="$3">$3</option>
+                <option value="$4">$4</option>
+              </select>
+            </mat-form-field>
+          </div>
+
+          <div class="daily-budget">
+            <div class="daily-budget-box">
+              $1 - conditions and duration <br>
+              $2 - conditions and duration <br>
+              $3 - conditions and duration <br>
+              $4 - conditions and duration <br>
+            </div>
+          </div>
+        </app-content-box-border>
+      </div>
+
+      <!--continue button-->
+      <div class="button-wrap">
+        <input type="button" class="button" value="Continue">
+      </div>
 
     </form>
   </div>
