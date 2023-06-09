@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {RequestHotelListDTO} from "../../../../../../share/dto/classes/hotel/RequestHotelListDTO";
-import {FormBuilder, FormGroup} from "@angular/forms";
 import {HotelListingService} from "../../../../../../share/services/hotel/hotel-listing.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-hotel-photos',
@@ -12,7 +11,7 @@ import {HotelListingService} from "../../../../../../share/services/hotel/hotel-
 export class HotelPhotosComponent implements OnInit {
   hotelPhotos: string[] = [];
 
-constructor(private hotelListingService: HotelListingService) {
+constructor(private hotelListingService: HotelListingService,private router:Router) {
 }
   isHovering: boolean = false;
 
@@ -37,6 +36,7 @@ constructor(private hotelListingService: HotelListingService) {
   addPhotosToHotel(){
     this.hotelListingService.addPhotosToHotel(this.hotelPhotos);
     console.log(this.hotelListingService.hotelListDto);
+    this.router.navigate(['/console/hotel-management/hotel-registration/hotel-policy']).then();
   }
 }
 

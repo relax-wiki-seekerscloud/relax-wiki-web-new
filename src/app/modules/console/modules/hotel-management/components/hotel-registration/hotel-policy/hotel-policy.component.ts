@@ -1,17 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+import {Policy} from "../../../../../../share/dto/classes/hotel/RequestHotelListDTO";
+import {Router} from "@angular/router";
+import {HotelListingService} from "../../../../../../share/services/hotel/hotel-listing.service";
 
-interface Day {
-  value: string;
-  viewValue: string;
-}
-interface Pay {
-  value: string;
-  viewValue: string;
-}
-interface Pet {
-  value: string;
-  viewValue: string;
-}
 @Component({
   selector: 'app-hotel-policy',
   templateUrl: './hotel-policy.component.html',
@@ -19,26 +11,46 @@ interface Pet {
 })
 
 export class HotelPolicyComponent implements OnInit {
-  // selected='day-1';
-  days: Day[] = [
-    {value: 'day-1', viewValue: '1 day'},
-    {value: 'day-2', viewValue: '2 days'},
-    {value: 'day-3', viewValue: '3 days'},
-  ];
 
-  stays: Pay[] = [
-    {value: 'full', viewValue: '100% of the full stay'},
-    {value: 'half', viewValue: '50% of the full stay'},
-    {value: 'quarter', viewValue: '25% of the full stay'},
-  ];
+  hotelPolicyForm = new FormGroup({
+    bookingCancelPeriod: new FormControl(''),
+    bookingCancelCharge: new FormControl(''),
+    pets: new FormControl(''),
+    petsCharge: new FormControl(''),
+    checkInTimeFrom: new FormControl(''),
+    checkInTimeTo: new FormControl(''),
+    checkOutTimeFrom: new FormControl(''),
+    checkOutTimeTo: new FormControl(''),
+  });
 
-  pets: Pet[] = [
-    {value: 'yes-1', viewValue: 'Yes'},
-    {value: 'no-0', viewValue: 'No'},
-  ];
-  constructor() { }
+  public check_in_from_string: String = "04:00";
+  public check_in_to_string: String = "23:00";
+  public check_out_from_string: String = "04:00";
+  public check_out_to_string: String = "23:00";
+
+
+  constructor(private router: Router, private hotelListingService: HotelListingService) {
+
+  }
+
+  addPolicy() {
+    let policyDTO: Policy = new Policy(
+      this.hotelPolicyForm.get('bookingCancelPeriod')?.value!,
+      this.hotelPolicyForm.get('bookingCancelCharge')?.value!,
+      this.hotelPolicyForm.get('pets')?.value!,
+      this.hotelPolicyForm.get('petsCharge')?.value!,
+      this.hotelPolicyForm.get('checkInTimeFrom')?.value!,
+      this.hotelPolicyForm.get('checkInTimeTo')?.value!,
+      this.hotelPolicyForm.get('checkOutTimeFrom')?.value!,
+      this.hotelPolicyForm.get('checkOutTimeTo')?.value!,
+    )
+    this.hotelListingService.addPolicyToHotel(policyDTO);
+    console.log(this.hotelListingService.hotelListDto);
+    this.router.navigate(['/console/hotel-management/hotel-registration/hotel-payments']).then();
+  }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -35,6 +35,7 @@ import { BookingSummaryBox3Component } from './components/booking-summary-box3/b
 import { BookingSummaryPersonnalDetailsFormComponent } from './components/booking-summary-personnal-details-form/booking-summary-personnal-details-form.component';
 import { DropzoneDirective } from './directives/dropzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
+import { StatusBarSteps4Component } from './components/status-bar-steps4/status-bar-steps4.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { UploadTaskComponent } from './components/upload-task/upload-task.compon
     BookingSummaryPersonnalDetailsFormComponent,
     FormSelectionBoxComponent,
     DropzoneDirective,
-    UploadTaskComponent
+    UploadTaskComponent,
+    StatusBarSteps4Component
   ],
     exports: [
         FooterComponent,
@@ -90,7 +92,8 @@ import { UploadTaskComponent } from './components/upload-task/upload-task.compon
         BookingSummaryBox2Component,
         BookingSummaryBox3Component,
         DropzoneDirective,
-        UploadTaskComponent
+        UploadTaskComponent,
+        StatusBarSteps4Component
 
     ],
 

@@ -1,0 +1,41 @@
+<app-status-bar-steps4></app-status-bar-steps4>
+<div class="name-area">
+  <h1>Features And Amenities</h1>
+</div>
+<form [formGroup]="restaurantFeaturesForm">
+  <app-form-selection-box titleName="Payments">
+    <div class="facility-inner">
+      <mat-checkbox class="checkbox" *ngFor="let payment of Payment; let i=index" [value]="payment.value" (change)="addToArray($event,'payment')">
+        {{ payment.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Parking">
+    <div class="facility-inner">
+      <mat-checkbox class="checkbox" *ngFor="let parking of Parking; let i=index" [value]="parking.value" (change)="addToArray($event,'parking')">
+        {{ parking.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Atmosphere">
+    <div class="facility-inner">
+      <mat-checkbox class="checkbox" *ngFor="let atmosphere of Atmosphere; let i=index" [value]="atmosphere.value" (change)="addToArray($event,'atmosphere')">
+        {{ atmosphere.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Additional">
+    <div class="facility-inner">
+      <mat-checkbox class="checkbox" *ngFor="let additional of Additional; let i=index" [value]="additional.value" (change)="addToArray($event,'additional')">
+        {{ additional.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <div class="button-container">
+    <button (click)="addRestaurantFeatures()" class="button" color="primary" mat-flat-button>Continue</button>
+  </div>
+</form>

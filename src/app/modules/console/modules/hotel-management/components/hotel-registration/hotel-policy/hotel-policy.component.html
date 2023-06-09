@@ -2,89 +2,105 @@
 <div class="name-area">
   <h1>Policies</h1>
 </div>
-<app-content-box-fill>
-  <div class="policy-container">
-    <div class="policy-container-inner-left">
-      <h2>Booking Cancellation</h2>
-      <p>If the customer wants to cancel the booking free of charge,
-        how many days before the check in day should he cancel it?</p>
-      <mat-form-field appearance="fill">
-        <mat-label>1 day</mat-label>   <!--here too-->
-        <mat-select>
-          <mat-option *ngFor="let day of days" [value]="day.value">
-            {{day.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+<form [formGroup]="hotelPolicyForm">
+  <app-content-box-fill>
+    <div class="policy-container">
+      <div class="policy-container-inner-left">
+        <h2>Booking Cancellation</h2>
+        <p>If the guest wants to cancel the booking free of charge,
+          how many days in advance can guests cancel it?</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Period</mat-label>
+          <mat-select formControlName="bookingCancelPeriod">
+            <mat-option value="1-day">1 day</mat-option>
+            <mat-option value="2-days">2 days</mat-option>
+            <mat-option value="3-days">3 days</mat-option>
+            <mat-option value="4-days">7 days</mat-option>
+            <mat-option value="5-days">14 days</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <p><br>Or else the guest would have to pay.</p>
-      <mat-form-field appearance="fill">
-        <mat-label>100% of the full stay</mat-label>   <!--here too-->
-        <mat-select>
-          <mat-option *ngFor="let pay of stays" [value]="pay.value">
-            {{pay.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="policy-container-inner-right">
-      <img src="../../../../../../../../assets/Images/policy-photo.png">
-    </div>
-  </div>
+        <p><br>Or else the guest would have to pay 100%</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Charge</mat-label>
+          <mat-select formControlName="bookingCancelCharge">
+            <mat-option value="firstNightCharge">of the first night</mat-option>
+            <mat-option value="fullStay">of the full stay</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-</app-content-box-fill>
-
-<app-content-box-fill>
-  <div class="policy-container">
-    <div class="policy-container-inner-left">
-      <h2>Pets</h2>
-      <p>Do you allow guests to bring pets at the hotel premises?</p>
-      <mat-form-field appearance="fill">
-        <mat-label>Yes</mat-label>   <!--here too-->
-        <mat-select>
-          <mat-option *ngFor="let pet of pets" [value]="pet.value">
-            {{pet.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <p><br>Is there any additional charges to</p>
-      <mat-form-field appearance="fill">
-        <mat-label>100% of the full stay</mat-label>   <!--here too-->
-        <mat-select>
-          <mat-option *ngFor="let pay of stays" [value]="pay.value">
-            {{pay.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>   <!--what this question is all about?-->
-    </div>
-    <div class="policy-container-inner-right">
-      <img src="../../../../../../../../assets/Images/policy-pets.png">
-    </div>
-  </div>
-</app-content-box-fill>
-
-<div class="time-box">
-  <div class="checkin-time">
-    <h2>Check In</h2>
-    <div class="time-container">
-      <div class="time-selector">
-
+      <div class="policy-container-inner-right">
+        <img src="../../../../../../../../assets/Images/policy-photo.png">
       </div>
     </div>
-  </div>
 
-  <div class="checkout-time">
-    <h2>Check Out</h2>
-    <div class="time-container">
-      <div class="time-selector">
+  </app-content-box-fill>
 
+  <app-content-box-fill>
+    <div class="policy-container">
+      <div class="policy-container-inner-left">
+        <h2>Pets</h2>
+        <p>Do you allow guests to bring pets at the hotel premises?</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Pets</mat-label>
+          <mat-select formControlName="pets">
+            <mat-option value="allowed">Allowed</mat-option>
+            <mat-option value="notAllowed">Not Allowed</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <p><br>Is there any additional charges to</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Pets Charge</mat-label>
+          <mat-select formControlName="petsCharge">
+            <mat-option value="free">Free</mat-option>
+            <mat-option value="charges">Charges may apply</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="policy-container-inner-right">
+        <img src="../../../../../../../../assets/Images/policy-pets.png">
       </div>
     </div>
+  </app-content-box-fill>
+
+  <div class="time-box">
+    <div class="checkin-time">
+      <h2>Check In</h2>
+
+      <div class="time-container">
+        <h4>From</h4>
+        <mat-form-field appearance="fill">
+          <input type="time" matInput formControlName="checkInTimeFrom" [(ngModel)]="check_in_from_string">
+        </mat-form-field>
+        <h4>To</h4>
+        <mat-form-field appearance="fill">
+          <input type="time" matInput formControlName="checkInTimeTo" [(ngModel)]="check_in_to_string">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="checkout-time">
+      <h2>Check Out</h2>
+      <div class="time-container">
+        <!--        <div class="time-selector">-->
+        <h4>From</h4>
+        <mat-form-field appearance="fill">
+          <input type="time" matInput formControlName="checkOutTimeFrom" [(ngModel)]="check_out_from_string">
+        </mat-form-field>
+        <h4>To</h4>
+        <mat-form-field appearance="fill">
+          <input type="time" matInput formControlName="checkOutTimeTo" [(ngModel)]="check_out_to_string">
+        </mat-form-field>
+        <!--        </div>-->
+        <!--      </div>-->
+      </div>
+
+    </div>
   </div>
+  <div class="button-container">
+    <button class="button" color="primary" (click)="addPolicy()" mat-flat-button>Continue</button>
+  </div>
+</form>
 
-</div>
-
-<div class="button-container">
-  <button class="button" color="primary" mat-flat-button>Continue</button>
-</div>
