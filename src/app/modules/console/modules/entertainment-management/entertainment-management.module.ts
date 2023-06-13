@@ -24,6 +24,7 @@ import {MatSelectModule} from "@angular/material/select";
 import { EntertainmentPhotosComponent } from './components/entertainment-registration/entertainment-photos/entertainment-photos.component';
 import { EntertainmentPoliciesComponent } from './components/entertainment-registration/entertainment-policies/entertainment-policies.component';
 import { EntertainmentListingSuccessfulComponent } from './components/entertainment-registration/entertainment-listing-successful/entertainment-listing-successful.component';
+import { EntertainmentBookingComponent } from './components/entertainment-booking/entertainment-booking.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { EntertainmentListingSuccessfulComponent } from './components/entertainm
     EntertainmentDefaultComponent,
     EntertainmentRegistrationComponent,
     EntertainmentListComponent,
+    EntertainmentBookingComponent,
     EntertainmentBasicInfoComponent,
     EntertainmentMoreInfoComponent,
     EntertainmentFacilitiesComponent,

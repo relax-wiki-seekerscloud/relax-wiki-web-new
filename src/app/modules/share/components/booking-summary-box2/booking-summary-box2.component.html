@@ -1,31 +1,35 @@
 <section class="hotel_detail_box">
   <section class="inner">
-    <section class="checkin">
-      <div>Check-in</div><br/>
-      <div>Sat, 14.01.2023</div>
-    </section>
-
-    <div class="vl"></div>
-
-    <section class="checkout">
-      <div>Check-out</div><br/>
-      <div>Mon, 16.01.2023</div>
-    </section>
-
-    <div class="v2"></div>
-
-    <section class="rooms">
-      <div>Selected rooms</div><br/>
-      <div>2 x Standard Double Room</div>
-    </section>
-
-    <div class="v3"></div>
-
-    <section class="people">
-      <div>Num of people</div><br/>
-      <div>4</div>
-    </section>
-
-
-</section>
+    <table>
+      <thead>
+      <tr>
+        <th class="numof_people" colspan="5">Hotel Room Type Details</th>
+      </tr>
+      <tr>
+        <th>Room type</th>
+        <th>Facilities</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <ng-container *ngIf="selectedHotelRoomTypeDataForBooking != null">
+        <tbody>
+        <tr class="big-row">
+          <td>{{selectedHotelRoomTypeDataForBooking.mainDescription}}
+            <br/><br/>({{selectedHotelRoomTypeDataForBooking.subDescription}})
+          </td>
+          <td>
+            <ul>
+              <ng-container
+                *ngIf="selectedHotelRoomTypeDataForBooking.hotelRoomTypeFacilities && selectedHotelRoomTypeDataForBooking.hotelRoomTypeFacilities.length > 0">
+                <li
+                  *ngFor="let hotelRoomTypeFacility of selectedHotelRoomTypeDataForBooking.hotelRoomTypeFacilities">{{hotelRoomTypeFacility.description}}</li>
+              </ng-container>
+            </ul>
+          </td>
+          <td class="price">${{selectedHotelRoomTypeDataForBooking.price}}</td>
+        </tr>
+        </tbody>
+      </ng-container>
+    </table>
+  </section>
 </section>

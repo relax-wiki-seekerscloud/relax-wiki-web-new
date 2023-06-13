@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { EntertainmentManagementComponent } from './entertainment-management.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {EntertainmentManagementComponent} from './entertainment-management.component';
 import {EntertainmentDefaultComponent} from "./components/entertainment-default/entertainment-default.component";
+import {EntertainmentSearchService} from "./service/entertainment-search.service";
+import {EntertainmentBookingComponent} from "./components/entertainment-booking/entertainment-booking.component";
 import { EntertainmentListComponent} from "./components/entertainment-list/entertainment-list.component";
 import {
   EntertainmentRegistrationComponent
@@ -15,9 +17,17 @@ import {EntertainmentPhotosComponent} from "./components/entertainment-registrat
 import {EntertainmentPoliciesComponent} from "./components/entertainment-registration/entertainment-policies/entertainment-policies.component";
 import {EntertainmentListingSuccessfulComponent} from "./components/entertainment-registration/entertainment-listing-successful/entertainment-listing-successful.component";
 
+
 const routes: Routes = [{ path: '', component: EntertainmentManagementComponent },
   {path:'entertainment-default', component: EntertainmentDefaultComponent},
-  {path:'entertainment-list', component: EntertainmentListComponent},
+  {
+    path: 'entertainment-list', component: EntertainmentListComponent,
+    resolve: {
+      data: EntertainmentSearchService
+    }
+  },
+  {path: 'entertainment-booking', component: EntertainmentBookingComponent},
+
   { path: 'activity-center-owner-profile', loadChildren: () => import('./modules/activity-center-owner-profile/activity-center-owner-profile.module').then(m => m.ActivityCenterOwnerProfileModule) },
 
   {
@@ -37,4 +47,5 @@ const routes: Routes = [{ path: '', component: EntertainmentManagementComponent 
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class EntertainmentManagementRoutingModule { }
+export class EntertainmentManagementRoutingModule {
+}
