@@ -3,15 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {RestaurantManagementComponent} from './restaurant-management.component';
 import {RestaurantDefaultComponent} from "./components/restaurant-default/restaurant-default.component";
 import {RestaurantListComponent} from "./components/restaurant-list/restaurant-list.component";
-import {
-  RestaurantBookingProcessComponent
-} from "./components/restaurant-booking-process/restaurant-booking-process.component";
-import {
-  RestaurantSingleViewComponent
-} from "./components/restaurant-booking-process/restaurant-single-view/restaurant-single-view.component";
-import {
-  RestaurantBookingSummaryComponent
-} from "./components/restaurant-booking-process/restaurant-booking-summary/restaurant-booking-summary.component";
 import {RestaurantSearchService} from "./service/restaurant-search.service";
 import {RestaurantService} from "./service/restaurant.service";
 import {RestaurantBookingProcessComponent} from "./components/restaurant-booking-process/restaurant-booking-process.component";
@@ -48,14 +39,10 @@ const routes: Routes = [{path: '', component: RestaurantManagementComponent},
         }
       },
       {path: 'restaurant-booking-summary', component: RestaurantBookingSummaryComponent},
-
-  {path: 'restaurant-list', component: RestaurantListComponent},
-  {path:'restaurant-booking-process', component:RestaurantBookingProcessComponent,
-    children:[
-      {path: 'restaurant-single-view',component: RestaurantSingleViewComponent},
-      {path: 'restaurant-booking-summary',component: RestaurantBookingSummaryComponent},
-    ],
+    ]
   },
+
+
   {
     path: 'restaurant-registration', component: RestaurantRegistrationComponent,
     children: [
@@ -72,5 +59,4 @@ const routes: Routes = [{path: '', component: RestaurantManagementComponent},
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class RestaurantManagementRoutingModule {
-}
+export class RestaurantManagementRoutingModule { }

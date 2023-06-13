@@ -34,17 +34,10 @@ import {PaginatorComponent} from './components/paginator/paginator.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {BookingSummaryBox1Component} from './components/booking-summary-box1/booking-summary-box1.component';
 import {MatIconModule} from "@angular/material/icon";
-import {BookingSummaryBox2Component} from './components/booking-summary-box2/booking-summary-box2.component';
-import {BookingSummaryBox3Component} from './components/booking-summary-box3/booking-summary-box3.component';
-import {
-  BookingSummaryPersonalDetailsFormComponent
-} from './components/booking-summary-personal-details-form/booking-summary-personal-details-form.component';
-import {DropzoneDirective} from './directives/dropzone.directive';
-import {UploadTaskComponent} from './components/upload-task/upload-task.component';
+import {BookingSummaryPersonalDetailsFormComponent} from './components/booking-summary-personal-details-form/booking-summary-personal-details-form.component';
 import {MatRadioModule} from "@angular/material/radio";
 import { BookingSummaryBox2Component } from './components/booking-summary-box2/booking-summary-box2.component';
 import { BookingSummaryBox3Component } from './components/booking-summary-box3/booking-summary-box3.component';
-import { BookingSummaryPersonnalDetailsFormComponent } from './components/booking-summary-personnal-details-form/booking-summary-personnal-details-form.component';
 import { DropzoneDirective } from './directives/dropzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 import { StatusBarSteps4Component } from './components/status-bar-steps4/status-bar-steps4.component';
@@ -82,30 +75,7 @@ import { StatusBarSteps4Component } from './components/status-bar-steps4/status-
     UploadTaskComponent,
     StatusBarSteps4Component
   ],
-    exports: [
-        FooterComponent,
-        FooterTwoComponent,
-        NavBarComponent,
-        NavBarTwoComponent,
-        RelaxwikiLogoComponent,
-        FilterByBudgetComponent,
-        FilterByRatingComponent,
-        HotelSearchSmallComponent,
-        FilterByEntertainmentActivityComponent,
-        StatusBarComponent,
-        InputFieldComponent,
-        HotelCategoryContainerBoxComponent,
-        HotelRoomContainerBoxComponent,
-        FormSelectionBoxComponent,
-        HotelRoomContainerBoxComponent,
-        FeedbackFormComponent,
-        PaginatorComponent,
-        BookingSummaryBox1Component,
-        BookingSummaryBox2Component,
-        BookingSummaryBox3Component,
-        DropzoneDirective,
-        UploadTaskComponent,
-        StatusBarSteps4Component
+
   exports: [
     FooterComponent,
     FooterTwoComponent,
@@ -129,6 +99,7 @@ import { StatusBarSteps4Component } from './components/status-bar-steps4/status-
     BookingSummaryBox3Component,
     DropzoneDirective,
     UploadTaskComponent,
+    StatusBarSteps4Component,
     BookingSummaryPersonalDetailsFormComponent
 
   ],
