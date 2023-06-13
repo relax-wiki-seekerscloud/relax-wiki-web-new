@@ -1,17 +1,39 @@
-<form #hotelSearchForm="ngForm" (ngSubmit)="searchHotels()">
+<!--<form #hotelSearchForm="ngForm" (ngSubmit)="searchHotels()">-->
+<div>
+  <form [formGroup]="hotelSearchForm">
+
     <div class="form-group">
       <label for="hotelLocation" class="hotelLocation">Destination</label>
-      <input type="text" class="form-control" id="hotelLocation" name="hotelLocation" [(ngModel)]="hotelLocation"required>
+      <input type="text"
+             class="form-control"
+             formControlName="hotelLocation"
+             placeholder="Destination">
+      <div *ngIf="isControlHasError('hotelLocation','required')">
+                                    <span class="text-danger" *ngIf="isControlHasError('hotelLocation','required')">
+                                        Destination is required
+                                    </span>
+      </div>
     </div>
+
     <div class="form-group" style="top:-15px;">
       <div style="display:flex;">
-        <div style="width:50%;">
+        <div style="width:40%;">
           <label for="hotelCheckin" class="hotelCheckin">Check in</label>
-          <input type="date" class="form-control location-input" id="hotelCheckin" name="hotelCheckin" [(ngModel)]="hotelCheckin" style="width:100px;" required >
-        </div> &nbsp; &nbsp;
-        <div style="width:50%;">
+          <input type="date"
+                 id="hotelCheckin"
+                 formControlName="hotelCheckin"
+                 style="width: 100%"
+                 class="form-control location-input"
+                 placeholder="Check in">
+        </div>
+        <div style="width:40%; margin-left: 16px">
           <label for="hotelCheckout">Check out</label>
-          <input type="date" class="form-control location-input" id="hotelCheckout" name="hotelCheckout" [(ngModel)]="hotelCheckout" style="width:100px;" required>
+          <input type="date"
+                 id="hotelCheckout"
+                 style="width: 100%"
+                 formControlName="hotelCheckout"
+                 class="form-control location-input"
+                 placeholder="Check out">
         </div>
       </div>
     </div>
@@ -20,25 +42,48 @@
       <div style="display:flex;">
         <div style="width:50%;">
           <label for="numOfAdults">Number of adults</label>
-          <input type="number" class="form-control location-input" id="numOfAdults" name="numOfAdults" [(ngModel)]="numOfAdults" style="width:100px;" required min="1" #numOfAdultsInput="ngModel">
-          <div *ngIf="numOfAdultsInput.invalid && numOfAdultsInput.touched"></div>
-        </div> &nbsp; &nbsp;
-        <div style="width:50%;">
+          <input type="number"
+                 min="1"
+                 style="width:100px;"
+                 class="form-control location-input"
+                 formControlName="numOfAdults">
+          <div *ngIf="isControlHasError('numOfAdults','required')">
+                                    <span class="text-danger" *ngIf="isControlHasError('numOfAdults','required')">
+                                        Number of adults is required
+                                    </span>
+          </div>
+        </div>
+        <div style="width:50%; margin-left: 5px">
           <label for="numOfChildren">Number of children</label>
-          <input type="number" class="form-control location-input" id="numOfChildren" name="numOfChildren" [(ngModel)]="numOfChildren" style="width:100px;" required>
+          <input type="number"
+                 min="1"
+                 style="width:100px;"
+                 class="form-control location-input"
+                 formControlName="numOfChildren">
+          <div *ngIf="isControlHasError('numOfChildren','required')">
+                                    <span class="text-danger" *ngIf="isControlHasError('numOfChildren','required')">
+                                        Number of childer is required
+                                    </span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="form-group" style="top:-35px;">
       <label for="hotelRooms">Number of rooms</label>
-      <input type="number" class="form-control" id="hotelRooms" name="hotelRooms" [(ngModel)]="hotelRooms" required min="1" #hotelRoomsInput="ngModel">
-      <div *ngIf="hotelRoomsInput.invalid && hotelRoomsInput.touched"></div>
+      <input type="number"
+             min="1"
+             class="form-control location-input"
+             formControlName="hotelRooms">
     </div>
 
     <div style="text-align:center;">
-      <button type="submit" class="btn btn-primary" [disabled]="hotelSearchForm.invalid">Search</button>
+      <button type="submit"
+              class="btn btn-primary"
+              (click)="onSearch()"
+              [disabled]="!isFormValid()">
+        Search</button>
     </div>
 
   </form>
-
+</div>

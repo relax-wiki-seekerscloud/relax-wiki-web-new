@@ -11,6 +11,7 @@ import { EntertainmentListComponent } from './components/entertainment-list/ente
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatIconModule} from "@angular/material/icon";
 import {ActivityCenterOwnerProfileModule} from "./modules/activity-center-owner-profile/activity-center-owner-profile.module";
+import { EntertainmentBookingComponent } from './components/entertainment-booking/entertainment-booking.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {ActivityCenterOwnerProfileModule} from "./modules/activity-center-owner-
     EntertainmentDefaultComponent,
     EntertainmentRegistrationComponent,
     EntertainmentListComponent,
+    EntertainmentBookingComponent,
 
   ],
   exports: [
