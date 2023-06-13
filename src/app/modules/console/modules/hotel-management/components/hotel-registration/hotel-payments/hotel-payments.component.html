@@ -7,46 +7,55 @@
   <h1>Payments</h1>
 </div>
 <div class="payment-selection-container">
-    <h2>Guest Payment Options</h2>
-<h3>Do you accept credit or debit cards?</h3>
+  <h2>Guest Payment Options</h2>
+  <h3>Do you accept credit or debit cards?</h3>
   <mat-form-field appearance="fill">
-    <mat-label>Yes</mat-label>   <!--here too-->
+    <mat-label>Accept?</mat-label>   <!--here too-->
     <mat-select>
-      <mat-option *ngFor="let choice of choices" [value]="choice.value">
-        {{choice.viewValue}}
-      </mat-option>
+      <mat-option value="yes">Yes</mat-option>
+      <mat-option value="no">No</mat-option>
     </mat-select>
-
   </mat-form-field>
+
   <div class="payments">
-    <section class="example-section" [formGroup]="payments">
-      <h3><mat-checkbox formControlName="americanExpress">American Express</mat-checkbox></h3>
-      <h3><mat-checkbox formControlName="visa">Visa</mat-checkbox></h3>
-      <h3><mat-checkbox formControlName="euroMastercard">Euro/ Mastercard</mat-checkbox></h3>
-    </section>
-    <section class="example-section" [formGroup]="payments">
-      <h3><mat-checkbox formControlName="americanExpress">American Express</mat-checkbox></h3>
-      <h3><mat-checkbox formControlName="visa">Visa</mat-checkbox></h3>
-      <h3><mat-checkbox formControlName="euroMastercard">Euro/ Mastercard</mat-checkbox></h3>
-    </section>
-    <section></section>
+    <div class="payments-inner">
+      <mat-checkbox class="checkbox" *ngFor="let payment of Payment; let i=index" [value]="payment.value"
+                    (change)="addToArray($event)">
+        {{ payment.name }}
+      </mat-checkbox>
+    </div>
   </div>
 </div>
 
 <div class="rules-container">
   <h2>To complete your registration, please tick the boxes below:</h2>
   <div class="rules">
-    <h3><mat-checkbox  [(ngModel)]="checkbox1">I certify that this is a legitimate accommodation business with all necessary licenses and permits,
-      which can be shown <br>upon first request. Relaxwiki.com reserves the right to verify and investigate any details provided in this registration.</mat-checkbox></h3>
-    <h3><mat-checkbox  [(ngModel)]="checkbox2">I have read, accepted and agreed to the <a href=""> General delivery terms</a> and<a href=""> Privacy statement</a> .</mat-checkbox></h3>
-    <h3><mat-checkbox  [(ngModel)]="checkbox3">Relaxwiki.com enables accommodations and guests to communicate through Relaxwiki.com,
-      which receives and <br>processes communications in accordance with the Relaxwiki.com Privacy Statement and General Delivery Terms.</mat-checkbox></h3>
+    <h3>
+      <mat-checkbox [(ngModel)]="checkbox1" (change)="checkAllCheckboxes()">I certify that this is a legitimate
+        accommodation business with all necessary licenses and permits,
+        which can be shown <br>upon first request. Relaxwiki.com reserves the right to verify and investigate any
+        details provided in this registration.
+      </mat-checkbox>
+    </h3>
+    <h3>
+      <mat-checkbox [(ngModel)]="checkbox2" (change)="checkAllCheckboxes()">I have read, accepted and agreed to the <a
+        href=""> General delivery terms</a> and<a href=""> Privacy statement</a> .
+      </mat-checkbox>
+    </h3>
+    <h3>
+      <mat-checkbox [(ngModel)]="checkbox3" (change)="checkAllCheckboxes()">Relaxwiki.com enables accommodations and
+        guests to communicate through Relaxwiki.com,
+        which receives and <br>processes communications in accordance with the Relaxwiki.com Privacy Statement and
+        General Delivery Terms.
+      </mat-checkbox>
+    </h3>
   </div>
 </div>
 
-
 <div class="button-container">
-  <button class="button" color="primary" mat-flat-button>Submit</button>
+  <button class="button" color="primary" [disabled]="!checkboxesChecked" (click)="addPaymentInfo()" mat-flat-button>
+    Submit
+  </button>
 </div>
 
 

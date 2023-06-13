@@ -57,15 +57,16 @@ import {HttpClientModule} from "@angular/common/http";
         HotelBookingProcessComponent,
 
     ],
-  exports: [
-    HotelRegistrationComponent,
-    ContentBoxBorderComponent,
-    HotelDefaultComponent,
-    HotelBasicInfoComponent,
-    HotelDefaultComponent,
-    HotelManagementComponent,
+    exports: [
+        HotelRegistrationComponent,
+        ContentBoxBorderComponent,
+        HotelDefaultComponent,
+        HotelBasicInfoComponent,
+        HotelDefaultComponent,
+        HotelManagementComponent,
+        ContentBoxFillComponent,
 
-  ],
+    ],
   imports: [
     CommonModule,
     HotelManagementRoutingModule,

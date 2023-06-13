@@ -1,0 +1,111 @@
+<app-status-bar-steps4></app-status-bar-steps4>
+<div class="name-area">
+  <h1>Welcome Gihara Pathirathna !</h1>
+  <p>Lets start with telling us the basic information </p>
+</div>
+
+<div class="information-area">
+  <form [formGroup]="entertainmentListingForm">
+    <app-content-box-fill>
+      <div class="name-input-area">
+        <app-input-field
+          [required]="true" class="input-group" name="Restaurant Name" placeholder="" [control]="entertainmentListingForm.controls.activityCenterName">
+        </app-input-field>
+        <p>Official Place Name</p>
+      </div>
+
+      <div class="form-group form-group-rating">
+        <app-input-field
+          [required]="false" class="input-group" name="Description of your Activity Center(Optional)" placeholder="" [control]="entertainmentListingForm.controls.activityCenterDesc">
+        </app-input-field>
+      </div>
+    </app-content-box-fill>
+
+    <app-content-box-border boxName="Contact Details">
+      <div class="box">
+        <div class="content-area">
+          <div class="name-input-area">
+            <app-input-field
+              [required]="true" name="Contact Person Name" [control]="entertainmentListingForm.controls.contactPersonName"></app-input-field>
+          </div>
+
+          <!--          <div class="name-input-area">-->
+          <!--            <div class="form-group">-->
+          <!--              <h4 class="required">Contact Number 1</h4>-->
+          <!--              <form [formGroup]="phoneForm">-->
+          <!--                <mat-form-field appearance="outline">-->
+          <!--                  <ngx-mat-intl-tel-input #phone [enablePlaceholder]="true" [enableSearch]="true"-->
+          <!--                                          formControlName="phone"-->
+          <!--                                          name="phone">-->
+          <!--                  </ngx-mat-intl-tel-input>-->
+          <!--                  &lt;!&ndash;                  <mat-hint>eg : {{phone.selectedCountry.placeHolder}}</mat-hint>&ndash;&gt;-->
+          <!--                </mat-form-field>-->
+          <!--              </form>-->
+          <!--            </div>-->
+
+          <!--            <div class="form-group">-->
+          <!--              <h4 class="required">Contact Number 2</h4>-->
+          <!--              <form [formGroup]="phoneForm">-->
+          <!--                <mat-form-field appearance="outline">-->
+          <!--                  &lt;!&ndash;                  <mat-label>Angular material international phone input</mat-label>&ndash;&gt;-->
+          <!--                  <ngx-mat-intl-tel-input #phone [enablePlaceholder]="true" [enableSearch]="true"-->
+          <!--                                          formControlName="phone"-->
+          <!--                                          name="phone">-->
+          <!--                  </ngx-mat-intl-tel-input>-->
+          <!--                  &lt;!&ndash;                  <mat-hint>eg : {{phone.selectedCountry.placeHolder}}</mat-hint>&ndash;&gt;-->
+          <!--                </mat-form-field>-->
+          <!--              </form>-->
+          <!--            </div>-->
+          <!--            <div></div>-->
+          <!--          </div>-->
+        </div>
+        <div class="image-area">
+          <img alt="call-image" class="image" src="../../../../../../../../assets/Images/call-image.png">
+        </div>
+      </div>
+    </app-content-box-border>
+
+    <div class="address-area">
+      <app-content-box-border boxName="Address">
+        <div class="address-container">
+          <div class="address-line">
+            <h4 class="required">Street address</h4>
+            <mat-form-field class="example-full-width address-input" appearance="fill">
+              <input matInput placeholder="e.g. 170/A street" formControlName="streetAddress">
+            </mat-form-field>
+
+            <h4 class="">Address line 2</h4>
+            <mat-form-field class="example-full-width address-input" appearance="fill">
+              <input matInput placeholder="Unit number, Suite, Floor, Building etc." formControlName="addressLine2">
+            </mat-form-field>
+          </div>
+
+          <div></div>
+
+          <div class="region-info">
+            <h4 class="">Country/Region</h4>
+            <mat-form-field class="example-full-width address-input" appearance="fill">
+              <input matInput placeholder="Canada" formControlName="country">
+            </mat-form-field>
+
+            <h4 class="required">City</h4>
+            <mat-form-field class="example-full-width address-input" appearance="fill">
+              <input matInput placeholder="Panadura" formControlName="city">
+            </mat-form-field>
+
+            <h4 class="">Postal Code</h4>
+            <mat-form-field class="example-full-width address-input" appearance="fill">
+              <input matInput formControlName="postalCode">
+            </mat-form-field>
+          </div>
+          <div class="address-image">
+            <img alt="map-image" class="image" src="../../../../../../../../assets/Images/map-address.png">
+          </div>
+        </div>
+      </app-content-box-border>
+    </div>
+    <div class="button-container">
+      <button class="button" color="primary" mat-flat-button (click)="addDataToEntertainmentDTO()" >Continue</button>
+    </div>
+  </form>
+</div>

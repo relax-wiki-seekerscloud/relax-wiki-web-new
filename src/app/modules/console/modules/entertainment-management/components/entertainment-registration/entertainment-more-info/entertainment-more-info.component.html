@@ -1,0 +1,67 @@
+<app-status-bar-steps4></app-status-bar-steps4>
+<div class="name-area">
+  <p>Tell us more information about your Activity Center </p>
+</div>
+
+<form [formGroup]="entertainmentMoreInfo">
+  <app-form-selection-box titleName="Category that fits best for this property">
+
+    <mat-radio-group aria-label="Select an option" class="radio-input" formControlName="entertainmentCategory">
+      <div class="info-inner">
+        <mat-radio-button color="primary" value="adventureSports">Adventure Sports</mat-radio-button>
+        <mat-radio-button color="primary" value="waterSports">Water Sports</mat-radio-button>
+        <mat-radio-button color="primary" value="winterSports">Winter Sports</mat-radio-button>
+        <mat-radio-button color="primary" value="equestrian">Equestrian</mat-radio-button>
+        <mat-radio-button color="primary" value="golfAndCountryClubs">Golf and Country Clubs</mat-radio-button>
+        <mat-radio-button color="primary" value="wellnessAndYogaRetreats">Wellness and Yoga Retreats</mat-radio-button>
+        <mat-radio-button color="primary" value="fitnessAndTraining">Fitness and Training Centers</mat-radio-button>
+        <mat-radio-button color="primary" value="culturalAndHistoricalTours">Cultural and Historical tours</mat-radio-button>
+        <mat-radio-button color="primary" value="wildlifeAndNature">Wildlife and Nature Centers</mat-radio-button>
+        <mat-radio-button color="primary" value="artsAndCraftsWorkshops">Arts and Crafts Workshops</mat-radio-button>
+        <mat-radio-button color="primary" value="culinaryExperiences">Culinary Experiences</mat-radio-button>
+        <mat-radio-button color="primary" value="amusementAndThemeParks">Amusement and Theme Parks</mat-radio-button>
+      </div>
+    </mat-radio-group>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Transportation Methods ">
+    <div class="info-inner">
+      <mat-checkbox class="checkbox" *ngFor="let transportationMethods of TransportationMethods; let i=index" [value]="transportationMethods.value" (change)="addToArray($event,'transportationMethods')">
+        {{ transportationMethods.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Open Hours">
+    <h4>From</h4>
+    <mat-form-field appearance="fill">
+      <input type="time" matInput formControlName="openTimeFrom" [(ngModel)]="open_from_string">
+    </mat-form-field>
+    <h4>To</h4>
+    <mat-form-field appearance="fill">
+      <input type="time" matInput formControlName="openTimeTo" [(ngModel)]="open_to_string">
+    </mat-form-field>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Meals You Serve">
+    <div class="info-inner">
+      <mat-checkbox class="checkbox" *ngFor="let servedMeals of ServedMeals; let i=index" [value]="servedMeals.value" (change)="addToArray($event,'servedMeals')">
+        {{ servedMeals.name }}
+      </mat-checkbox>
+    </div>
+  </app-form-selection-box>
+
+  <app-form-selection-box titleName="Pricing">
+
+<!--    <div class="form-group">-->
+      <h4 class="required">Lowest rate for a person($)</h4>
+      <mat-form-field class="example-full-width" appearance="fill"  >
+        <input matInput formControlName="pricePerPerson">
+      </mat-form-field>
+<!--    </div>-->
+  </app-form-selection-box>
+
+  <div class="button-container">
+    <button (click)="addEntertainmentMoreInfo()" class="button" color="primary" mat-flat-button>Continue</button>
+  </div>
+</form>

@@ -1,11 +1,14 @@
 import {Injectable} from '@angular/core';
-import {RequestHotelListDTO, Room} from "../../dto/classes/hotel/RequestHotelListDTO";
+import {RequestHotelListDTO, Room, Policy} from "../../dto/classes/hotel/RequestHotelListDTO";
+import {Observable} from "rxjs";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelListingService {
 
+  constructor(private http: HttpClient) { }
   hotelListDTO: RequestHotelListDTO | undefined;
 
   addDataToHotelListDTO(tempHotelListDTO: RequestHotelListDTO) {
@@ -89,5 +92,19 @@ export class HotelListingService {
   addPhotosToHotel(photos: Array<string>) {
     if (this.hotelListDTO)
       this.hotelListDTO.photos = photos;
+  }
+
+  addPolicyToHotel(policy: Policy) {
+    if (this.hotelListDTO)
+    this.hotelListDTO.policy.push(policy);
+  }
+
+  addPaymentDetails(payment: Array<string>) {
+    if (this.hotelListDTO)
+    this.hotelListDTO.payment = payment;
+  }
+
+  postHotelListing(RequestHotelListDTO: RequestHotelListDTO): Observable<any> {
+    return this.http.post('http://localhost:8080/api/users/change-this', RequestHotelListDTO);
   }
 }
