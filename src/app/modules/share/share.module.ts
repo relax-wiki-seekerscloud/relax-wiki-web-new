@@ -68,7 +68,7 @@ import { StatusBarSteps4Component } from './components/status-bar-steps4/status-
     FormSelectionBoxComponent,
     DropzoneDirective,
     UploadTaskComponent,
-    StatusBarSteps4Component
+    StatusBarSteps4Component,
   ],
     exports: [
         FooterComponent,

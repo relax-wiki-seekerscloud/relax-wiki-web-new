@@ -21,33 +21,35 @@ import {HotelBookingSummaryComponent} from "./components/hotel-booking-process/h
 
 
 const routes: Routes = [
-  {path: '', component: HotelManagementComponent},
-  { path: 'hotel-owner-profile', loadChildren: () => import('./modules/hotel-owner-profile/hotel-owner-profile.module').then(m => m.HotelOwnerProfileModule) },
-  {path:'hotel-default', component: HotelDefaultComponent},
-  {path: 'hotel-registration', component: HotelRegistrationComponent,
-    children: [
-      {path: 'hotel-category', component:HotelCategoryComponent},
-      {path: 'hotel-basic-info', component: HotelBasicInfoComponent},
-      {path: 'hotel-room-count', component:HotelRoomCountComponent},
-      {path: 'hotel-room-description',component:HotelRoomDescriptionComponent},
-      {path:'hotel-facilities',component:HotelFacilitiesComponent},
-      {path: 'hotel-amenities',component:HotelAmenitiesComponent},
-      {path:'hotel-policy',component:HotelPolicyComponent},
-      {path:'hotel-payments',component:HotelPaymentsComponent},
-      {path: 'hotel-listing-successful',component:HotelListingSuccessfulComponent},
-      {path:'hotel-photos',component:HotelPhotosComponent},
-      {path: 'hotel-room-description',component:HotelRoomDescriptionComponent},
-
-
-
-    ],
+  {path: '', component: HotelManagementComponent, children:[
+      {path: '',redirectTo:'hotel-default',pathMatch:"full"},
+      {path:'hotel-default', component: HotelDefaultComponent},
+      { path: 'hotel-owner-profile', loadChildren: () => import('./modules/hotel-owner-profile/hotel-owner-profile.module').then(m => m.HotelOwnerProfileModule) },
+      {path: 'hotel-registration', component: HotelRegistrationComponent,
+        children: [
+          {path: 'hotel-category', component:HotelCategoryComponent},
+          {path: 'hotel-basic-info', component: HotelBasicInfoComponent},
+          {path: 'hotel-room-count', component:HotelRoomCountComponent},
+          {path: 'hotel-room-description',component:HotelRoomDescriptionComponent},
+          {path:'hotel-facilities',component:HotelFacilitiesComponent},
+          {path: 'hotel-amenities',component:HotelAmenitiesComponent},
+          {path:'hotel-policy',component:HotelPolicyComponent},
+          {path:'hotel-payments',component:HotelPaymentsComponent},
+          {path: 'hotel-listing-successful',component:HotelListingSuccessfulComponent},
+          {path:'hotel-photos',component:HotelPhotosComponent},
+          {path: 'hotel-room-description',component:HotelRoomDescriptionComponent},
+        ],
+      },
+      {path:'hotel-booking-process', component:HotelBookingProcessComponent,
+        children:[
+          {path: 'hotel-single-view',component: HotelSingleViewComponent},
+          {path: 'hotel-booking-summary',component: HotelBookingSummaryComponent},
+        ],
+      },
+    ]
   },
-  {path:'hotel-booking-process', component:HotelBookingProcessComponent,
-    children:[
-      {path: 'hotel-single-view',component: HotelSingleViewComponent},
-      {path: 'hotel-booking-summary',component: HotelBookingSummaryComponent},
-    ],
-  },
+
+
 
 
 

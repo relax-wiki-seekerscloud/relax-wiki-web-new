@@ -12,28 +12,35 @@ import {RestaurantMoreInfoComponent} from "./components/restaurant-registration/
 import {RestaurantFeaturesComponent} from "./components/restaurant-registration/restaurant-features/restaurant-features.component";
 import {RestaurantPhotosComponent} from "./components/restaurant-registration/restaurant-photos/restaurant-photos.component";
 import {RestaurantListingSuccessfulComponent} from "./components/restaurant-registration/restaurant-listing-successful/restaurant-listing-successful.component";
+import {ConsoleDefaultComponent} from "../../components/console-default/console-default.component";
 
-const routes: Routes = [{ path: '', component: RestaurantManagementComponent},
-  { path: 'restaurant-owner-profile', loadChildren: () => import('./modules/restaurant-owner-profile/restaurant-owner-profile.module').then(m => m.RestaurantOwnerProfileModule) },
+const routes: Routes = [
 
-  {path: 'restaurant-default', component: RestaurantDefaultComponent},
-  {path: 'restaurant-list', component: RestaurantListComponent},
-  {path:'restaurant-booking-process', component:RestaurantBookingProcessComponent,
-    children:[
-      {path: 'restaurant-single-view',component: RestaurantSingleViewComponent},
-      {path: 'restaurant-booking-summary',component: RestaurantBookingSummaryComponent},
-    ],
+  { path: '', component: RestaurantManagementComponent, children:[
+      {path:'',redirectTo:'main',pathMatch:"full"},
+      {path:'main',component:RestaurantDefaultComponent},
+      {path: 'restaurant-owner-profile', loadChildren: () => import('./modules/restaurant-owner-profile/restaurant-owner-profile.module').then(m => m.RestaurantOwnerProfileModule) },
+      {path: 'restaurant-default', component: RestaurantDefaultComponent},
+      {path: 'restaurant-list', component: RestaurantListComponent},
+      {path:'restaurant-booking-process', component:RestaurantBookingProcessComponent,
+        children:[
+          {path: 'restaurant-single-view',component: RestaurantSingleViewComponent},
+          {path: 'restaurant-booking-summary',component: RestaurantBookingSummaryComponent},
+        ],
+      },
+      {
+        path: 'restaurant-registration', component: RestaurantRegistrationComponent,
+        children: [
+          {path: 'restaurant-basic-info', component: RestaurantBasicInfoComponent},
+          {path: 'restaurant-more-info',component: RestaurantMoreInfoComponent},
+          {path:'restaurant-features',component: RestaurantFeaturesComponent},
+          {path:'restaurant-photos',component: RestaurantPhotosComponent},
+          {path:'restaurant-listing-successful',component: RestaurantListingSuccessfulComponent},
+        ],
+      },
+    ]
   },
-  {
-    path: 'restaurant-registration', component: RestaurantRegistrationComponent,
-    children: [
-      {path: 'restaurant-basic-info', component: RestaurantBasicInfoComponent},
-      {path: 'restaurant-more-info',component: RestaurantMoreInfoComponent},
-      {path:'restaurant-features',component: RestaurantFeaturesComponent},
-      {path:'restaurant-photos',component: RestaurantPhotosComponent},
-      {path:'restaurant-listing-successful',component: RestaurantListingSuccessfulComponent},
-    ],
-  },
+
 ];
 
 @NgModule({
