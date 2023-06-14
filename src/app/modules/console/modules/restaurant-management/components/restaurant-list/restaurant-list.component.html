@@ -1,75 +1,76 @@
 <app-nav-bar></app-nav-bar>
 <router-outlet></router-outlet>
-<section class="hotel_secone">102 restaurants found</section>
+<section class="hotel_secone">{{restaurantDataSource.length}} restaurants found</section>
 <section class="hotel_sectwo">
   <app-filter-by-budget></app-filter-by-budget>
   <app-filter-by-rating></app-filter-by-rating>
-  <section class="hotel_secfive">
-    <section class="image"><img src="assets/dIPratos.jpg" alt="restaurant image"></section>
 
-    <section class="hotel_details"> <!--box to display restaurant details (1st restaurant)-->
-      <h2>DiPrato's</h2>
-      <section class="stars">
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-      </section>
-      <p>342 Pickens St, Columbia, SC 29205, United States</p>
-      <p>excellent | <a href="">206 reviews</a></p>
-      <p style="font-weight:bold;">American | Cafe | Deli </p>
-      <p><a href="">View menu</a></p>
-      <p style="color:red;">Free cancellation</p>
+  <button style="margin-top: 300px; margin-left: 700px" type="submit" class="btn btn-primary"
+          (click)="onSearchRestaurants()">
+    Search
+  </button>
 
-    </section>
+  <div>
+    <div class="row" *ngFor="let restaurant of restaurantDataSource; index as i">
+      <div class="row hotel_secfive">
 
-  </section>
+        <ng-container
+          *ngIf="restaurant && restaurant.restaurantImageDTOList && restaurant.restaurantImageDTOList.length > 0">
+          <section class="image"><img src=" {{restaurant.restaurantImageDTOList[0].imageURL}}" alt="restaurant image">
+          </section>
+        </ng-container>
 
-  <section class="hotel_secfive" style="top:860px;">
-    <section class="image"><img src="assets/hamptonStreet.jpg" alt="restaurant image"></section>
+        <section class="hotel_details"> <!--box to display restaurant details (1st restaurant)-->
+          <h2 (click)="onClickRestaurants($event, restaurant)">{{restaurant.restaurantName}}</h2>
+          <ng-container *ngIf="restaurant.starCategory !== 'NOT_RATED'">
+            <section class="stars">
+              <ng-container *ngIf="restaurant.starCategory === 'ONE'">
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+              <ng-container *ngIf="restaurant.starCategory === 'TWO'">
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+              <ng-container *ngIf="restaurant.starCategory === 'THREE'">
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+              <ng-container *ngIf="restaurant.starCategory === 'FOUR'">
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+              <ng-container *ngIf="restaurant.starCategory === 'FIVE'">
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+            </section>
+          </ng-container>
 
-    <section class="hotel_details"> <!--box to display restaurant details (2nd restaurant)-->
-      <h2>Hampton Street Vineyard</h2>
-      <section class="stars">
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-      </section>
-      <p>1207 Hampton St, Columbia, SC 29201, United States</p>
-      <p>Very good | <a href="">150 reviews</a></p>
-      <p style="font-weight:bold;">Vegetarian friendly </p>
-      <p><a href="">View menu</a></p>
-      <p style="color:red;">Free cancellation</p>
+          <p>{{restaurant.address}}</p>
+          <p>{{ restaurantCondition[restaurant.restaurantCondition] }} | <a
+            href="">{{restaurant.restaurantReviewDTOList.length}} reviews</a></p>
+          <p style="font-weight:bold;">
+            <ng-container *ngFor="let foodCategory of restaurant.restaurantFoodCategoryDTOList">
+              <span>{{foodCategory.mainDescription}} | </span>
+            </ng-container>
+          </p>
+          <p><a (click)="onMenuClick($event, restaurant)">View menu</a></p>
 
-    </section>
+          <p style="color:red;" *ngIf="restaurant.hasFreeCancellation === 'Y'">Free cancellation</p>
 
-  </section>
+        </section>
 
-  <section class="hotel_secfive" style="top:1130px;">
-    <section class="image"><img src="assets/alodias.jpg" alt="restaurant image"></section>
-
-    <section class="hotel_details"> <!--box to display restaurant details (3rd restaurant)-->
-      <h2>Alodia's Cucina Italiana</h2>
-      <section class="stars">
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-      </section>
-      <p>101 W Main St Suite 200, Lexington, SC 29072, United States</p>
-      <p>Great | <a href="">180 reviews</a></p>
-      <p style="font-weight:bold;">Italian | Vegetarian friendly | Vegan options </p>
-      <p><a href="">View menu</a></p>
-      <p style="color:red;">Free cancellation</p>
-
-    </section>
-
-  </section>
-
-
-
-
-
+      </div>
+    </div>
+  </div>
 </section>
-<section class="footer_two"><app-footer-two></app-footer-two></section>
+<section class="footer_two">
+  <app-footer-two></app-footer-two>
+</section>
 

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HotelSearchService} from "../../../console/modules/hotel-management/service/hotel-search.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {LocalStorage} from "ngx-webstorage";
+import {SETTINGS} from "../../settings/commons.settings";
 
 @Component({
   selector: 'app-hotel-search-small',
@@ -6,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hotel-search-small.component.scss']
 })
 export class HotelSearchSmallComponent implements OnInit {
+  hotelSearchForm: FormGroup;
+
   hotelLocation: string = '';
   hotelCheckin: Date = new Date();
   hotelCheckout: Date = new Date();
@@ -13,9 +19,35 @@ export class HotelSearchSmallComponent implements OnInit {
   numOfChildren: number = 0;
   hotelRooms: number = 0;
 
-  constructor() { }
+  @LocalStorage(SETTINGS.STORAGE.FILTER_BY_BUDGET_DATA_ARR)
+  filterByBudgetDataArray: any;
+
+  @LocalStorage(SETTINGS.STORAGE.FILTER_BY_RATINGS_DATA_ARR)
+  filterByRatingsDataArray: any;
+
+  constructor(private hotelSearchService: HotelSearchService,
+              private formBuilder: FormBuilder,) {
+  }
 
   ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm() {
+    this.hotelSearchForm = this.formBuilder.group({
+      hotelLocation: ["", Validators.compose([
+        Validators.required
+      ])],
+      hotelCheckin: [""],
+      hotelCheckout: [""],
+      numOfAdults: ["", Validators.compose([
+        Validators.required
+      ])],
+      numOfChildren: ["", Validators.compose([
+        Validators.required
+      ])],
+      hotelRooms: [""],
+    });
   }
 
   searchHotels() {
@@ -43,4 +75,25 @@ export class HotelSearchSmallComponent implements OnInit {
     // Perform the actual search and filtering of hotels here, using the values from the input fields
   }
 
+  isControlHasError(controlName: string, validationType: string): boolean {
+    const control = this.hotelSearchForm.controls[controlName];
+    if (!control) {
+      return false;
+    }
+
+    const result = control.hasError(validationType) && (control.dirty || control.touched);
+    return result;
+  }
+
+  isFormValid() {
+    return this.hotelSearchForm.valid;
+  }
+
+  onSearch() {
+    let submitData = Object.assign({}, this.hotelSearchForm.getRawValue());
+    submitData.filterByBudgetArr = this.filterByBudgetDataArray;
+    submitData.filterByRatingsArr = this.filterByRatingsDataArray;
+
+    this.hotelSearchService.searchHotels(submitData);
+  }
 }

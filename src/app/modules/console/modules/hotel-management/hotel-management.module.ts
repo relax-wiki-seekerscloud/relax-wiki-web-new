@@ -32,6 +32,7 @@ import {HotelSingleViewComponent} from "./components/hotel-booking-process/hotel
 import {HotelBookingSummaryComponent} from "./components/hotel-booking-process/hotel-booking-summary/hotel-booking-summary.component";
 import {HotelBookingProcessComponent} from "./components/hotel-booking-process/hotel-booking-process.component";
 import {HotelOwnerProfileModule} from "./modules/hotel-owner-profile/hotel-owner-profile.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import {HotelOwnerProfileModule} from "./modules/hotel-owner-profile/hotel-owner
     FormsModule,
     MatChipsModule,
     MatIconModule,
-    HotelOwnerProfileModule
+    HotelOwnerProfileModule,
+    HttpClientModule
   ],
 
 })

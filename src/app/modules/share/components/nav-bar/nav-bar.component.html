@@ -31,20 +31,22 @@
       </div>
       <div class="nav-bar-inner-bottom-outer">
         <div class="nav-bar-inner-bottom-outer-inner">
-          <div class="hotel">
+          <div class="hotel" [routerLink]="['/hotel-management/hotel-default']" routerLinkActive="active">
             <div class="icon1"><img src="assets/Images/apartment_FILL0_wght400_GRAD0_opsz48.svg" alt="hotel"></div>
             <div class="icon-text1"><p class="p1">Hotel</p></div>
           </div>
-          <div class="resturent">
-            <div class="icon2"><img src="assets/Images/local_dining_FILL0_wght400_GRAD0_opsz48.svg" alt="resturent"></div>
+          <div class="resturent" [routerLink]="['/restaurant-management/restaurant-default']" routerLinkActive="active">
+            <div class="icon2"><img src="assets/Images/local_dining_FILL0_wght400_GRAD0_opsz48.svg" alt="resturent">
+            </div>
             <div class="icon-text2"><p class="p1">Restaurant</p></div>
           </div>
-          <div class="entertainment">
+          <div class="entertainment" [routerLink]="['/entertainment-management/entertainment-default']" routerLinkActive="active">
             <div class="icon3"><img src="assets/Images/hiking_FILL0_wght400_GRAD0_opsz48.svg" alt="entertainment"></div>
             <div class="icon-text3"><p class="p1">Entertainment</p></div>
           </div>
           <div class="carrental">
-            <div class="icon4"><img src="assets/Images/directions_car_FILL0_wght400_GRAD0_opsz48.svg" alt="car rental"></div>
+            <div class="icon4"><img src="assets/Images/directions_car_FILL0_wght400_GRAD0_opsz48.svg" alt="car rental">
+            </div>
             <div class="icon-text4"><p class="p1">Car Rental</p></div>
           </div>
           <div class="airport">
@@ -58,5 +60,3 @@
     </div>
   </div>
 </div>
-
-
