@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Policy} from "../../../../../../share/dto/classes/hotel/RequestHotelListDTO";
 import {Router} from "@angular/router";
 import {HotelListingService} from "../../../../../../share/services/hotel/hotel-listing.service";
@@ -13,9 +13,9 @@ import {HotelListingService} from "../../../../../../share/services/hotel/hotel-
 export class HotelPolicyComponent implements OnInit {
 
   hotelPolicyForm = new FormGroup({
-    bookingCancelPeriod: new FormControl(''),
+    bookingCancelPeriod: new FormControl('',[Validators.required]),
     bookingCancelCharge: new FormControl(''),
-    pets: new FormControl(''),
+    pets: new FormControl('',[Validators.required]),
     petsCharge: new FormControl(''),
     checkInTimeFrom: new FormControl(''),
     checkInTimeTo: new FormControl(''),
@@ -53,4 +53,11 @@ export class HotelPolicyComponent implements OnInit {
 
   }
 
+  get bookingCancelPeriod(){
+    return this.hotelPolicyForm.get('bookingCancelPeriod')
+  }
+
+  get pets(){
+    return this.hotelPolicyForm.get('pets')
+  }
 }

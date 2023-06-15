@@ -1,9 +1,9 @@
-<app-status-bar-steps4></app-status-bar-steps4>
+<app-status-bar [currentStep]="1" [totalSteps]="4"></app-status-bar>
 <div class="name-area">
   <p>Tell us more information about your restaurant </p>
 </div>
 
-<form [formGroup]="restaurantMoreInfo">
+<form [formGroup]="restaurantMoreInfo" >
   <app-form-selection-box titleName="Category that fits best for this property">
 
       <mat-radio-group aria-label="Select an option" class="radio-input" formControlName="restaurantCategory">
@@ -18,6 +18,9 @@
         <mat-radio-button color="primary" value="dessert">Dessert</mat-radio-button>
         </div>
       </mat-radio-group>
+<!--      <mat-hint *ngIf="restaurantCategory && restaurantCategory.invalid && restaurantCategory.touched">-->
+<!--        <span style="color: red">Please select the category of your restaurant</span>-->
+<!--      </mat-hint>-->
   </app-form-selection-box>
 
   <app-form-selection-box titleName="Offered Cuisine ">
@@ -47,7 +50,12 @@
     </div>
   </app-form-selection-box>
 
+  <div *ngIf="restaurantMoreInfo.controls['restaurantCategory'].invalid && restaurantMoreInfo.controls['restaurantCategory'].touched" class="error-message">
+    Add the category of your business
+  </div>
+
   <div class="button-container">
+<!--    <p *ngIf="errorMessage">{{errorMessage}}</p>-->
     <button (click)="addRestaurantMoreInfo()" class="button" color="primary" mat-flat-button>Continue</button>
   </div>
 </form>

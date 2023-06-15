@@ -2,7 +2,6 @@
   height: 10rem;
   width: 1024px;
   margin: auto;
-  //background-color: red;
   display: flex;
   align-items: center;
   position: relative;
@@ -19,7 +18,7 @@
 }
 .doneStatusBarLine{
   background-color: #3d8de8;
-  width: 16%;
+  //width: 18%;
 }
 .ball{
   display: flex;
@@ -51,5 +50,29 @@
   background-color: #3d8de8;
   span{
     color: white;
+  }
+}
+@media screen and (max-width: 1116px){
+  .statusBarContainer{
+    width: 900px;
+  }
+  .statusBarLine{
+    width: 99%;
+  }
+}
+@media screen and (max-width: 1070px){
+  .statusBarContainer{
+    width: 800px;
+  }
+  .statusBarLine{
+    width: 99%;
+  }
+}
+@media screen and (max-width: 900px){
+  .statusBarContainer{
+    width: 650px;
+  }
+  .statusBarLine{
+    width: 99%;
   }
 }

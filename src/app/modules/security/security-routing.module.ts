@@ -7,7 +7,7 @@ import {SignUpComponent} from './components/sign-up/sign-up.component';
 
 
 const routes: Routes = [
-  { path: '', component: SecurityComponent },
+  {path: '', component: SecurityComponent },
   {path:'log-in',component:LoginComponent},
   {path:'sign-up',component:SignUpComponent}
 ];

@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 
 export class HotelPhotosComponent implements OnInit {
   hotelPhotos: string[] = [];
+  errorMessage: string = '';
 
 constructor(private hotelListingService: HotelListingService,private router:Router) {
 }
@@ -34,9 +35,14 @@ constructor(private hotelListingService: HotelListingService,private router:Rout
   }
 
   addPhotosToHotel(){
-    this.hotelListingService.addPhotosToHotel(this.hotelPhotos);
-    console.log(this.hotelListingService.hotelListDto);
-    this.router.navigate(['/console/hotel-management/hotel-registration/hotel-policy']).then();
+    // if (this.hotelPhotos.length>0){
+      this.hotelListingService.addPhotosToHotel(this.hotelPhotos);
+      console.log(this.hotelListingService.hotelListDto);
+      this.router.navigate(['/console/hotel-management/hotel-registration/hotel-policy']).then();
+    // }else {
+    //   this.errorMessage="Please add at least one photo of your property";
+    }
+
   }
-}
+
 

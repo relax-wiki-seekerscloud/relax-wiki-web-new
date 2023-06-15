@@ -24,18 +24,18 @@ interface BedType {
 export class HotelRoomDescriptionComponent implements OnInit {
 
   roomInformation = new FormGroup({
-    roomType:new FormControl(''),
-    roomName:new FormControl(''),
+    roomType:new FormControl('',[Validators.required]),
+    roomName:new FormControl('',[Validators.required]),
     roomSize:new FormControl(''),
     customRoomName:new FormControl(''),
-    noOfPeople:new FormControl(''),
+    noOfPeople:new FormControl('1',[Validators.required]),
     roomCountFromRoomType:new FormControl(''),
     smokingPolicy:new FormControl(''),
     beds:new FormArray([]),   //here we are creating a form array
-    bedRoomCount:new FormControl(''),
+    bedroomCount:new FormControl(''),
     livingRoomCount:new FormControl(''),
-    bathRoomCount:new FormControl(''),
-    pricePerNight:new FormControl(''),
+    bathroomCount:new FormControl(''),
+    pricePerNight:new FormControl('',[Validators.required]),
   });
 
   get bedForms() {
@@ -65,9 +65,9 @@ export class HotelRoomDescriptionComponent implements OnInit {
       this.roomInformation.get('noOfPeople')?.value!,
       this.roomInformation.get('roomCountFromRoomType')?.value!,
       this.roomInformation.get('smokingPolicy')?.value!,
-      this.roomInformation.get('bedRoomCount')?.value!,
+      this.roomInformation.get('bedroomCount')?.value!,
       this.roomInformation.get('livingRoomCount')?.value!,
-      this.roomInformation.get('bathRoomCount')?.value!,
+      this.roomInformation.get('bathroomCount')?.value!,
       this.roomInformation.get('pricePerNight')?.value!,
     )
     roomDTO.beds = this.bedForms.value;
@@ -117,6 +117,27 @@ export class HotelRoomDescriptionComponent implements OnInit {
     {value:'futonBed', viewValue:'Futon Bed(s) / Variable size'},
   ];
   ngOnInit(): void {
+  }
+
+  get roomType(){
+    return this.roomInformation.get('roomType');
+  }
+
+  get roomName(){
+    return this.roomInformation.get('roomName')
+  }
+
+  get noOfPeople(){
+    return this.roomInformation.get('noOfPeople')
+  }
+  get pricePerNight(){
+    return this.roomInformation.get('pricePerNight')
+  }
+  get bedType(){
+    return this.bedForms.get('bedType')
+  }
+  get bedCount(){
+    return this.bedForms.get('bedCount')
   }
 }
 

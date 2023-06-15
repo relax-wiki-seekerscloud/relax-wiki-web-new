@@ -6,6 +6,7 @@ import {AdvertisementPaymentSuccessfulComponent} from "./components/advertisemen
 import {AdvertisementPaymentFaildComponent} from "./components/advertisements/components/advertisement-payment-faild/advertisement-payment-faild.component";
 import {AdvertisementImageComponent} from "./components/advertisements/components/advertisement-image/advertisement-image.component";
 import {AdvertisementsVideoComponent} from "./components/advertisements/components/advertisements-video/advertisements-video.component";
+import {ListPropertyComponent} from "./components/list-property/list-property.component";
 
 const routes: Routes = [
   { path: '', component: ConsoleComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'advertisement-payment-faild' , component:AdvertisementPaymentFaildComponent},
   { path: 'advertisement-image' , component:AdvertisementImageComponent},
   { path: 'advertisement-video' , component:AdvertisementsVideoComponent},
+  {path:'list-property',component:ListPropertyComponent},
   { path: 'daily-process', loadChildren: () => import('./modules/daily-process/daily-process.module').then(m => m.DailyProcessModule) },
   { path: 'restaurant-management', loadChildren: () => import('./modules/restaurant-management/restaurant-management.module').then(m => m.RestaurantManagementModule) },
   { path: 'hotel-management', loadChildren: () => import('./modules/hotel-management/hotel-management.module').then(m => m.HotelManagementModule) },

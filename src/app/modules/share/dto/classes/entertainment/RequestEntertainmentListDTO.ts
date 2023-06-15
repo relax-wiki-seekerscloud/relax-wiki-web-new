@@ -1,9 +1,19 @@
 export class RequestEntertainmentListDTO {
-  public entertainmentMoreInfo: Array<EntertainmentMoreInfo> = [];
-  public entertainmentFacilities: Array<EntertainmentFacilities> = [];
-  public entertainmentPhotosUrl:Array<string>=[];
-  public entertainmentPolicies:Array<EntertainmentPolicy>=[];
 
+  public photoUrls:Array<string>=[];
+  public facilities: Array<string> = [];
+  public activities: Array<string> = [];
+  public packages: Array<string> = [];
+  public languages: Array<string> = [];
+  public bookingCancelPeriod:string;
+  public bookingCancelCharge:string;
+  public paymentMethods:Array<string>=[];
+  public transportationMethods: Array<string> = [];
+  public mealsProvided: Array<string> = [];
+  public entertainmentCategory: string;
+  public openTimeFrom: string;
+  public openTimeTo: string;
+  public lowestRateForOnePerson: string;
   constructor(
     public activityCenterName: string,
     public activityCenterDesc: string,
@@ -18,13 +28,14 @@ export class RequestEntertainmentListDTO {
 }
 
 export class EntertainmentMoreInfo {
+
   constructor(
     public transportationMethods: Array<string> = [],
-    public servedMeals: Array<string> = [],
+    public mealsProvided: Array<string> = [],
     public entertainmentCategory: string,
     public openTimeFrom: string,
     public openTimeTo: string,
-    public pricePerPerson: string,
+    public lowestRateForOnePerson: string,
   ) {
   }
 }
@@ -43,7 +54,7 @@ export class EntertainmentPolicy{
   constructor(
     public bookingCancelPeriod:string,
     public bookingCancelCharge:string,
-    public payment:Array<string>=[],
+    public paymentMethods:Array<string>=[],
   ) {
   }
 }

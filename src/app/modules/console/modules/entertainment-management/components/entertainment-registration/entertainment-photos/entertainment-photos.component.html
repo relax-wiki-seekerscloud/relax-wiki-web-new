@@ -1,4 +1,4 @@
-<app-status-bar-steps4></app-status-bar-steps4>
+<app-status-bar [currentStep]="3" [totalSteps]="5"></app-status-bar>
 <div class="photo-container">
   <div class="photo-container-inner-description">
     <div class="name-area">
@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-  <div class="photo-container-inner edit-area">
+  <div class="photo-container-inner edit-area"  *ngIf="files.length > 0">
     <div class="photo-item" *ngFor="let file of files">
       <upload-task [file]="file" (readyUrl)="addPhoto($event)"  ></upload-task>
     </div>

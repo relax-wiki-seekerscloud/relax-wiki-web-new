@@ -20,6 +20,8 @@ import {RestaurantManagementModule} from "./modules/restaurant-management/restau
 import {EntertainmentManagementModule} from "./modules/entertainment-management/entertainment-management.module";
 import {HotelManagementModule} from "./modules/hotel-management/hotel-management.module";
 import {DailyProcessModule} from "./modules/daily-process/daily-process.module";
+import { ListPropertyComponent } from './components/list-property/list-property.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -37,7 +39,8 @@ import {DailyProcessModule} from "./modules/daily-process/daily-process.module";
     AdvertisementsVideoComponent,
     AdvertisementPaymentSuccessfulComponent,
     AdvertisementPaymentFaildComponent,
-    OffersComponent
+    OffersComponent,
+    ListPropertyComponent
   ],
   exports: [
     AdvertisementsComponent,
@@ -53,7 +56,8 @@ import {DailyProcessModule} from "./modules/daily-process/daily-process.module";
     MatSelectModule,
     DailyProcessModule,
     EntertainmentManagementModule,
-    RestaurantManagementModule
+    RestaurantManagementModule,
+    MatButtonModule
   ]
 })
 export class ConsoleModule { }

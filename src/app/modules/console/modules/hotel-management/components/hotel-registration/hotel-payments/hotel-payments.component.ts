@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HotelListingService} from "../../../../../../share/services/hotel/hotel-listing.service";
-
+import {RequestHotelListDTO} from "../../../../../../share/dto/classes/hotel/RequestHotelListDTO";
 
 @Component({
   selector: 'app-hotel-payments',
@@ -13,7 +13,7 @@ export class HotelPaymentsComponent implements OnInit {
 
   hotelPaymentForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private hotelListingService: HotelListingService) {
+  constructor(private fb: FormBuilder, private router: Router, @Inject(HotelListingService) private hotelListingService: HotelListingService) {
     this.hotelPaymentForm = this.fb.group({
       paymentsArray: this.fb.array([]),
     })
@@ -73,7 +73,10 @@ export class HotelPaymentsComponent implements OnInit {
     this.hotelListingService.addPaymentDetails(this.hotelPaymentForm.value.paymentsArray);
     // console.log(this.hotelPaymentForm.value.paymentsArray);
     console.log(this.hotelListingService.hotelListDto);
+    const result = this.hotelListingService.postHotelListing(this.hotelListingService.hotelListDTO);
+    result.subscribe((res)=>console.log(res))
     this.router.navigate(['/console/hotel-management/hotel-registration/hotel-listing-successful']).then();
+
   }
 
   ngOnInit(): void {

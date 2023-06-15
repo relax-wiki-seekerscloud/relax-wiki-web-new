@@ -67,3 +67,15 @@
 .continue-button{
   margin: 2rem auto;
 }
+.photo-container-inner.edit-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.photo-item {
+  width: calc(33.33% - 1rem);
+  margin: 0.5rem;
+  padding: 2rem 0;
+
+}

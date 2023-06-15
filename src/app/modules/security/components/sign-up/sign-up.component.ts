@@ -56,10 +56,10 @@ export class SignUpComponent implements OnInit {
 
   addUser(){
     const userRegistrationDto = new UserRegistrationDto();
-    userRegistrationDto.userFirstName = this.signUpForm.value.userFirstName;
-    userRegistrationDto.userLastName = this.signUpForm.value.userLastName;
-    userRegistrationDto.userEmail = this.signUpForm.value.userEmail;
-    userRegistrationDto.userPassword = this.signUpForm.value.userPassword;
+    userRegistrationDto.firstName = this.signUpForm.value.userFirstName;
+    userRegistrationDto.lastName = this.signUpForm.value.userLastName;
+    userRegistrationDto.email = this.signUpForm.value.userEmail;
+    userRegistrationDto.password = this.signUpForm.value.userPassword;
 
     this.userRegistrationService.postUserRegistration(userRegistrationDto)
       .subscribe(

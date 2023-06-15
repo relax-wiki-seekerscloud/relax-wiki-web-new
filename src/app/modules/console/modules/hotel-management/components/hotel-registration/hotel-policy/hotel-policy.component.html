@@ -1,4 +1,4 @@
-<app-status-bar></app-status-bar>
+<app-status-bar [currentStep]="5" [totalSteps]="7"></app-status-bar>
 <div class="name-area">
   <h1>Policies</h1>
 </div>
@@ -19,7 +19,11 @@
             <mat-option value="5-days">14 days</mat-option>
           </mat-select>
         </mat-form-field>
-
+        <mat-hint>
+          <span style="color: red" *ngIf="bookingCancelPeriod && bookingCancelPeriod.invalid && bookingCancelPeriod.touched">
+            Please enter the booking cancel period
+          </span>
+        </mat-hint>
         <p><br>Or else the guest would have to pay 100%</p>
         <mat-form-field appearance="fill">
           <mat-label>Charge</mat-label>
@@ -49,7 +53,11 @@
             <mat-option value="notAllowed">Not Allowed</mat-option>
           </mat-select>
         </mat-form-field>
-
+        <mat-hint>
+          <span style="color: red" *ngIf="pets && pets.invalid && pets.touched">
+            Please enter whether the pets are allowed at your hotel
+          </span>
+        </mat-hint>
         <p><br>Is there any additional charges to</p>
         <mat-form-field appearance="fill">
           <mat-label>Pets Charge</mat-label>
@@ -84,7 +92,6 @@
     <div class="checkout-time">
       <h2>Check Out</h2>
       <div class="time-container">
-        <!--        <div class="time-selector">-->
         <h4>From</h4>
         <mat-form-field appearance="fill">
           <input type="time" matInput formControlName="checkOutTimeFrom" [(ngModel)]="check_out_from_string">
@@ -93,14 +100,11 @@
         <mat-form-field appearance="fill">
           <input type="time" matInput formControlName="checkOutTimeTo" [(ngModel)]="check_out_to_string">
         </mat-form-field>
-        <!--        </div>-->
-        <!--      </div>-->
       </div>
-
     </div>
   </div>
   <div class="button-container">
-    <button class="button" color="primary" (click)="addPolicy()" mat-flat-button>Continue</button>
+    <button [disabled]="hotelPolicyForm.invalid" class="button" color="primary" (click)="addPolicy()" mat-flat-button>Continue</button>
   </div>
 </form>
 

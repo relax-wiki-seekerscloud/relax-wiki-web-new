@@ -1,4 +1,4 @@
-<app-status-bar></app-status-bar>
+<app-status-bar [currentStep]="2" [totalSteps]="7"></app-status-bar>
 <div class="name-area">
   <h1>Facilities and Services you provide</h1>
 </div>
@@ -9,6 +9,11 @@
         {{ facility.name }}
       </mat-checkbox>
     </div>
+    <mat-hint>
+      <span style="color: red" *ngIf="facilities &&facilities.errors?.['required']">
+        Add at least one facility
+      </span>
+    </mat-hint>
   </app-form-selection-box>
 
   <app-form-selection-box titleName="Services">
@@ -17,6 +22,11 @@
         {{ service.name }}
       </mat-checkbox>
     </div>
+    <mat-hint>
+      <span style="color: red" *ngIf="services &&services.errors?.['required']">
+        Add at least one service
+      </span>
+    </mat-hint>
   </app-form-selection-box>
 
   <app-form-selection-box titleName="Languages Spoken">
@@ -29,7 +39,7 @@
 
 
   <div class="button-container">
-    <button (click)="submitForm()" class="button" color="primary" mat-flat-button>Continue</button>
+    <button [disabled]="facilities.invalid" (click)="submitForm()" class="button" color="primary" mat-flat-button>Continue</button>
   </div>
 
 </form>

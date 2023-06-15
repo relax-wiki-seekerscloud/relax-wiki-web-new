@@ -20,12 +20,12 @@ export class EntertainmentBasicInfoComponent implements OnInit {
   entertainmentListingForm = new FormGroup({
     activityCenterName: new FormControl('',[Validators.required, Validators.minLength(3)]),
     activityCenterDesc:new FormControl('',),
-    contactPersonName:new FormControl('',[Validators.required, Validators.minLength(3)]),
+    contactPersonName:new FormControl('',[Validators.required]),
     streetAddress:new FormControl(''),
     addressLine2:new FormControl(''),
     country:new FormControl(''),
     city:new FormControl('',[Validators.required]),
-    postalCode:new FormControl(''),
+    postalCode:new FormControl('',[Validators.required]),
   });
 
   addDataToEntertainmentDTO(){
@@ -45,5 +45,20 @@ export class EntertainmentBasicInfoComponent implements OnInit {
   }
   ngOnInit(): void {
   }
+  get activityCenterName(){
+    return this.entertainmentListingForm.get('activityCenterName');
+  }
 
+  get contactPersonName(){
+    return this.entertainmentListingForm.get('contactPersonName');
+  }
+
+  get city(){
+    return this.entertainmentListingForm.get('city');
+  }
+
+
+  get postalCode(){
+    return this.entertainmentListingForm.get('postalCode');
+  }
 }

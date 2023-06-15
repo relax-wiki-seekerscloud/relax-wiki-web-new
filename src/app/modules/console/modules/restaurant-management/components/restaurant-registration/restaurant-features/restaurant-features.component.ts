@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {RestaurantFeatures} from "../../../../../../share/dto/classes/restaurant/RequestRestaurantListDTO";
 import {RestaurantListingService} from "../../../../../../share/services/restaurant/restaurant-listing.service";
@@ -15,7 +15,7 @@ export class RestaurantFeaturesComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router,private restaurantListingService: RestaurantListingService) {
     this.restaurantFeaturesForm = this.fb.group({
-      paymentsArray: this.fb.array([]),
+      paymentsArray: this.fb.array([],[Validators.required]),
       parkingArray: this.fb.array([]),
       atmosphereArray: this.fb.array([]),
       additionalArray: this.fb.array([]),
@@ -72,7 +72,7 @@ export class RestaurantFeaturesComponent implements OnInit {
 
   addToArray(e: any, type: String) {
     let array: FormArray;
-    if (type == 'payment') {
+    if (type == 'paymentMethods') {
       array = this.restaurantFeaturesForm.get('paymentsArray') as FormArray;
     } else if (type == 'parking') {
       array = this.restaurantFeaturesForm.get('parkingArray') as FormArray;
@@ -108,7 +108,9 @@ export class RestaurantFeaturesComponent implements OnInit {
     this.router.navigate(['/console/restaurant-management/restaurant-registration/restaurant-photos']).then();
 
   }
-
+  get payments():FormArray{
+    return this.restaurantFeaturesForm.get('paymentsArray') as FormArray;
+  }
   ngOnInit(): void {
   }
 

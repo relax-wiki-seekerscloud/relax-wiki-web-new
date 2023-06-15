@@ -1,4 +1,4 @@
-<app-status-bar></app-status-bar>
+<app-status-bar [currentStep]="4" [totalSteps]="7"></app-status-bar>
 <div class="photo-container">
   <div class="photo-container-inner-description">
     <div class="name-area">
@@ -16,11 +16,15 @@
       </div>
     </div>
   </div>
-  <div class="photo-container-inner edit-area">
+  <mat-hint>
+    <span style="color: red" *ngIf="errorMessage" class="error-message">{{ errorMessage }}</span>
+  </mat-hint>
+
+
+  <div class="photo-container-inner edit-area"  *ngIf="files.length > 0">
     <div class="photo-item" *ngFor="let file of files">
-      <upload-task [file]="file" (readyUrl)="addPhoto($event)"  ></upload-task>
+      <upload-task [file]="file" (readyUrl)="addPhoto($event)"></upload-task>
     </div>
-<!--    <div class="photo-item final-step"></div>-->
   </div>
 </div>
 <div class="button-container continue-button">

@@ -17,8 +17,8 @@ export class HotelFacilitiesComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private router:Router, private hotelListingService: HotelListingService) {
     this.hotelFacilityForm = this.fb.group({
-      facilitiesArray: this.fb.array([]),
-      servicesArray: this.fb.array([]),
+      facilitiesArray: this.fb.array([],[Validators.required]),
+      servicesArray: this.fb.array([],[Validators.required]),
       languageControl: new FormControl([]),
     })
   }
@@ -85,6 +85,14 @@ export class HotelFacilitiesComponent implements OnInit {
     console.log(this.hotelListingService.hotelListDto);
 
     this.router.navigate(['/console/hotel-management/hotel-registration/hotel-amenities']).then();
+  }
+
+  get facilities():FormArray{
+    return this.hotelFacilityForm.get('facilitiesArray') as FormArray;
+  }
+
+  get services():FormArray{
+    return this.hotelFacilityForm.get('servicesArray') as FormArray;
   }
 }
 

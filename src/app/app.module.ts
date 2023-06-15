@@ -46,7 +46,6 @@ import {FIREBASE_OPTIONS} from "@angular/fire/compat";
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideStorage(() => getStorage()),
 
-
     ],
 
 

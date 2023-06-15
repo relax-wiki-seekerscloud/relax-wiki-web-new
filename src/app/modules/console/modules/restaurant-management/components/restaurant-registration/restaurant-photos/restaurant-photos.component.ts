@@ -9,6 +9,7 @@ import {RestaurantListingService} from "../../../../../../share/services/restaur
 })
 export class RestaurantPhotosComponent implements OnInit {
   restaurantPhotos: string[] = [];
+  errorMessage: string = '';
   constructor(private restaurantListingService: RestaurantListingService,private router:Router) { }
 
   isHovering: boolean = false;
@@ -31,9 +32,14 @@ export class RestaurantPhotosComponent implements OnInit {
   }
 
   addPhotosToRestaurant(){
+    // if (this.hotelPhotos.length>0){
     this.restaurantListingService.addPhotosToRestaurant(this.restaurantPhotos);
     console.log(this.restaurantListingService.restaurantListDTO);
+    const result = this.restaurantListingService.postRestaurantListing(this.restaurantListingService.restaurantListDTO);
+    result.subscribe((res)=>console.log(res))
     this.router.navigate(['/console/restaurant-management/restaurant-registration/restaurant-listing-successful']).then();
+    // }else {
+    //   this.errorMessage="Please add at least one photo of your property";
   }
   ngOnInit(): void {
   }

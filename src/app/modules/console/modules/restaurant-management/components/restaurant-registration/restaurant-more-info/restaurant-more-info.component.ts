@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {RestaurantListingService} from "../../../../../../share/services/restaurant/restaurant-listing.service";
 import {RestaurantMoreInfo} from "../../../../../../share/dto/classes/restaurant/RequestRestaurantListDTO";
@@ -12,11 +12,11 @@ import {RestaurantMoreInfo} from "../../../../../../share/dto/classes/restaurant
 })
 export class RestaurantMoreInfoComponent implements OnInit {
   restaurantMoreInfo: FormGroup;
-
+  errorMessage: string = '';
 
   constructor(private fb: FormBuilder, private router: Router, private restaurantListingService: RestaurantListingService) {
     this.restaurantMoreInfo = this.fb.group({
-      restaurantCategory: new FormControl(['']),
+      restaurantCategory: new FormControl([''],[Validators.required]),
       offeredCuisineArray: this.fb.array([]),
       servedMealsArray: this.fb.array([]),
       openTimeFrom: new FormControl(['']),
@@ -79,10 +79,19 @@ export class RestaurantMoreInfoComponent implements OnInit {
       this.restaurantMoreInfo.get('openTimeTo')?.value!,
     )
 
-    this.restaurantListingService.addMoreInfoToRestaurant(moreInfoDTO);
-    console.log(this.restaurantListingService.restaurantListDTO);
-    this.router.navigate(['/console/restaurant-management/restaurant-registration/restaurant-features']).then();
+    if (this.restaurantMoreInfo.invalid){
+      this.errorMessage='Add the category of your business';
+    }else {
+      this.restaurantListingService.addMoreInfoToRestaurant(moreInfoDTO);
+      console.log(this.restaurantListingService.restaurantListDTO);
+      this.router.navigate(['/console/restaurant-management/restaurant-registration/restaurant-features']).then();
+    }
 
+
+  }
+
+  get restaurantCategory(){
+    return this.restaurantMoreInfo.get('restaurantCategory');
   }
 
   ngOnInit(): void {

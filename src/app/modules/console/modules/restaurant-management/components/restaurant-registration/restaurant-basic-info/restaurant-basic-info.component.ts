@@ -14,12 +14,12 @@ export class RestaurantBasicInfoComponent implements OnInit {
   restaurantListingForm = new FormGroup({
     restaurantName: new FormControl('', [Validators.required, Validators.minLength(3)]),
     restaurantDesc: new FormControl(''),
-    contactPersonName: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    contactPersonName: new FormControl('', [Validators.required]),
     streetAddress: new FormControl('', [Validators.required]),
     addressLine2: new FormControl(''),
     country: new FormControl(''),
     city: new FormControl('',[Validators.required]),
-    postalCode: new FormControl(''),
+    postalCode: new FormControl('',[Validators.required]),
   });
 
   constructor(private router:Router, private restaurantListingService: RestaurantListingService) {
@@ -42,6 +42,21 @@ export class RestaurantBasicInfoComponent implements OnInit {
     this.router.navigate(['/console/restaurant-management/restaurant-registration/restaurant-more-info']).then();
   }
   ngOnInit(): void {
+  }
+  get restaurantName(){
+    return this.restaurantListingForm.get('restaurantName');
+  }
+  get contactPersonName(){
+    return this.restaurantListingForm.get('contactPersonName');
+  }
+  get streetAddress(){
+    return this.restaurantListingForm.get('streetAddress');
+  }
+  get city(){
+    return this.restaurantListingForm.get('city');
+  }
+  get postalCode(){
+    return this.restaurantListingForm.get('postalCode');
   }
 
 }

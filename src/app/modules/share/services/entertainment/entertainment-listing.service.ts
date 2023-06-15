@@ -6,6 +6,7 @@ import {
   RequestEntertainmentListDTO
 } from "../../dto/classes/entertainment/RequestEntertainmentListDTO";
 import {RequestRestaurantListDTO, RestaurantMoreInfo} from "../../dto/classes/restaurant/RequestRestaurantListDTO";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -24,21 +25,38 @@ export class EntertainmentListingService {
 
   addMoreInfoToEntertainment(moreInfo: EntertainmentMoreInfo) {
     if (this.entertainmentListDTO)
-      this.entertainmentListDTO.entertainmentMoreInfo.push(moreInfo);
+      this.entertainmentListDTO.transportationMethods = moreInfo.transportationMethods;
+      this.entertainmentListDTO.mealsProvided = moreInfo.mealsProvided;
+      this.entertainmentListDTO.entertainmentCategory = moreInfo.entertainmentCategory;
+      this.entertainmentListDTO.openTimeFrom = moreInfo.openTimeFrom;
+      this.entertainmentListDTO.openTimeTo = moreInfo.openTimeTo;
+      this.entertainmentListDTO.lowestRateForOnePerson = moreInfo.lowestRateForOnePerson;
   }
 
-  addFacilitiesToEntertainment(entertainmentFacility:EntertainmentFacilities){
+  addFacilitiesToEntertainment(entertainmentFacility: EntertainmentFacilities) {
     if (this.entertainmentListDTO)
-      this.entertainmentListDTO.entertainmentFacilities.push(entertainmentFacility);
+      this.entertainmentListDTO.facilities = entertainmentFacility.facilities;
+      this.entertainmentListDTO.activities = entertainmentFacility.activities;
+      this.entertainmentListDTO.packages = entertainmentFacility.packages;
+      this.entertainmentListDTO.languages = entertainmentFacility.languages;
   }
 
-  addPhotosToEntertainment(photos:Array<string>){
+  addPhotosToEntertainment(photos: Array<string>) {
     if (this.entertainmentListDTO)
-      this.entertainmentListDTO.entertainmentPhotosUrl=photos;
+      this.entertainmentListDTO.photoUrls = photos;
   }
 
-  addPolicyToEntertainment(entertainmentPolicy:EntertainmentPolicy){
+  addPolicyToEntertainment(entertainmentPolicy: EntertainmentPolicy) {
     if (this.entertainmentListDTO)
-      this.entertainmentListDTO.entertainmentPolicies.push(entertainmentPolicy);
+      this.entertainmentListDTO.bookingCancelCharge = entertainmentPolicy.bookingCancelCharge;
+      this.entertainmentListDTO.bookingCancelPeriod = entertainmentPolicy.bookingCancelPeriod;
+      this.entertainmentListDTO.paymentMethods = entertainmentPolicy.paymentMethods;
+
+  }
+
+  postEntertainmentListing(requestEntertainmentListDTO: RequestEntertainmentListDTO): Observable<any> {
+    console.log("hi")
+    console.log(requestEntertainmentListDTO);
+    return this.http.post('http://localhost:8080/api/activityDetails/add-new-activity', requestEntertainmentListDTO);
   }
 }

@@ -2,7 +2,6 @@ import {Component, OnInit, Input, Output , EventEmitter} from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/storage';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
-import {FormControl} from "@angular/forms";
 
 
 @Component({
@@ -53,6 +52,20 @@ export class UploadTaskComponent {
 
   isActive(snapshot:any) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes;
+  }
+  deletePhoto(downloadURL: string) {
+    if (downloadURL) {
+      // Delete the file from Firebase Storage
+      const storageRef = this.storage.refFromURL(downloadURL);
+      storageRef.delete().subscribe(
+        () => {
+          this.downloadURL = null; // Remove the deleted photo from `downloadURL`
+        },
+        (error) => {
+          console.error('Error deleting file:', error);
+        }
+      );
+    }
   }
 
 }

@@ -13,9 +13,10 @@ import {
 })
 export class EntertainmentPoliciesComponent implements OnInit {
 
-  entertainmentPolicyForm:FormGroup;
-  constructor(private fb: FormBuilder, private router: Router,private entertainmentListingService: EntertainmentListingService) {
-    this.entertainmentPolicyForm=this.fb.group({
+  entertainmentPolicyForm: FormGroup;
+
+  constructor(private fb: FormBuilder, private router: Router, private entertainmentListingService: EntertainmentListingService) {
+    this.entertainmentPolicyForm = this.fb.group({
       bookingCancelPeriod: new FormControl(''),
       bookingCancelCharge: new FormControl(''),
       paymentsArray: this.fb.array([]),
@@ -65,9 +66,10 @@ export class EntertainmentPoliciesComponent implements OnInit {
       this.entertainmentPolicyForm.get('bookingCancelCharge')?.value!,
       this.entertainmentPolicyForm.get('paymentsArray')?.value!,
     )
-
     this.entertainmentListingService.addPolicyToEntertainment(policyDTO);
     console.log(this.entertainmentListingService.entertainmentListDTO);
+    const result = this.entertainmentListingService.postEntertainmentListing(this.entertainmentListingService.entertainmentListDTO);
+    result.subscribe((res) => console.log(res));
     this.router.navigate(['/console/entertainment-management/entertainment-registration/entertainment-listing-successful']).then();
   }
 

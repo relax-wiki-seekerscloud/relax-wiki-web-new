@@ -1,14 +1,19 @@
-<app-status-bar-steps4></app-status-bar-steps4>
+<app-status-bar [currentStep]="2" [totalSteps]="4"></app-status-bar>
 <div class="name-area">
   <h1>Features And Amenities</h1>
 </div>
 <form [formGroup]="restaurantFeaturesForm">
   <app-form-selection-box titleName="Payments">
     <div class="facility-inner">
-      <mat-checkbox class="checkbox" *ngFor="let payment of Payment; let i=index" [value]="payment.value" (change)="addToArray($event,'payment')">
+      <mat-checkbox class="checkbox" *ngFor="let payment of Payment; let i=index" [value]="payment.value" (change)="addToArray($event,'paymentMethods')">
         {{ payment.name }}
       </mat-checkbox>
     </div>
+    <mat-hint>
+      <span style="color: red" *ngIf="payments &&payments.errors?.['required']">
+        Select your payment method
+      </span>
+    </mat-hint>
   </app-form-selection-box>
 
   <app-form-selection-box titleName="Parking">

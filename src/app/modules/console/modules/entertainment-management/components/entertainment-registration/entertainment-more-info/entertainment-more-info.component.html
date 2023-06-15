@@ -1,4 +1,4 @@
-<app-status-bar-steps4></app-status-bar-steps4>
+<app-status-bar [currentStep]="1" [totalSteps]="5"></app-status-bar>
 <div class="name-area">
   <p>Tell us more information about your Activity Center </p>
 </div>
@@ -45,7 +45,7 @@
 
   <app-form-selection-box titleName="Meals You Serve">
     <div class="info-inner">
-      <mat-checkbox class="checkbox" *ngFor="let servedMeals of ServedMeals; let i=index" [value]="servedMeals.value" (change)="addToArray($event,'servedMeals')">
+      <mat-checkbox class="checkbox" *ngFor="let servedMeals of ServedMeals; let i=index" [value]="servedMeals.value" (change)="addToArray($event,'mealsProvided')">
         {{ servedMeals.name }}
       </mat-checkbox>
     </div>
@@ -56,12 +56,15 @@
 <!--    <div class="form-group">-->
       <h4 class="required">Lowest rate for a person($)</h4>
       <mat-form-field class="example-full-width" appearance="fill"  >
-        <input matInput formControlName="pricePerPerson">
+        <input matInput formControlName="lowestRateForOnePerson">
       </mat-form-field>
+    <mat-hint *ngIf="lowestRateForOnePerson && lowestRateForOnePerson.invalid && lowestRateForOnePerson.touched">
+      <span style="color: red">Enter the lowest price for one person</span>
+    </mat-hint>
 <!--    </div>-->
   </app-form-selection-box>
 
   <div class="button-container">
-    <button (click)="addEntertainmentMoreInfo()" class="button" color="primary" mat-flat-button>Continue</button>
+    <button [disabled]="entertainmentMoreInfo.invalid" (click)="addEntertainmentMoreInfo()" class="button" color="primary" mat-flat-button>Continue</button>
   </div>
 </form>

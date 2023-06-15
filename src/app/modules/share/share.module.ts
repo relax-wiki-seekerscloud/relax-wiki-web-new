@@ -35,7 +35,8 @@ import { BookingSummaryBox3Component } from './components/booking-summary-box3/b
 import { BookingSummaryPersonnalDetailsFormComponent } from './components/booking-summary-personnal-details-form/booking-summary-personnal-details-form.component';
 import { DropzoneDirective } from './directives/dropzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
-import { StatusBarSteps4Component } from './components/status-bar-steps4/status-bar-steps4.component';
+import { SelectPropertyBoxComponent } from './components/select-property-box/select-property-box.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -68,34 +69,34 @@ import { StatusBarSteps4Component } from './components/status-bar-steps4/status-
     FormSelectionBoxComponent,
     DropzoneDirective,
     UploadTaskComponent,
-    StatusBarSteps4Component
+    SelectPropertyBoxComponent
   ],
-    exports: [
-        FooterComponent,
-        FooterTwoComponent,
-        NavBarComponent,
-        NavBarTwoComponent,
-        RelaxwikiLogoComponent,
-        FilterByBudgetComponent,
-        FilterByRatingComponent,
-        HotelSearchSmallComponent,
-        FilterByEntertainmentActivityComponent,
-        StatusBarComponent,
-        InputFieldComponent,
-        HotelCategoryContainerBoxComponent,
-        HotelRoomContainerBoxComponent,
-        FormSelectionBoxComponent,
-        HotelRoomContainerBoxComponent,
-        FeedbackFormComponent,
-        PaginatorComponent,
-        BookingSummaryBox1Component,
-        BookingSummaryBox2Component,
-        BookingSummaryBox3Component,
-        DropzoneDirective,
-        UploadTaskComponent,
-        StatusBarSteps4Component
+  exports: [
+    FooterComponent,
+    FooterTwoComponent,
+    NavBarComponent,
+    NavBarTwoComponent,
+    RelaxwikiLogoComponent,
+    FilterByBudgetComponent,
+    FilterByRatingComponent,
+    HotelSearchSmallComponent,
+    FilterByEntertainmentActivityComponent,
+    StatusBarComponent,
+    InputFieldComponent,
+    HotelCategoryContainerBoxComponent,
+    HotelRoomContainerBoxComponent,
+    FormSelectionBoxComponent,
+    HotelRoomContainerBoxComponent,
+    FeedbackFormComponent,
+    PaginatorComponent,
+    BookingSummaryBox1Component,
+    BookingSummaryBox2Component,
+    BookingSummaryBox3Component,
+    DropzoneDirective,
+    UploadTaskComponent,
+    SelectPropertyBoxComponent
 
-    ],
+  ],
 
 
   imports: [
@@ -107,7 +108,8 @@ import { StatusBarSteps4Component } from './components/status-bar-steps4/status-
     MatInputModule,
     ReactiveFormsModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
 
 

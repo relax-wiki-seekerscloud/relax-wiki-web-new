@@ -1,14 +1,16 @@
 import {Injectable} from '@angular/core';
 import {RequestHotelListDTO, Room, Policy} from "../../dto/classes/hotel/RequestHotelListDTO";
 import {Observable} from "rxjs";
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelListingService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
+
   hotelListDTO: RequestHotelListDTO | undefined;
 
   addDataToHotelListDTO(tempHotelListDTO: RequestHotelListDTO) {
@@ -38,7 +40,7 @@ export class HotelListingService {
 
   addAmenitiesToHotel(amenities: Array<string>) {
     if (this.hotelListDTO)
-      this.hotelListDTO.amenities = amenities;
+      this.hotelListDTO.mostCommonAmenities = amenities;
   }
 
   addRoomAmenitiesToHotel(roomAmenities: Array<string>) {
@@ -85,26 +87,36 @@ export class HotelListingService {
     if (this.hotelListDTO)
       this.hotelListDTO.servicesAndExtrasAmenities = servicesAndExtrasAmenities;
   }
-  get hotelListDto(){
+
+  get hotelListDto() {
     return this.hotelListDTO;
   }
 
   addPhotosToHotel(photos: Array<string>) {
     if (this.hotelListDTO)
-      this.hotelListDTO.photos = photos;
+      this.hotelListDTO.photoUrls = photos;
   }
 
   addPolicyToHotel(policy: Policy) {
-    if (this.hotelListDTO)
-    this.hotelListDTO.policy.push(policy);
+    if (this.hotelListDTO) {
+      this.hotelListDTO.pets = policy.pets == "allowed"? true:false;
+      this.hotelListDTO.petsCharge = policy.petsCharge;
+      this.hotelListDTO.bookingCancelPeriod = policy.bookingCancelPeriod;
+      this.hotelListDTO.bookingCancelCharge = policy.bookingCancelCharge;
+      this.hotelListDTO.checkInTimeFrom = policy.checkInTimeFrom;
+      this.hotelListDTO.checkInTimeTo = policy.checkInTimeTo;
+      this.hotelListDTO.checkOutTimeFrom = policy.checkOutTimeFrom;
+      this.hotelListDTO.checkOutTimeTo = policy.checkOutTimeTo;
+    }
   }
 
   addPaymentDetails(payment: Array<string>) {
     if (this.hotelListDTO)
-    this.hotelListDTO.payment = payment;
+      this.hotelListDTO.paymentMethods = payment;
   }
 
-  postHotelListing(RequestHotelListDTO: RequestHotelListDTO): Observable<any> {
-    return this.http.post('http://localhost:8080/api/users/change-this', RequestHotelListDTO);
+  postHotelListing(requestHotelListDTO: RequestHotelListDTO): Observable<any> {
+    console.log(requestHotelListDTO);
+    return this.http.post('http://localhost:8080/api/hotelDetails/add-new-hotel', requestHotelListDTO);
   }
 }

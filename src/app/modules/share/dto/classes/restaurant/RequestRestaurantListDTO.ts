@@ -1,8 +1,15 @@
 export class RequestRestaurantListDTO {
 
-  public restaurantMoreInfo: Array<RestaurantMoreInfo> = [];
-  public restaurantFeatures:Array<RestaurantFeatures>=[];
-  public photos:Array<string> = [];
+  public photoUrls:Array<string> = [];
+  public offeredCuisine: Array<string> = [];
+  public mealsServed: Array<string> = [];
+  public restaurantCategory: string;
+  public openTimeFrom: string;
+  public openTimeTo: string;
+  public paymentMethods: Array<string> = [];
+  public parking: Array<string> = [];
+  public atmosphere: Array<string> = [];
+  public additional: Array<string> = [];
   constructor(
     public restaurantName: string,
     public restaurantDesc: string,
@@ -19,7 +26,7 @@ export class RequestRestaurantListDTO {
 export class RestaurantMoreInfo {
   constructor(
     public offeredCuisine: Array<string> = [],
-    public servedMeals: Array<string> = [],
+    public mealsServed: Array<string> = [],
     public restaurantCategory: string,
     public openTimeFrom: string,
     public openTimeTo: string,
@@ -29,7 +36,7 @@ export class RestaurantMoreInfo {
 
 export class RestaurantFeatures {
   constructor(
-    public payments: Array<string> = [],
+    public paymentMethods: Array<string> = [],
     public parking: Array<string> = [],
     public atmosphere: Array<string> = [],
     public additional: Array<string> = [],

@@ -26,7 +26,7 @@ export class EntertainmentMoreInfoComponent implements OnInit {
       openTimeFrom: new FormControl(['']),
       openTimeTo: new FormControl(['']),
       servedMealsArray: this.fb.array([]),
-      pricePerPerson:new FormControl('',[Validators.required]),
+      lowestRateForOnePerson:new FormControl('',[Validators.required]),
     })
   }
 
@@ -78,7 +78,7 @@ export class EntertainmentMoreInfoComponent implements OnInit {
       this.entertainmentMoreInfo.get('entertainmentCategory')?.value!,
       this.entertainmentMoreInfo.get('openTimeFrom')?.value!,
       this.entertainmentMoreInfo.get('openTimeTo')?.value!,
-      this.entertainmentMoreInfo.get('pricePerPerson')?.value!,
+      this.entertainmentMoreInfo.get('lowestRateForOnePerson')?.value!,
     )
 
     this.entertainmentListingService.addMoreInfoToEntertainment(moreInfoDTO);
@@ -88,4 +88,7 @@ export class EntertainmentMoreInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get lowestRateForOnePerson(){
+    return this.entertainmentMoreInfo.get('lowestRateForOnePerson');
+  }
 }

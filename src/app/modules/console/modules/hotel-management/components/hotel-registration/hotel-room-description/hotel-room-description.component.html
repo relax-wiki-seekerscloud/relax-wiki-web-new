@@ -1,4 +1,4 @@
-<app-status-bar></app-status-bar>
+<app-status-bar [currentStep]="1" [totalSteps]="7"></app-status-bar>
 <div class="name-area">
   <h1>Room Description</h1>
 </div>
@@ -17,7 +17,11 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-
+        <mat-hint>
+          <span *ngIf="roomType && roomType.touched && roomType.invalid" style="color: red">
+            Room type should not be empty
+          </span>
+        </mat-hint>
         <h4>Room name</h4>
         <mat-form-field appearance="fill" class="input-field room-name">
           <mat-label>e.g. Single room with beach view</mat-label>
@@ -27,8 +31,13 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <p>This name will be displayed to the guests</p>
 
+        <p>This name will be displayed to the guests</p>
+        <mat-hint>
+          <span *ngIf="roomName && roomName.touched && roomName.invalid" style="color: red">
+            Room name should not be empty
+          </span>
+        </mat-hint>
       </div>
       <div class="container-right">
         <div class="container-right-inner-one">
@@ -49,6 +58,11 @@
         <div class="inner-answer">
           <app-input-field [control]="roomInformation.controls.noOfPeople"></app-input-field>
         </div>
+        <mat-hint>
+          <span *ngIf="noOfPeople && noOfPeople.touched && noOfPeople.invalid" style="color: red">
+            Enter the number of people that can stay in this room
+          </span>
+        </mat-hint>
       </div>
       <div class="container-below-questions">
         <div class="inner-question">
@@ -83,19 +97,27 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
+
+          <mat-hint>
+          <span *ngIf="bedType && bedType.touched && bedType.invalid" style="color: red">
+            Enter the available bed types in this room
+          </span>
+          </mat-hint>
         </div>
 
         <div class="bed-info-inner">
-          <!--          <app-input-field [control]="roomInformation.controls.beds.controls" name="Number of Beds"></app-input-field>-->
           <div class="form-group">
             <h4 >Number of Beds</h4>
             <mat-form-field class="example-full-width" appearance="fill"  >
               <input matInput formControlName="bedCount">
             </mat-form-field>
+            <mat-hint>
+          <span *ngIf="bedCount && bedCount.touched && bedCount.invalid" style="color: red">
+            Enter the bed count of this type
+          </span>
+            </mat-hint>
           </div>
-
         </div>
-
         <div class="button-container">
           <button (click)="deleteBedInformation(i)" class="button" color="warn" mat-flat-button>Remove</button>
         </div>
@@ -108,10 +130,10 @@
 
   <app-content-box-border boxName="Other Details">
     <div class="other-details-container">
-      <app-input-field [control]="roomInformation.controls.bedRoomCount" name="Number of Bed rooms"></app-input-field>
+      <app-input-field [control]="roomInformation.controls.bedroomCount" name="Number of Bed rooms"></app-input-field>
       <app-input-field [control]="roomInformation.controls.livingRoomCount"
                        name="Number of Living rooms"></app-input-field>
-      <app-input-field [control]="roomInformation.controls.bathRoomCount" name="Number of Bath rooms"></app-input-field>
+      <app-input-field [control]="roomInformation.controls.bathroomCount" name="Number of Bath rooms"></app-input-field>
     </div>
   </app-content-box-border>
 
@@ -122,11 +144,16 @@
         <app-input-field [control]="roomInformation.controls.pricePerNight"></app-input-field>
         <p>USD</p>
       </div>
+      <mat-hint>
+    <span style="color: red" *ngIf="pricePerNight && pricePerNight.invalid && pricePerNight.touched">
+      <small>Enter the minimum price of this room</small>
+    </span>
+      </mat-hint>
     </app-content-box-fill>
   </div>
 
   <div class="button-container">
-    <button (click)="addRoomInformation()" class="button" color="primary" mat-flat-button>Continue</button>
+    <button [disabled]="roomInformation.invalid" (click)="addRoomInformation()" class="button" color="primary" mat-flat-button>Continue</button>
   </div>
 
 </form>

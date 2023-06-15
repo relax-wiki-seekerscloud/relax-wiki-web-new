@@ -1,0 +1,61 @@
+<app-nav-bar-two></app-nav-bar-two>
+<router-outlet></router-outlet>
+<div class="title-area">
+  <h1>List Your Property on RelaxWiki.com</h1>
+</div>
+<div class="content-area">
+  <div class="property-area">
+    <div class="property-box">
+      <div class="property-box-content">
+        <h2>Hotels</h2>
+        <img src="assets/Images/hotel-list.png">
+        <div class="button-container">
+          <button (click)="goToListHotel()" class="button" color="primary" mat-flat-button>List Your Property </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-box">
+      <div class="property-box-content">
+        <h2>Restaurants</h2>
+        <img src="assets/Images/hotel-list.png">
+        <div class="button-container">
+          <button (click)="goToListRestaurant()" class="button" color="primary" mat-flat-button>List Your Property </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-box">
+      <div class="property-box-content">
+        <h2>Entertainment</h2>
+        <img src="assets/Images/hotel-list.png">
+        <div class="button-container">
+          <button (click)="goToListEntertainment()" class="button" color="primary" mat-flat-button>List Your Property </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-box">
+      <div class="property-box-content">
+        <h2>Car</h2>
+        <img src="assets/Images/hotel-list.png">
+        <div class="button-container">
+          <button class="button" color="primary" mat-flat-button>List Your Property </button>
+        </div>
+      </div>
+    </div>
+
+<!--    <app-select-property-box name="Airport Taxi"-->
+<!--                             imagePath="assets/Images/hotel-list.png"-->
+<!--                              listPage="goToListHotel()"></app-select-property-box>-->
+    <div class="property-box">
+      <div class="property-box-content">
+        <h2>Airport Taxi</h2>
+        <img src="assets/Images/hotel-list.png">
+        <div class="button-container">
+          <button  class="button" color="primary" mat-flat-button>List Your Property </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
