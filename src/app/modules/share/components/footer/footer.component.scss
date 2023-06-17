@@ -131,8 +131,11 @@ hr{
   padding: 0;
   margin-top: 0;
   font-size: 12px;
-  line-height:16px;
+  line-height:8px;
   font-weight: lighter;
+}
+.footer-inner-quick-links-list p:hover{
+  cursor: pointer;
 }
 .footer-inner-news-letter-inputs{
   margin-top: 10px;
