@@ -570,7 +570,35 @@
   height: 100%;
   margin-right: 110px;
 }
+//-------------forth-wrap----------------\
+.forth-wrap-inner{
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
 
+.forth-wrap-inner-bottom{
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.card{
+  width: 13rem;
+  transition: 5ms;
+  border: none;
+}
+.card img:hover{
+  box-shadow: 2px 2px 5px #888888;
+}
+.card-title{
+  margin-top: 5px;
+  font-weight: bold;
+}
+.card-text{
+  margin-top: -10px;
+  font-size: smaller;
+}
 //-------------fifth-wrap----------------
 .fifth-wrap{
   width: 100%;
