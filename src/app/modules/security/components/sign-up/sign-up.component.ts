@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserRegistrationService} from "../../../share/services/user/user-registration-service.service";
 import {UserRegistrationDto} from "../../../share/dto/classes/user/UserRegistrationDTO";
@@ -15,8 +15,8 @@ export class SignUpComponent implements OnInit {
     userFirstName:['', [Validators.required, Validators.minLength(3)]],
     userLastName: ['', [Validators.required, Validators.minLength(3)]],
     userEmail: ['', [Validators.required, Validators.email]],
-    userPassword: ['', [Validators.required, Validators.minLength(6)]],
-    confirmPassword:['', [Validators.required, Validators.minLength(6)]],
+    userPassword: ['', [Validators.required, Validators.minLength(8)]],
+    confirmPassword:['', [Validators.required, Validators.minLength(8)]],
   },
     {
       validator: this.validatePassword.bind(this),
@@ -51,10 +51,13 @@ export class SignUpComponent implements OnInit {
   private _hideCPassword: boolean | undefined=true;
 
 
-
   msg: string | undefined;
 
   addUser(){
+    if (this.signUpForm.invalid) {
+      console.log('Invlid');
+      // return;
+    }
     const userRegistrationDto = new UserRegistrationDto();
     userRegistrationDto.firstName = this.signUpForm.value.userFirstName;
     userRegistrationDto.lastName = this.signUpForm.value.userLastName;
@@ -85,6 +88,25 @@ export class SignUpComponent implements OnInit {
       return {passwordNotMatch: false};
     }
     return {passwordNotMatch: true};
+  }
+
+  validatePasswordRequirements(control: AbstractControl) {
+    const value = control.value as string;
+
+    if (!/(?=.*[a-z])/.test(value)) {
+      return { lowercase: true };
+    }
+    if (!/(?=.*[A-Z])/.test(value)) {
+      return { uppercase: true };
+    }
+    if (!/(?=.*\d)/.test(value)) {
+      return { digit: true };
+    }
+    if (!/(?=.*[@$!%*?&])/.test(value)) {
+      return { specialCharacter: true };
+    }
+
+    return null;
   }
   ngOnInit(): void {
   }

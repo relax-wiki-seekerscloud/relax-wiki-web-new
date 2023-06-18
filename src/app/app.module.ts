@@ -16,8 +16,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
-
-
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {UniversalAppInterceptor} from "./universal-app.interceptor";
 
 
 @NgModule({
@@ -51,7 +51,9 @@ import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 
 
   providers: [
-    {provide:FIREBASE_OPTIONS, useValue:environment.firebase}
+    {provide:FIREBASE_OPTIONS, useValue:environment.firebase},
+    {provide: HTTP_INTERCEPTORS, useClass: UniversalAppInterceptor, multi: true },
+
   ],
   bootstrap: [AppComponent]
 })
