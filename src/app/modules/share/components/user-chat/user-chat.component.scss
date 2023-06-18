@@ -1,0 +1,44 @@
+.chat-wrap-main{
+  height: 80vh;
+  //border: 1px solid blue;
+}
+.chat-wrap-inner-top{
+  height: 10%;
+  //border: 1px solid red;
+  background-color: #1A2238;
+  display: flex;
+  justify-content: space-between;
+}
+.chat-wrap-inner-bottom{
+  height: 90%;
+  border: 1px solid green;
+  background-color: white;
+}
+.relax-wiki-logo{
+  width: 200px;
+  color: white;
+  margin-top: 10px;
+}
+.close-button{
+  width: 33px;
+  margin-top: 8px;
+}
+
+.close-button button{
+  height: 31px;
+  width: 33px;
+  background-color: #1A2238;
+  color: #999999;
+  padding: 0;
+}
+.chat-wrap-inner-bottom{
+  display: flex;
+}
+.chat-wrap-inner-bottom-left{
+  border: 1px solid red;
+  height: 100%;
+}
+.chat-wrap-inner-bottom-right{
+  border: 1px solid blue;
+  height: 100%;
+}
