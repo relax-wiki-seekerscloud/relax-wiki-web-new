@@ -42,7 +42,12 @@
         <hr class="hr2">
       </div>
       <div class="footer-inner-quick-links-list">
-        <p>Hotel <br> Restaurant <br>Entertainment <br>Car Rental<br> Airport Taxi</p>
+        <p [routerLink]="['/hotel-management/hotel-default']">Hotel</p>
+        <p [routerLink]="['/restaurant-management/restaurant-default']">Restaurant</p>
+        <p [routerLink]="['/entertainment-management/entertainment-default']">Entertainment</p>
+        <p>Car Rental</p>
+        <p>Airport Taxi</p>
+<!--        <p>Hotel <br> Restaurant <br>Entertainment <br>Car Rental<br> Airport Taxi</p>-->
       </div>
     </div>
     <div class="footer-inner-about">
@@ -53,7 +58,9 @@
         <hr class="hr2">
       </div>
       <div class="footer-inner-quick-links-list">
-        <p>Privacy policies <br> Terms & Conditions</p>
+        <p>Privacy policies</p>
+        <p>Terms & Conditions</p>
+<!--        <p>Privacy policies <br> Terms & Conditions</p>-->
       </div>
     </div>
     <div class="footer-inner-news-letter">

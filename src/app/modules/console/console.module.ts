@@ -5,7 +5,7 @@ import { ConsoleRoutingModule } from './console-routing.module';
 import { ConsoleComponent } from './console.component';
 import { ConsoleDefaultComponent } from './components/console-default/console-default.component';
 import { AdvertisementsComponent } from './components/advertisements/advertisements.component';
-import {ShareModule} from "../share/share.module";
+import { ShareModule } from "../share/share.module";
 import { AdvertisementDefaultComponent } from './components/advertisements/components/advertisement-default/advertisement-default.component';
 import { AdvertisementImageComponent } from './components/advertisements/components/advertisement-image/advertisement-image.component';
 import { AdvertisementsVideoComponent } from './components/advertisements/components/advertisements-video/advertisements-video.component';
@@ -15,12 +15,11 @@ import { AdvertisementPaymentFaildComponent } from './components/advertisements/
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
-import { OffersComponent } from './components/offers/offers.component';
+import {OffersComponent } from './components/offers/offers.component';
 import {RestaurantManagementModule} from "./modules/restaurant-management/restaurant-management.module";
 import {EntertainmentManagementModule} from "./modules/entertainment-management/entertainment-management.module";
 import {HotelManagementModule} from "./modules/hotel-management/hotel-management.module";
 import {DailyProcessModule} from "./modules/daily-process/daily-process.module";
-
 
 
 

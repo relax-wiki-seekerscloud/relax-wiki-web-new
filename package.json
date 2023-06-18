@@ -21,16 +21,17 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "aos": "^2.3.4",
     "bootstrap": "^5.2.3",
     "iso-639-1": "^2.1.15",
     "jquery": "^3.6.3",
     "libphonenumber-js": "^1.10.21",
     "ngx-bootstrap": "^6.2.0",
     "ngx-mat-intl-tel-input": "^5.0.0",
+    "ngx-webstorage": "^2.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "ngx-webstorage": "^2.0.1"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.3",
