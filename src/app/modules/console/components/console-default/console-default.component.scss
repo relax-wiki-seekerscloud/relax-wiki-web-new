@@ -364,8 +364,40 @@
   }
 }
 
-//----------------Top-wrap----------------
+//----------------chat--------------------
+.chat-icon-outer{
+  //border: 1px solid blue;
+  width: 100%;
+  height: 80px;
+  padding-left: 93%;
+  margin-top: 600px;
+}
+.chat-icon{
+  position: fixed;
+  z-index: 1;
+}
+.user-chat-main-wrap{
+  height: 100%;
+  //position: absolute;
+  position: fixed;
+  background-color: rgba(30, 39, 46,.8);
+  z-index: 1;
+}
+.user-chat-outer-wrap{
+  height: 80vh;
+  //border: 1px solid blue;
+  margin-left: 10vw;
+  margin-top: 12vh;
+  position: absolute;
+  z-index: 1;
+}
+@media screen and (max-width: 800px) {
+  .user-chat-outer-wrap{
+    margin-left: auto;
+  }
+}
 
+//----------------Top-wrap----------------
 .top-wrap{
   width: 100%;
   height: 100vh;
