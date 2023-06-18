@@ -1,5 +1,13 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+  Validators
+} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserRegistrationService} from "../../../share/services/user/user-registration-service.service";
 import {UserRegistrationDto} from "../../../share/dto/classes/user/UserRegistrationDTO";
@@ -11,22 +19,21 @@ import {UserRegistrationDto} from "../../../share/dto/classes/user/UserRegistrat
 })
 export class SignUpComponent implements OnInit {
 
-  signUpForm : FormGroup = this.fb.group({
-    userFirstName:['', [Validators.required, Validators.minLength(3)]],
-    userLastName: ['', [Validators.required, Validators.minLength(3)]],
-    userEmail: ['', [Validators.required, Validators.email]],
-    userPassword: ['', [Validators.required, Validators.minLength(8)]],
-    confirmPassword:['', [Validators.required, Validators.minLength(8)]],
-  },
-    {
-      validator: this.validatePassword.bind(this),
-    }
-    );
+  signUpForm : FormGroup = new FormGroup<any>({
+    userFirstName:new FormControl('',[Validators.required,Validators.minLength(3)]),
+    userLastName:new FormControl('',[Validators.required,Validators.minLength(3)]),
+    userEmail:new FormControl('',[Validators.required,Validators.email]),
+    userPassword:new FormControl('',[Validators.required,Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)]),
+    confirmPassword:new FormControl('',[Validators.required, (control: AbstractControl): ValidationErrors | null => {
+      const password = this.signUpForm?.controls['userPassword'].value;
+      return password != control.value ? {passwordNotMatch:true} : null;
+    }]),
+
+  });
 
   constructor(private fb: FormBuilder,
               @Inject(UserRegistrationService)private userRegistrationService: UserRegistrationService,
               private router: Router) {
-    this.signUpForm.valueChanges.subscribe(console.log)
   }
 
   get hidePassword(): boolean {
@@ -53,10 +60,25 @@ export class SignUpComponent implements OnInit {
 
   msg: string | undefined;
 
+  // validatePassword() {
+  //   console.log(this.signUpForm);
+  //   const password = this.signUpForm?.get('userPassword')?.value!;
+  //   const confirmPassword = this.signUpForm?.get('confirmPassword')?.value!;
+  //   if (password == confirmPassword){
+  //     return false;
+  //   }
+  //   return true;
+  // }
+
   addUser(){
-    if (this.signUpForm.invalid) {
-      console.log('Invlid');
-      // return;
+    let valid = true;
+    for (const i in this.signUpForm.controls) {
+        this.signUpForm.controls[i].markAsTouched();
+        valid = valid && this.signUpForm.controls[i].status =="VALID";
+
+    }
+    if(!valid){
+      return;
     }
     const userRegistrationDto = new UserRegistrationDto();
     userRegistrationDto.firstName = this.signUpForm.value.userFirstName;
@@ -80,34 +102,8 @@ export class SignUpComponent implements OnInit {
       );
   }
 
-  validatePassword() {
-    const password = this.signUpForm?.get('userPassword')?.value!;
-    const confirmPassword = this.signUpForm?.get('confirmPassword')?.value!;
-    console.log(password,confirmPassword);
-    if (password == confirmPassword){
-      return {passwordNotMatch: false};
-    }
-    return {passwordNotMatch: true};
-  }
 
-  validatePasswordRequirements(control: AbstractControl) {
-    const value = control.value as string;
 
-    if (!/(?=.*[a-z])/.test(value)) {
-      return { lowercase: true };
-    }
-    if (!/(?=.*[A-Z])/.test(value)) {
-      return { uppercase: true };
-    }
-    if (!/(?=.*\d)/.test(value)) {
-      return { digit: true };
-    }
-    if (!/(?=.*[@$!%*?&])/.test(value)) {
-      return { specialCharacter: true };
-    }
-
-    return null;
-  }
   ngOnInit(): void {
   }
 

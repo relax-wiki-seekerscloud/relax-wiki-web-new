@@ -30,7 +30,9 @@
               {{ hide ? 'visibility_off' : 'visibility' }}
             </mat-icon>
           </mat-form-field>
-
+          <mat-hint *ngIf="userLoginForm.get('userPassword') && userLoginForm.get('userPassword').invalid && userLoginForm.get('userPassword').touched">
+            <span *ngIf="userLoginForm.get('userPassword').errors?.['required']" style="color: red">Password is required</span>
+          </mat-hint>
           <a href="" class="forgotPassword">Forgot Password?</a>
         </div>
         <div class="loginButtonContainer">

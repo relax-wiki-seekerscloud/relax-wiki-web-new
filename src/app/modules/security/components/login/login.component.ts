@@ -23,7 +23,7 @@ export class LoginComponent {
 
   constructor(@Inject(UserLoginService)private userLoginService: UserLoginService , @Inject(LocalStorageService) private localStorageService:LocalStorageService) { }
 
-  userLoginForm=new FormGroup({
+  userLoginForm :FormGroup =new FormGroup<any>({
     userEmail:new FormControl('',[Validators.required,Validators.email]),
     userPassword:new FormControl('',[Validators.required])
   })
@@ -34,6 +34,14 @@ export class LoginComponent {
 
 
   loginUser(){
+    let valid = true;
+    for (const i in this.userLoginForm.controls) {
+      this.userLoginForm.controls[i].markAsTouched();
+      valid = valid && this.userLoginForm.controls[i].status =="VALID";
+    }
+    if(!valid){
+      return;
+    }
     const userLoginDto = new UserLoginDto();
     userLoginDto.email = this.userLoginForm.value.userEmail;
     userLoginDto.password = this.userLoginForm.value.userPassword;

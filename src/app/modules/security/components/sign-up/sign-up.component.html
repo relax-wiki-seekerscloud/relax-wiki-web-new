@@ -101,11 +101,18 @@
 
             </div>
 
-            <p class="passwordError" *ngIf="signUpForm.getError('passwordNotMatch')&&
-            signUpForm.get('confirmPassword')?.touched">
+            <p class="passwordError" *ngIf="signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword').errors?.['passwordNotMatch']">
               Passwords do not match
             </p>
 
+            <div *ngIf="signUpForm.get('userPassword')?.invalid && signUpForm.get('userPassword')?.touched">
+              <div *ngIf="signUpForm.get('userPassword')?.errors?.['required']" class="error-message">
+                <p class="passwordError">Password is required.</p>
+              </div>
+              <div *ngIf="signUpForm.get('userPassword')?.errors?.['pattern']" class="error-message">
+                <p class="passwordError">Password must contain at least 8 characters including 1 letter and a number.</p>
+              </div>
+            </div>
 
             <div class="signUpButtonContainer">
               <button mat-flat-button color="primary" (click)="addUser()">Create an Account</button>
