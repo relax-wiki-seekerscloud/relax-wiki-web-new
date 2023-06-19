@@ -1,0 +1,48 @@
+.sales-info-main-wrap{
+  //border: 1px solid red;
+  margin: 30px auto;
+  height: 380px;
+}
+.sales-report-main{
+  //border: 1px solid blue;
+  height: 380px;
+}
+.row{
+  //border: 1px solid purple;
+}
+.report-heading-outer{
+  //border: 1px solid green;
+  height: 40px;
+}
+
+.report-body-outer{
+  //border: 1px solid rosybrown;
+  //height: 85%;
+  box-shadow: 2px 2px 5px #888888;
+}
+.report-heading{
+  //border: 1px solid red;
+  margin:  0px auto;
+  height: 40px;
+}
+.report-heading h3{
+  font-weight: bold;
+}
+.report-body-outer{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+@media screen and (max-width: 1540px){
+  .income-cart-canvas{
+     width: 40vw;
+     height: 400px;
+  }
+}
+
+@media screen and (max-width: 1026px){
+  .income-cart-canvas{
+    width: 40vw;
+    height: 400px;
+  }
+}

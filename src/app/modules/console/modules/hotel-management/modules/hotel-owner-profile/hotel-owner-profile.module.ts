@@ -16,6 +16,8 @@ import {MatIconModule} from "@angular/material/icon";
 import { FormsModule } from '@angular/forms';
 import {ShareModule} from "../../../../../share/share.module";
 import { ActivityCenterOwnerProfileModule} from "../../../entertainment-management/modules/activity-center-owner-profile/activity-center-owner-profile.module";
+import { SalesInfoComponent } from './sales-info/sales-info.component';
+import {NgChartsModule} from "ng2-charts";
 
 
 @NgModule({
@@ -23,27 +25,29 @@ import { ActivityCenterOwnerProfileModule} from "../../../entertainment-manageme
     HotelOwnerProfileComponent,
     BasicInformationComponent,
     SalesInformationComponent,
-
-
-
     HotelProfileNavbarComponent,
+    SalesInfoComponent,
 
 
 
   ],
   exports: [
     HotelOwnerProfileComponent,
+    BasicInformationComponent,
+    SalesInformationComponent,
+    SalesInfoComponent,
 
   ],
-    imports: [
-        CommonModule,
-        HotelOwnerProfileRoutingModule,
-        MatFormFieldModule,
-        MatChipsModule,
-        MatIconModule,
-        FormsModule,
-        ShareModule,
-        ActivityCenterOwnerProfileModule
-    ]
+  imports: [
+    CommonModule,
+    HotelOwnerProfileRoutingModule,
+    MatFormFieldModule,
+    MatChipsModule,
+    MatIconModule,
+    FormsModule,
+    ShareModule,
+    ActivityCenterOwnerProfileModule,
+    NgChartsModule
+  ]
 })
 export class HotelOwnerProfileModule { }

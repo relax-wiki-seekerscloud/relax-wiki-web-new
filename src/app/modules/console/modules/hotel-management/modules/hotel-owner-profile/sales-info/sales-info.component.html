@@ -1,0 +1,48 @@
+<app-nav-bar-two></app-nav-bar-two>
+<app-hotel-profile-navbar></app-hotel-profile-navbar>
+
+<div class="row">
+  <div class="sales-info-main-wrap col-lg-10 col-md-10" col-sm-12>
+    <div class="row">
+      <div class="sales-report-main col-lg-6 col-md-12 col-sm-12">
+        <div class="row">
+          <div class="report-heading-outer col-lg-12">
+            <div class="row">
+              <div class="report-heading col-lg-6">
+                <h3>Number of Bookings on last 7 days</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="report-body-outer" >
+          <canvas baseChart
+                  [data]="barChartData"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [type]="'bar'">
+          </canvas>
+        </div>
+      </div>
+      <div class="sales-report-main col-lg-6 col-md-12 col-sm-12">
+        <div class="report-heading-outer">
+          <div class="row">
+            <div class="report-heading col-lg-6">
+              <h3>Total income per day on last 7 days</h3>
+            </div>
+          </div>
+        </div>
+        <div class="report-body-outer" >
+          <div style="display: block;">
+            <canvas class="income-cart-canvas" baseChart
+                    [type]="'line'"
+                    [data]="lineChartData"
+                    [options]="lineChartOptions"
+                    [legend]="lineChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>
+   </div>
+  </div>
+</div>

@@ -25,9 +25,10 @@ import {
     RestaurantProfileNavbarComponent,
 
   ],
-  exports: [
-    RestaurantOwnerProfileComponent
-  ],
+    exports: [
+        RestaurantOwnerProfileComponent,
+        SalesInformationComponent
+    ],
     imports: [
         CommonModule,
         RestaurantOwnerProfileRoutingModule,

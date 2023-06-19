@@ -17,9 +17,14 @@ import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {
+  RestaurantOwnerProfileModule
+} from "./modules/console/modules/restaurant-management/modules/restaurant-owner-profile/restaurant-owner-profile.module";
+import {
+  HotelOwnerProfileModule
+} from "./modules/console/modules/hotel-management/modules/hotel-owner-profile/hotel-owner-profile.module";
 
-
-
+import {NgChartsModule} from "ng2-charts";
 
 
 @NgModule({
@@ -27,30 +32,32 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     AppComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        ShareModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        FormsModule,
-        SecurityModule,
-        ConsoleModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        FormsModule,
-        SecurityModule,
-        ConsoleModule,
-        MatIconModule,
-        HttpClientModule,
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideStorage(() => getStorage()),
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ShareModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    SecurityModule,
+    ConsoleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    SecurityModule,
+    ConsoleModule,
+    MatIconModule,
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
+    RestaurantOwnerProfileModule,
+    HotelOwnerProfileModule,
+    NgChartsModule
 
-
-    ],
+  ],
 
 
 
