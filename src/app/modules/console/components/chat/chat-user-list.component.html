@@ -1,0 +1,51 @@
+<div class="maininterface">
+
+<!--  .......................................Chat User List.....................................................-->
+
+  <div class="chatlist">
+
+<!--  my profile details-->
+    <div class="my-profile-details">
+      <h6>{{MyUserId}}</h6>
+    </div>
+
+<!-- My chat list -->
+    <div class="my-chat-list">
+      <table border="1">
+        <tr *ngFor="let user of listData">
+          <td (click)="getChat(MyUserId,user.hotelID,user.hotelName)">Hotel : {{ user.hotelName }}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+<!-- ------------------------------------------Chat Windpws--------------------------------------------------------- -->
+
+  <div class="chat">
+
+<!--    Chat User Name -->
+    <div class="chat-user-name">
+      <h6>{{hotelName}}</h6>
+    </div>
+
+<!--    Chat Body-->
+    <div class="chat-body" id="chatBody">
+      <table border="1">
+        <tr *ngFor="let chat of ChatData">
+          <td [ngStyle]="{ 'color': chat.messageOwnerId === MyUserId ? 'Green' : 'Blue' }" [class.align-right]="chat.messageOwnerId === MyUserId">
+            {{ chat.message }}
+          </td>
+        </tr>
+      </table>
+    </div>
+
+<!--    Typing window with send button-->
+    <div class="chat-input">
+      <input class="chat-type-box" type="text" id="messageId" name="messageName" [(ngModel)]="messageText" (keydown.enter)="sendMessage()">
+      <input class="chat-send-button" type="button" name="Send" value="Send" (click)="sendMessage()">
+    </div>
+
+  </div>
+
+</div>

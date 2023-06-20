@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserChatComponent} from "../user-chat/user-chat.component";
 import {MatDialog} from "@angular/material/dialog";
+import {ChatUserListComponent} from "../../../console/components/chat/chat-user-list.component";
 
 @Component({
   selector: 'app-chat-icon',
@@ -16,7 +17,7 @@ export class ChatIconComponent implements OnInit {
   }
 
   openChatUiPopUp(){
-    this.dialog.open(UserChatComponent, {
+    this.dialog.open(ChatUserListComponent, {
       width: '80vw',
     });
   }

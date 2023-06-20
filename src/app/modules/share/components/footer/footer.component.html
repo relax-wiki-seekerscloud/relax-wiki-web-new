@@ -72,10 +72,10 @@
           <hr class="hr2">
         </div>
         <div class="footer-inner-news-letter-inputs">
-          <input type="text" name="email" class="email-input" placeholder="Enter Your Email">
+          <input type="text" name="email" class="email-input" placeholder="Enter Your Email" [(ngModel)]="email">
         </div>
         <div class="footer-inner-news-letter-inputs-button">
-          <input type="submit" value="Subscribe" name="subscribe" class="subscribe-button" id="subscribe-button">
+          <input type="button" value="Subscribe" name="subscribe" class="subscribe-button" id="subscribe-button" (click)="sendEmail()">
         </div>
       </form>
     </div>

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,19 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  constructor() {
+  email: any;
+  constructor(private http:HttpClient) {
   }
 
   ngOnInit(): void {
   }
 
+  sendEmail() {
+    console.log("Send email to: "+this.email);
+    this.http.post(`http://localhost:8080/api/sendEmail/${this.email}`,{})
+      .subscribe();
+
+    this.http.post(`http://localhost:8080/api/saveSubscriber/${this.email}`,{})
+      .subscribe();
+  }
 }

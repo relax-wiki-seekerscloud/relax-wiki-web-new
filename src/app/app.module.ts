@@ -25,11 +25,13 @@ import {
 } from "./modules/console/modules/hotel-management/modules/hotel-owner-profile/hotel-owner-profile.module";
 
 import {NgChartsModule} from "ng2-charts";
+import {ChatUserListComponent} from "./modules/console/components/chat/chat-user-list.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ChatUserListComponent
 
   ],
   imports: [
@@ -55,7 +57,7 @@ import {NgChartsModule} from "ng2-charts";
     provideStorage(() => getStorage()),
     RestaurantOwnerProfileModule,
     HotelOwnerProfileModule,
-    NgChartsModule
+    NgChartsModule,
 
   ],
 

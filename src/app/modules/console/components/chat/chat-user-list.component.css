@@ -1,0 +1,52 @@
+
+.maininterface{
+  width: 60vw;
+  height:80vh;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+.chatlist{
+  border: 1px solid black;
+  width: 30%
+}
+.my-profile-details{
+  border: 1px solid sandybrown;
+  height: 50px;
+}
+.my-chat-list{
+  height: 85%;
+  border: 1px solid blue;
+}
+.chat{
+  border: 1px solid green;
+  width:70%
+}
+.chat-user-name{
+  border: 1px solid purple;
+  height: 50px;
+
+}
+.chat-user-name h6{
+  margin: 5px;
+}
+.chat-body{
+  border: 1px solid yellow;
+  height: 75%;
+  overflow: scroll;
+}
+.chat-input{
+  width: 100%;
+}
+.chat-type-box{
+  width: 85%;
+  height: 35px;
+}
+.chat-send-button{
+  width: 13%;
+  height: 40px;
+}
+
+.align-right {
+  text-align: right;
+}
