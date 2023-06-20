@@ -1,51 +1,131 @@
-<div class="maininterface">
+<!--<div class="maininterface">-->
 
-<!--  .......................................Chat User List.....................................................-->
+<!--&lt;!&ndash;  .......................................Chat User List.....................................................&ndash;&gt;-->
 
-  <div class="chatlist">
+<!--  <div class="chatlist">-->
 
 <!--  my profile details-->
-    <div class="my-profile-details">
-      <h6>{{MyUserId}}</h6>
-    </div>
+<!--    <div class="my-profile-details">-->
+<!--      <h6>{{MyUserId}}</h6>-->
+<!--    </div>-->
 
-<!-- My chat list -->
-    <div class="my-chat-list">
-      <table border="1">
-        <tr *ngFor="let user of listData">
-          <td (click)="getChat(MyUserId,user.hotelID,user.hotelName)">Hotel : {{ user.hotelName }}</td>
-        </tr>
-      </table>
-    </div>
+<!--&lt;!&ndash; My chat list &ndash;&gt;-->
+<!--    <div class="my-chat-list">-->
+<!--      <table border="1">-->
+<!--        <tr *ngFor="let user of listData">-->
+<!--          <td (click)="getChat(MyUserId,user.hotelID,user.hotelName)">Hotel : {{ user.hotelName }}</td>-->
+<!--        </tr>-->
+<!--      </table>-->
+<!--    </div>-->
 
+<!--  </div>-->
+
+<!--&lt;!&ndash; &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;Chat Windpws-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; &ndash;&gt;-->
+
+<!--  <div class="chat">-->
+
+<!--&lt;!&ndash;    Chat User Name &ndash;&gt;-->
+<!--    <div class="chat-user-name">-->
+<!--      <h6>{{hotelName}}</h6>-->
+<!--    </div>-->
+
+<!--&lt;!&ndash;    Chat Body&ndash;&gt;-->
+<!--    <div class="chat-body" id="chatBody">-->
+<!--      <table border="1">-->
+<!--        <tr *ngFor="let chat of ChatData">-->
+<!--          <td [ngStyle]="{ 'color': chat.messageOwnerId === MyUserId ? 'Green' : 'Blue' }" [class.align-right]="chat.messageOwnerId === MyUserId">-->
+<!--            {{ chat.message }}-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--      </table>-->
+<!--    </div>-->
+
+<!--&lt;!&ndash;    Typing window with send button&ndash;&gt;-->
+<!--    <div class="chat-input">-->
+<!--      <input class="chat-type-box" type="text" id="messageId" name="messageName" [(ngModel)]="messageText" (keydown.enter)="sendMessage()">-->
+<!--      <input class="chat-send-button" type="button" name="Send" value="Send" (click)="sendMessage()">-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+<div class="chat-wrap-main col-lg-12">
+  <div class="chat-wrap-inner-top col-lg-12">
+    <div class="relax-wiki-logo">
+      <app-relaxwiki-logo></app-relaxwiki-logo>
+    </div>
+    <div class="close-button">
+      <button>
+        <mat-icon mat-dialog-close="true">close</mat-icon>
+      </button>
+    </div>
   </div>
-
-<!-- ------------------------------------------Chat Windpws--------------------------------------------------------- -->
-
-  <div class="chat">
-
-<!--    Chat User Name -->
-    <div class="chat-user-name">
-      <h6>{{hotelName}}</h6>
+  <div class="chat-wrap-inner-bottom col-lg-12">
+    <div class="chat-wrap-inner-bottom-left col-lg-4 col-md-4 col-sm-4">
+      <div class="row">
+<!--        <div class="guest-user-name col-lg-11">-->
+<!--          <h4>{{MyUserId}}</h4>-->
+<!--        </div>-->
+        <div class="admin-search-bar col-lg-11">
+            <div class="row">
+              <div class="search-input col-lg-12">
+                <form action="">
+                  <input type="text" class="search-input-box" placeholder="Search here..">
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="hr-line col-lg-12">
+          <hr>
+        </div>
+        <!-- admin chat list -->
+        <div class="admin-user-list col-lg-11">
+          <table class="admin-user-list-table">
+            <tr *ngFor="let user of listData">
+              <td (click)="getChat(MyUserId,user.hotelID,user.hotelName)"> {{ user.hotelName }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
+    <!-- ------------------------------------------Chat Window--------------------------------------------------------- -->
 
-<!--    Chat Body-->
-    <div class="chat-body" id="chatBody">
-      <table border="1">
-        <tr *ngFor="let chat of ChatData">
-          <td [ngStyle]="{ 'color': chat.messageOwnerId === MyUserId ? 'Green' : 'Blue' }" [class.align-right]="chat.messageOwnerId === MyUserId">
-            {{ chat.message }}
-          </td>
-        </tr>
-      </table>
+    <div class="chat-wrap-inner-bottom-right col-lg-8 col-md-8 col-sm-8">
+      <div class="row">
+        <div class="chat-admin-name">
+          <div class="row">
+            <div class="chat-admin-name-inner col-lg-8">
+              <h1>{{hotelName}}</h1>
+            </div>
+          </div>
+        </div>
+        <!--    Chat Body-->
+        <div class="chat-body col-lg-12" id="chatBody">
+          <table class="chat-body-table">
+            <tr *ngFor="let chat of ChatData">
+              <td [ngStyle]="{ 'color': chat.messageOwnerId === MyUserId ? 'green' : 'blue' }" [class.align-right]="chat.messageOwnerId === MyUserId" class="message-cell">
+                {{ chat.message }}
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="chat-input col-lg-12">
+          <input class="chat-type-box" type="text" id="messageId" name="messageName" [(ngModel)]="messageText" (keydown.enter)="sendMessage()">
+          <input class="chat-send-button" type="button" name="Send" value="Send" (click)="sendMessage()">
+        </div>
+      </div>
     </div>
-
-<!--    Typing window with send button-->
-    <div class="chat-input">
-      <input class="chat-type-box" type="text" id="messageId" name="messageName" [(ngModel)]="messageText" (keydown.enter)="sendMessage()">
-      <input class="chat-send-button" type="button" name="Send" value="Send" (click)="sendMessage()">
-    </div>
-
   </div>
-
 </div>
+

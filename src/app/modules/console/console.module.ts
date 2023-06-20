@@ -20,6 +20,7 @@ import {RestaurantManagementModule} from "./modules/restaurant-management/restau
 import {EntertainmentManagementModule} from "./modules/entertainment-management/entertainment-management.module";
 import {HotelManagementModule} from "./modules/hotel-management/hotel-management.module";
 import {DailyProcessModule} from "./modules/daily-process/daily-process.module";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 
@@ -42,17 +43,18 @@ import {DailyProcessModule} from "./modules/daily-process/daily-process.module";
     AdvertisementsComponent,
 
   ],
-  imports: [
-    CommonModule,
-    ConsoleRoutingModule,
-    ShareModule,
-    HotelManagementModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    DailyProcessModule,
-    EntertainmentManagementModule,
-    RestaurantManagementModule
-  ]
+    imports: [
+        CommonModule,
+        ConsoleRoutingModule,
+        ShareModule,
+        HotelManagementModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        DailyProcessModule,
+        EntertainmentManagementModule,
+        RestaurantManagementModule,
+        MatTooltipModule
+    ]
 })
 export class ConsoleModule { }

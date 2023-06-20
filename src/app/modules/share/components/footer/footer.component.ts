@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  email: any;
+  email = '';
   constructor(private http:HttpClient) {
   }
 
@@ -21,5 +21,7 @@ export class FooterComponent implements OnInit {
 
     this.http.post(`http://localhost:8080/api/saveSubscriber/${this.email}`,{})
       .subscribe();
+
+    this.email='';
   }
 }

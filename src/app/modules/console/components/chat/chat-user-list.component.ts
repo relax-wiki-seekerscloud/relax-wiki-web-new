@@ -4,6 +4,7 @@ import {ChatUser} from "./Entities/chat-user";
 import {Chat} from "./Entities/chat";
 import {Subscription} from "rxjs";
 
+
 @Component({
   selector: 'app-chat-user-list',
   templateUrl: './chat-user-list.component.html',
