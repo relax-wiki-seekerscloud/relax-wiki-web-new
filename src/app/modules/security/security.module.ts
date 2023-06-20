@@ -11,27 +11,37 @@ import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
+import { EmailVerifiedComponent } from './components/email-verified/email-verified.component';
+import { EmailNotVerifiedComponent } from './components/email-not-verified/email-not-verified.component';
+import {ShareModule} from "../share/share.module";
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { PleaseVerifyEmailComponent } from './components/please-verify-email/please-verify-email.component';
 
 @NgModule({
   declarations: [
     SecurityComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    EmailVerifiedComponent,
+    EmailNotVerifiedComponent,
+    VerifyEmailComponent,
+    PleaseVerifyEmailComponent
   ],
   exports: [
     LoginComponent,
     SignUpComponent
   ],
-    imports: [
-        CommonModule,
-        SecurityRoutingModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        FormsModule,
-        MatIconModule,
-        ReactiveFormsModule,
-        HttpClientModule
-    ]
+  imports: [
+    CommonModule,
+    SecurityRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ShareModule
+  ]
 })
 export class SecurityModule { }

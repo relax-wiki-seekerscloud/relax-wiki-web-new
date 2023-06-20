@@ -69,7 +69,7 @@ import {MatButtonModule} from "@angular/material/button";
     FormSelectionBoxComponent,
     DropzoneDirective,
     UploadTaskComponent,
-    SelectPropertyBoxComponent
+    SelectPropertyBoxComponent,
   ],
   exports: [
     FooterComponent,

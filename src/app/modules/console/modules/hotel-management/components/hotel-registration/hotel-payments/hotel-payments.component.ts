@@ -1,8 +1,7 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HotelListingService} from "../../../../../../share/services/hotel/hotel-listing.service";
-import {RequestHotelListDTO} from "../../../../../../share/dto/classes/hotel/RequestHotelListDTO";
 
 @Component({
   selector: 'app-hotel-payments',
@@ -10,7 +9,7 @@ import {RequestHotelListDTO} from "../../../../../../share/dto/classes/hotel/Req
   styleUrls: ['./hotel-payments.component.scss']
 })
 export class HotelPaymentsComponent implements OnInit {
-
+  @Input() userFirstName:string;
   hotelPaymentForm: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router, @Inject(HotelListingService) private hotelListingService: HotelListingService) {

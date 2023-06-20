@@ -9,18 +9,18 @@ import {AdvertisementsVideoComponent} from "./components/advertisements/componen
 import {ListPropertyComponent} from "./components/list-property/list-property.component";
 
 const routes: Routes = [
-  { path: '/', component: ConsoleComponent },
-  { path: '/taxi-rental-management', loadChildren: () => import('./modules/taxi-rental-management/taxi-rental-management.module').then(m => m.TaxiRentalManagementModule) },
-  { path: '/advertisement-default', component:AdvertisementDefaultComponent},
-  { path: '/advertisement-payment-successful', component:AdvertisementPaymentSuccessfulComponent},
-  { path: '/advertisement-payment-faild' , component:AdvertisementPaymentFaildComponent},
-  { path: '/advertisement-image' , component:AdvertisementImageComponent},
-  { path: '/advertisement-video' , component:AdvertisementsVideoComponent},
-  { path: '/list-property',component:ListPropertyComponent },
-  { path: '/daily-process', loadChildren: () => import('./modules/daily-process/daily-process.module').then(m => m.DailyProcessModule),  },
-  { path: '/restaurant-management', loadChildren: () => import('./modules/restaurant-management/restaurant-management.module').then(m => m.RestaurantManagementModule) },
+  { path: '', component: ConsoleComponent },
+  { path: 'taxi-rental-management', loadChildren: () => import('./modules/taxi-rental-management/taxi-rental-management.module').then(m => m.TaxiRentalManagementModule) },
+  { path: 'advertisement-default', component:AdvertisementDefaultComponent},
+  { path: 'advertisement-payment-successful', component:AdvertisementPaymentSuccessfulComponent},
+  { path: 'advertisement-payment-faild' , component:AdvertisementPaymentFaildComponent},
+  { path: 'advertisement-image' , component:AdvertisementImageComponent},
+  { path: 'advertisement-video' , component:AdvertisementsVideoComponent},
+  { path: 'list-property',component:ListPropertyComponent },
+  { path: 'daily-process', loadChildren: () => import('./modules/daily-process/daily-process.module').then(m => m.DailyProcessModule),  },
+  { path: 'restaurant-management', loadChildren: () => import('./modules/restaurant-management/restaurant-management.module').then(m => m.RestaurantManagementModule) },
   { path: 'hotel-management', loadChildren: () => import('./modules/hotel-management/hotel-management.module').then(m => m.HotelManagementModule) },
-  { path: './entertainment-management', loadChildren: () => import('./modules/entertainment-management/entertainment-management.module').then(m => m.EntertainmentManagementModule) },
+  { path: 'entertainment-management', loadChildren: () => import('./modules/entertainment-management/entertainment-management.module').then(m => m.EntertainmentManagementModule) },
 
 ];
 @NgModule({

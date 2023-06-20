@@ -21,7 +21,10 @@ export class EntertainmentPhotosComponent implements OnInit {
     this.entertainmentPhotos.push(url);
     console.log(this.entertainmentPhotos);
   }
-
+  removePhoto(data:any) {
+    this.entertainmentPhotos = this.entertainmentPhotos.filter(item => item !== data.url);
+    this.files = this.files.filter(item => item !== data.file);
+  }
   toggleHover(event: boolean) {
     this.isHovering = event;
   }

@@ -23,7 +23,7 @@
 
   <div class="photo-container-inner edit-area"  *ngIf="files.length > 0">
     <div class="photo-item" *ngFor="let file of files">
-      <upload-task [file]="file" (readyUrl)="addPhoto($event)"></upload-task>
+      <upload-task [file]="file" (readyUrl)="addPhoto($event)" (deleteUrl)="removePhoto($event)"></upload-task>
     </div>
   </div>
 </div>

@@ -12,6 +12,7 @@ import { finalize, tap } from 'rxjs/operators';
 export class UploadTaskComponent {
   @Input() file: File | undefined;
   @Output() readyUrl = new EventEmitter<string>();
+  @Output() deleteUrl  = new EventEmitter<any>();
   task: AngularFireUploadTask | undefined;
 
   percentage: Observable<number> | undefined;
@@ -26,6 +27,7 @@ export class UploadTaskComponent {
   emitUrl(){
     this.readyUrl.emit(this.downloadURL);
   }
+
   startUpload() {
 
     // The storage path
@@ -59,12 +61,14 @@ export class UploadTaskComponent {
       const storageRef = this.storage.refFromURL(downloadURL);
       storageRef.delete().subscribe(
         () => {
+          this.deleteUrl.emit({file:this.file,url:this.downloadURL});
           this.downloadURL = null; // Remove the deleted photo from `downloadURL`
         },
         (error) => {
           console.error('Error deleting file:', error);
         }
       );
+
     }
   }
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-hotel-listing-successful',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hotel-listing-successful.component.scss']
 })
 export class HotelListingSuccessfulComponent implements OnInit {
-
-  constructor() { }
+  @Input() userName:string;
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-
+  newListing(){
+    this.router.navigate(['/console/hotel-management/hotel-registration/hotel-basic-info']).then();
+  }
 }

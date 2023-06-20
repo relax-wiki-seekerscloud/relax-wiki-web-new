@@ -19,7 +19,6 @@
           <mat-form-field>
 
             <input matInput
-                   [(ngModel)]="password"
                    formControlName="userPassword"
                    [type]="hide ? 'password' : 'text'"
                    name="password"/>
@@ -38,6 +37,8 @@
         <div class="loginButtonContainer">
           <button mat-flat-button color="primary" (click)="loginUser()">Login</button>
         </div>
+        <div class="error" *ngIf="error">{{error}}</div>
+        <h3>Don't have an account? <a href="/security/sign-up">Sign Up</a></h3>
       </form>
     </section>
 

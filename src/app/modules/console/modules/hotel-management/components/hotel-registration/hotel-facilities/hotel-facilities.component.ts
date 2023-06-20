@@ -20,7 +20,8 @@ export class HotelFacilitiesComponent implements OnInit {
       facilitiesArray: this.fb.array([],[Validators.required]),
       servicesArray: this.fb.array([],[Validators.required]),
       languageControl: new FormControl([]),
-    })
+    });
+
   }
 
   Facility: Array<any> = [

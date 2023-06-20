@@ -1,7 +1,9 @@
 body, html {
   margin: 0;
   padding: 0;
-}.title-area{
+
+}
+.title-area{
   //background-color: red;
   width: 100%;
   height: 5rem;
@@ -13,16 +15,19 @@ body, html {
     font-size:30px;
   }
 }
+
 .content-area{
-  background-color: #2F1B68;
-  height: 77vh; //check this
-  //background-image: url("assets/Images/list-property.png");
+  //background-color: #2F1B68;
+  background-image: url("../../../../../assets/Images/list-property.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 80vh;
   padding: 4.5rem 0;
 
 }
 
 .property-area{
-  //background-color: wheat;
+  justify-content: center;
   height: 23rem;
   padding: 3rem;
   display: flex;

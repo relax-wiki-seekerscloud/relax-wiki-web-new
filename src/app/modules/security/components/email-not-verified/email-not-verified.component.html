@@ -1,0 +1,12 @@
+<app-nav-bar-two></app-nav-bar-two>
+<router-outlet></router-outlet>
+<div class="content-area">
+  <div class="image">
+    <img src="../../../../../assets/Images/fail.png">
+  </div>
+  <div class="message-area">
+    <h3>Sorry! Your email is not verified. Please verify your email.</h3>
+    <h4>Did not receive the verification link? <button mat-flat-button color="primary" (click)="resend()">Resend link</button></h4>
+    <h4 *ngIf="sent">{{sent}}</h4>
+  </div>
+</div>

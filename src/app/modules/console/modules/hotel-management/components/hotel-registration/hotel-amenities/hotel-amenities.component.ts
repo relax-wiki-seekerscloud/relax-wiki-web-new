@@ -23,7 +23,8 @@ export class HotelAmenitiesComponent implements OnInit {
       bathroomArray: new FormControl([]),
       outdoorAndViewArray: new FormControl([]),
       accessibilityArray: new FormControl([]),
-    })
+    });
+
   }
 
   Amenity: Array<any> = [

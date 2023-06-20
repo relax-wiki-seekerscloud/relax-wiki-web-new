@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-entertainment-listing-successful',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entertainment-listing-successful.component.scss']
 })
 export class EntertainmentListingSuccessfulComponent implements OnInit {
-
+  @Input() userName:string;
   constructor() { }
 
   ngOnInit(): void {

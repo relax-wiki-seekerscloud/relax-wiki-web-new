@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {RequestHotelListDTO} from "../../dto/classes/hotel/RequestHotelListDTO";
+import {Component, Input, OnInit} from '@angular/core';
+import {RequestHotelListDTO, Room} from "../../dto/classes/hotel/RequestHotelListDTO";
+import {HotelListingService} from "../../services/hotel/hotel-listing.service";
 
 @Component({
   selector: 'app-hotel-room-container-box',
@@ -7,12 +8,25 @@ import {RequestHotelListDTO} from "../../dto/classes/hotel/RequestHotelListDTO";
   styleUrls: ['./hotel-room-container-box.component.scss']
 })
 export class HotelRoomContainerBoxComponent implements OnInit {
-
-  constructor() { }
+   rooms: Room[];
+  constructor(private hotelListingService: HotelListingService) {
+    this.rooms = this.hotelListingService.hotelListDTO?.rooms || [];
+  }
 
   ngOnInit(): void {
   }
   printHello(){
-    console.log(RequestHotelListDTO)
+    console.log("hi")
+    console.log(this.rooms);
   }
+  deleteRoom(index:number){
+    this.hotelListingService.hotelListDTO?.rooms.splice(index,1);
+    this.rooms = this.hotelListingService.hotelListDTO?.rooms || [];
+  }
+  getRoomName(index:number){
+    const text = this.rooms[index].roomName;
+    const result = text.replace(/([A-Z])/g, " $1");
+    return result.charAt(0).toUpperCase() + result.slice(1);
+  }
+
 }

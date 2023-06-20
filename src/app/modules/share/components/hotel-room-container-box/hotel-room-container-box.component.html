@@ -1,4 +1,15 @@
-<div class="room-one container" (click)="printHello()">
-  <img src="../../../../../assets/Images/hotel-room-count.png" >
-<!--  <h1>Twin Room</h1>-->
+<div class="room-container">
+<div class="room-one container"  *ngIf="rooms.length==0">
+  <img  src="../../../../../assets/Images/hotel-room-count.png" >
+
+  <!--  <h1>Twin Room</h1>-->
 </div>
+<div *ngFor="let room of rooms;index as i" >
+  <div class="room-one container">
+    <img *ngIf="rooms.length>0" src="../../../../../assets/Images/bedroom-count.png" >
+    <h3>{{getRoomName(i)}}</h3>
+    <button (click)="deleteRoom(i)" class="button" color="warn" mat-flat-button>Remove</button>
+  </div>
+</div>
+</div>
+

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {RequestHotelListDTO} from "../../../../../../share/dto/classes/hotel/RequestHotelListDTO";
 import {HotelListingService} from "../../../../../../share/services/hotel/hotel-listing.service";
@@ -14,6 +14,7 @@ import {Router} from "@angular/router";
 
 export class HotelBasicInfoComponent implements OnInit {
 
+  @Input() userName:string;
   hotelListingForm = new FormGroup({
     hotelName: new FormControl('', [Validators.required, Validators.minLength(3)]),
     starRating: new FormControl(''),
@@ -26,6 +27,7 @@ export class HotelBasicInfoComponent implements OnInit {
   });
 
   constructor(private router:Router, private hotelListingService: HotelListingService) {
+    console.log(hotelListingService.hotelListDTO)
 
   }
 

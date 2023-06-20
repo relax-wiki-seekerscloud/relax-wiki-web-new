@@ -8,12 +8,23 @@
   min-height: 100vh;
   flex: 5;
 }
+.error{
+  color:red;
+  text-align: center;
+  margin-top:1rem;
+  padding:1rem;
+}
 .imageArea{
   background-image: url("../../../../../assets/images/login-page.png");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
   flex:4;
+}
+
+h3{
+  text-align: center;
+  margin-top: 1rem;
 }
 .header{
   height: 7rem;

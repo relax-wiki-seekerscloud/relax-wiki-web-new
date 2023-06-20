@@ -1,13 +1,22 @@
+.room-container{
+  display:flex;
+  gap:1rem;
+}
 .container{
-  height: 8rem;
-  width: 8rem;
+  min-height:8rem;
+  min-width: 8rem;
   border-radius: 0.5rem;
-  display: flex;
+  display: grid;
   justify-content: center;
+  justify-items: center;
+  padding:1rem;
   box-shadow: 1px 3px 3px #bfbfbf;
   background-color: white;
   img{
     padding: 1.25rem ;
+    height: 7rem;
+    width: 7rem;
+    object-fit: contain;
   }
   //hover
 }

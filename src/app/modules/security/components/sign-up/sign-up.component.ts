@@ -11,6 +11,7 @@ import {
 import {Router} from "@angular/router";
 import {UserRegistrationService} from "../../../share/services/user/user-registration-service.service";
 import {UserRegistrationDto} from "../../../share/dto/classes/user/UserRegistrationDTO";
+import {user} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-sign-up',
@@ -90,7 +91,7 @@ export class SignUpComponent implements OnInit {
       .subscribe(
         (res : any) => {
           console.log(res);
-          this.router.navigate(['/log-in']).then();
+          this.router.navigate(['/security/please-verify-email/'+userRegistrationDto.email]).then();
         },
         (error :any) => {
           this.msg = error.error.message;

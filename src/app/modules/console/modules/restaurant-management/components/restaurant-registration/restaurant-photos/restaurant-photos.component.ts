@@ -20,7 +20,10 @@ export class RestaurantPhotosComponent implements OnInit {
     this.restaurantPhotos.push(url);
     console.log(this.restaurantPhotos);
   }
-
+  removePhoto(data:any) {
+    this.restaurantPhotos = this.restaurantPhotos.filter(item => item !== data.url);
+    this.files = this.files.filter(item => item !== data.file);
+  }
   toggleHover(event: boolean) {
     this.isHovering = event;
   }

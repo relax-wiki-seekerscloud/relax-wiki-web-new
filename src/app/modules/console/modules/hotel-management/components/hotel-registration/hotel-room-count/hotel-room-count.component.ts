@@ -14,9 +14,7 @@ export class HotelRoomCountComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  print(){
-    console.log(this.hotelListingService);
-  }
+
   addRooms(){
     this.router.navigate(['/console/hotel-management/hotel-registration/hotel-room-description']).then();
   }
@@ -27,6 +25,6 @@ export class HotelRoomCountComponent implements OnInit {
     return this.hotelListingService.hotelListDTO?.rooms.length || 0;
   }
   get rooms(){
-    return this.hotelListingService.hotelListDTO?.rooms;
+    return this.hotelListingService.hotelListDTO?.rooms || [];
   }
 }

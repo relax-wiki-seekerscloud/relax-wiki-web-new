@@ -22,6 +22,10 @@ constructor(private hotelListingService: HotelListingService,private router:Rout
     this.hotelPhotos.push(url);
     console.log(this.hotelPhotos);
   }
+  removePhoto(data:any) {
+    this.hotelPhotos = this.hotelPhotos.filter(item => item !== data.url);
+    this.files = this.files.filter(item => item !== data.file);
+  }
   toggleHover(event: boolean) {
     this.isHovering = event;
   }

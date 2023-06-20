@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {RestaurantListingService} from "../../../../../../share/services/restaurant/restaurant-listing.service";
@@ -10,6 +10,8 @@ import {RequestRestaurantListDTO} from "../../../../../../share/dto/classes/rest
   styleUrls: ['./restaurant-basic-info.component.scss']
 })
 export class RestaurantBasicInfoComponent implements OnInit {
+
+  @Input() userName:string;
 
   restaurantListingForm = new FormGroup({
     restaurantName: new FormControl('', [Validators.required, Validators.minLength(3)]),

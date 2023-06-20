@@ -1,0 +1,12 @@
+<app-nav-bar-two></app-nav-bar-two>
+<router-outlet></router-outlet>
+<div class="content-area">
+  <div class="image">
+    <img src="../../../../../assets/Images/email-waiting.png">
+  </div>
+  <div class="message-area">
+    <h3>We are verifying your email</h3>
+    <h2 *ngIf="error">Oops. There was an error :(</h2>
+    <button *ngIf="error" mat-flat-button color="primary" (click)="go">Please try resending the email</button>
+  </div>
+</div>
