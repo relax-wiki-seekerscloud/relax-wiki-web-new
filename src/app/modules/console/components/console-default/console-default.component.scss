@@ -575,6 +575,7 @@
   height: 60px;
   margin-top: 5px;
   font-size: 12px;
+  overflow: hidden;
 }
 .option-content-view-more{
   //border: 1px solid red;
@@ -610,9 +611,9 @@
     max-width: 230px;
     margin-left: 10px;
   }
-  .option-content-description{
+  .option-content-description {
     max-width: 230px;
-    height: 57px;
+    height: 50px;
     overflow: hidden;
   }
   .option-content-place-name{

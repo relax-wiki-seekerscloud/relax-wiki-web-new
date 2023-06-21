@@ -6,10 +6,12 @@ import {TaxiListComponent} from "./components/taxi-list/taxi-list.component";
 import {TaxiListByCategoryComponent} from "./components/taxi-list-by-category/taxi-list-by-category.component";
 
 const routes: Routes = [
-  { path: '', component: TaxiRentalManagementComponent },
-  { path:'taxi-rental-default', component: TaxiRentalDefaultComponent},
-  { path:'taxi-list', component:TaxiListComponent},
-  { path:'taxi-list-by-category', component: TaxiListByCategoryComponent}
+  { path: '', component: TaxiRentalManagementComponent, children:[
+      {path:'', redirectTo:'taxi-rental-default',pathMatch:"full"},
+      { path:'taxi-rental-default', component: TaxiRentalDefaultComponent},
+      { path:'taxi-list', component:TaxiListComponent},
+      { path:'taxi-list-by-category', component: TaxiListByCategoryComponent}
+    ]},
 ];
 
 @NgModule({
