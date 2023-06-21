@@ -714,3 +714,58 @@
   //border: 1px solid red;
   height: 360px;
 }
+
+
+
+//------------offer------------
+
+
+.offers{
+  width: 550px;
+  height: 220px;
+  border: 1px solid rgba(235, 237, 239, 1);
+  background-image: url("../../../../../../src/assets/Images/pexels-ahmed-abdelaziz-453201.jpg");
+  background-size: cover;
+  color: white;
+  backdrop-filter: brightness(20%);
+}
+.offers-title{
+  margin-left: 5%;
+  margin-top: 20px;
+  //border: 1px solid red;
+  max-width: 450px;
+  height: 25px;
+}
+.offers-title h5{
+  font-weight: bold;
+  font-size: 16px;
+}
+.offers-description{
+  //border: 1px solid red;
+  width: 90%;
+  height: 100px;
+  margin-left: 5%;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: lighter;
+}
+.offers-discover-button{
+  width: 150px;
+  height: 35px;
+  //border: 1px solid red;
+  margin-left: 5%;
+  margin-top: 12px;
+}
+.offers-discover-button-class:hover{
+  font-weight: normal;
+}
+.offers-discover-button-class{
+  width: 148px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(12, 140, 233, 1);
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
