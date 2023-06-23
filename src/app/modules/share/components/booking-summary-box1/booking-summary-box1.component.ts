@@ -16,6 +16,7 @@ export class BookingSummaryBox1Component implements OnInit {
   @LocalStorage(SETTINGS.STORAGE.SELECTED_HOTEL_ROOM_TYPE_DATA_FOR_BOOKING)
   selectedHotelRoomTypeDataForBooking: any;
 
+
   hotelCondition: any = SETTINGS.HotelCondition;
 
   constructor() {

@@ -34,12 +34,7 @@
     </ng-container>
     <section class="address" style="margin-left: 10px">{{restaurantDto.address}}</section>
 
-    <section class="menu_box">
-      <a (click)="onMenuClick($event)">View menu</a>
-    </section>
-    <section class="menu_box">
-      <a (click)="viewReviews($event)">Go to Review</a>
-    </section>
+
   </section>
 
 </section>
@@ -80,7 +75,7 @@
   <table>
     <thead>
     <tr>
-      <th class="numof_people" colspan="5">Restaurant Details</th>
+      <th class="numof_people" colspan="5">Restaurant Menu</th>
     </tr>
     <tr>
       <th>Food Category</th>
@@ -106,4 +101,5 @@
     </ng-container>
   </table>
 </section>
+<section class="footer_two"><app-footer></app-footer></section>
 

@@ -1,9 +1,10 @@
 .hotel_detail_box{
   margin: 0 auto;
   padding: 10px;
-  border: 1px solid black;
-  width:800px;
+  border: 1px solid grey;
+  width:700px;
   height:250px;
+  border-radius: 10px;
 }
 
 .hotel_detail_inner{
@@ -55,3 +56,4 @@ a{
   color: grey;
   text-decoration: none;
 }
+

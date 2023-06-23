@@ -1,13 +1,11 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="container">
+  <br/>
   <div class="row hotel_secfive">
 
-    <ng-container
-      *ngIf="selectedEntertainment && selectedEntertainment.entertainmentImageDTOList && selectedEntertainment.entertainmentImageDTOList.length > 0">
-      <section class="image"><img src=" {{selectedEntertainment.entertainmentImageDTOList[0].imageURL}}"
-                                  alt="restaurant image">
-      </section>
+    <ng-container *ngIf="selectedEntertainment && selectedEntertainment.entertainmentImageDTOList && selectedEntertainment.entertainmentImageDTOList.length > 0">
+      <section class="image"><img src="{{selectedEntertainment.entertainmentImageDTOList[0].imageURL}}" alt="entertainment image"></section>
     </ng-container>
     <section class="hotel_details"> <!--box to display entertainment details (1st act)-->
       <h2>{{selectedEntertainment.title}}</h2>
@@ -47,8 +45,11 @@
       <p style="width: 500px">{{selectedEntertainment.mainDescription}}.</p>
     </section>
 
+
     <section class="price_details">
+      <p>Total Price Payable</p>
       <p style="font-weight:bold; font-size: 14px;">${{selectedEntertainment.price}}</p>
+      <p>Tax and Other Charges Included</p>
     </section>
 
   </div>
@@ -59,40 +60,37 @@
     <form style="padding: 50px">
       <div class="form-group">
         <label>First Name:</label>
-        <input type="text" [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}" class="form-control"
-               id="firstName">
+        <input type="text" [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}" class="form-control" id="firstName">
       </div>
 
       <div class="form-group">
         <label>Last Name:</label>
-        <input type="text" [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}" class="form-control"
-               id="lastName">
+        <input type="text" [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}" class="form-control" id="lastName">
       </div>
 
       <div class="form-group">
         <label>Email:</label>
-        <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email">
+        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
       </div>
 
       <div class="form-group">
         <label>Special Requests:</label>
-        <input type="text" [(ngModel)]="specialRequests" [ngModelOptions]="{standalone: true}" class="form-control"
-               id="specialRequests">
+        <input type="text" [(ngModel)]="specialRequests" [ngModelOptions]="{standalone: true}" class="form-control" id="specialRequests">
       </div>
 
       <div class="form-group">
         <label>Booking Date:</label>
-        <input type="date" [(ngModel)]="bookingDate" [ngModelOptions]="{standalone: true}" class="form-control"
-               id="bookingDate">
+        <input type="date" [(ngModel)]="bookingDate" [ngModelOptions]="{standalone: true}" class="form-control" id="bookingDate">
       </div>
 
       <div class="form-group">
         <label>Arrival Time:</label>
-        <input type="time" [(ngModel)]="arrivalTime" [ngModelOptions]="{standalone: true}" class="form-control"
-               id="arrivalTime">
-      </div>
-
-      <button type="submit" class="btn btn-primary" (click)="addBookingPersonalDetails()">Submit</button>
+        <input type="time" [(ngModel)]="arrivalTime" [ngModelOptions]="{standalone: true}" class="form-control" id="arrivalTime">
+      </div><br/>
+      <section class="bt">
+        <button type="submit" class="btn btn-primary" [disabled]="!isBookingDetailsValid()" (click)="addBookingPersonalDetails()">Save Booking Details</button> &nbsp; &nbsp; &nbsp;
+        <button type="submit" class="btn btn-primary" [disabled]="!isBookingDetailsSaved()" (click)="makePayment(selectedEntertainment.price)">Go to Payment</button>
+      </section>
 
     </form>
   </div>

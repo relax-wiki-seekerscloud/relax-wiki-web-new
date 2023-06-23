@@ -1,13 +1,13 @@
+
+
 .footer-main{
   width: 100%;
   height: 360px;
   position: absolute;
   background-color: rgba(26, 34, 56, 1);
-  //border: 1px solid red;
   color: white;
 }
 .footer-inner-main{
-  // border: 1px solid red;
   height: 200px;
   margin-top: 40px;
   margin-left: 150px;
@@ -19,23 +19,20 @@
 .footer-inner-main-first,.footer-inner-main-second,.footer-inner-main-third,.footer-inner-main-forth{
   width: 25%;
   height: 100%;
-  //border: 1px solid red;
+
 }
 
 .relaxwiki-logo{
   font-size: 32px;
   font-weight: bold;
-  //border: 1px solid red;
 }
 
 .contact-details-main{
-  //border: 1px solid red;
   width: 100%;
   height: auto;
   margin-top: 0px;
 }
 .footer-inner-main-second{
-  //border: 1px solid red;
   margin-left: 60px;
   width: 30px;
 }
@@ -49,7 +46,6 @@
   font-size:14px;
 }
 .footer-inner-main-third-icon{
-  //border: 1px solid red;
   height: 25px;
   width: 25px;
   margin-top: 7px;
@@ -60,7 +56,6 @@
 }
 
 .footer-inner-main-third-contact,.contact-one, .contact-two{
-  //border: 1px solid red;
 }
 
 .contact-one, .contact-two{
@@ -78,12 +73,10 @@ hr{
   font-size: 12px;
 }
 .footer-inner-main-forth-icon{
-  //border: 1px solid red;
   height: 25px;
   width: 25px;
 }
 .contact-mail{
-  //border: 1px solid red;
   height: 20px;
   margin-top: 2.5px;
   margin-left: 10px;
@@ -94,17 +87,14 @@ hr{
   height: 100%;
 }
 .footer-inner-quick-links,.footer-inner-about{
-  //border: 1px solid red;
   width: 17%;
   height: 100%;
 }
 .footer-inner-news-letter{
-  //border: 1px solid red;
   width: 20%;
   height: 100%;
 }
 .footer-inner-quick-links-header{
-  //border: 1px solid red;
   height: 20px;
   margin-top: 10px;
 }
@@ -113,7 +103,6 @@ hr{
   font-weight: bold;
 }
 .footer-inner-quick-links-hr{
-  //border: 1px solid red;
   width: 40px;
   height: 20px;
 }
@@ -124,7 +113,6 @@ hr{
 }
 .footer-inner-quick-links-list{
   margin-top: 5px;
-  //border: 1px solid red;
   height: 100px;
 }
 .footer-inner-quick-links-list p{
@@ -159,7 +147,6 @@ hr{
 }
 
 .footer-inner-sub{
-  //border: 1px solid red;
   height: 50px;
   margin-left: 60px;
   margin-right: 60px;
@@ -167,7 +154,6 @@ hr{
 
 }
 .footer-inner-sub-inner-1{
-  //border: 1px solid red;
   height: 60%;
   width: 100%;
   display: flex;
@@ -175,7 +161,6 @@ hr{
 }
 
 .footer-inner-sub-inner-2{
-  //border: 1px solid red;
   height: 40%;
   width: 100%;
   display: flex;
@@ -185,7 +170,6 @@ hr{
   margin-top: 5px;
   height: 10px;
   width: 10px;
-  //border: 1px solid red;
   display: flex;
 }
 .footer-inner-sub-inner-2 p{
@@ -193,14 +177,12 @@ hr{
   font-size: 10px;
 }
 .footer-inner-sub-inner-1-sub{
-  //border: 1px solid red;
   height: 100%;
   width: 150px;
   display: flex;
   justify-content: space-between;
 }
 .social-media-icon{
-  //border: 1px solid red;
   width: 23px;
   height: 23px;
   display: flex;
@@ -235,14 +217,12 @@ hr{
   }
 
   .footer-inner-news-letter{
-    //border: 1px solid red;
     margin-left: 20px;
     width: 200px;
   }
   .relaxwiki-logo{
     font-size: 25px;
     font-weight: bold;
-    //border: 1px solid red;
   }
 
 }
@@ -256,7 +236,6 @@ hr{
   }
 
   .footer-inner-sub{
-    //border: 1px solid red;
     margin-top: 300px;
   }
   .contact-details-main{

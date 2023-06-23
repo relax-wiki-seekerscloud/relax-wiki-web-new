@@ -11,6 +11,7 @@ export const environment = {
     apiKey: 'AIzaSyDW1LPAFcMEUdjC-EM99s88zHzIwLGb4A0',
     authDomain: 'relaxwiki-847ae.firebaseapp.com',
     messagingSenderId: '103893174324',
+
   },
   production: false
 };

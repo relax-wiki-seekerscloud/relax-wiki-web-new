@@ -2,13 +2,12 @@
 <router-outlet></router-outlet>
 <section class="hotel_secone">{{restaurantDataSource.length}} restaurants found</section>
 <section class="hotel_sectwo">
-  <app-filter-by-budget></app-filter-by-budget>
   <app-filter-by-rating></app-filter-by-rating>
 
-  <button style="margin-top: 300px; margin-left: 700px" type="submit" class="btn btn-primary"
+  <section class="button" style="margin-left: -20px; margin-top: -10px;"><button style="margin-top: 300px; margin-left: 400px" type="submit" class="btn btn-primary"
           (click)="onSearchRestaurants()">
     Search
-  </button>
+  </button></section>
 
   <div>
     <div class="row" *ngFor="let restaurant of restaurantDataSource; index as i">

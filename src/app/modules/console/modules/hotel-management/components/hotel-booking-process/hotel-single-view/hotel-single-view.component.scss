@@ -1,4 +1,4 @@
-.parent {
+.container{
   overflow-x: hidden;
 }
 
@@ -28,10 +28,10 @@
   position: absolute;
   align-items: center;
   margin-top: 130px;
-  left: 50px;
+  left:50px;
   width: calc(100vw - 70px);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 290px));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 290px));
   column-gap: 10px;
   row-gap: 10px;
 }
@@ -134,3 +134,14 @@ button {
   font-size: 14px;
 
 }
+
+.footer_two {
+  position: relative;
+  top: 1200px;
+}
+
+
+
+
+
+

@@ -7,10 +7,12 @@
   <app-filter-by-rating></app-filter-by-rating>
   <app-filter-by-entertainment-activity></app-filter-by-entertainment-activity>
 
-  <button style="margin-top: 300px; margin-left: 1000px" type="submit" class="btn btn-primary"
+  <section class="first_button">
+  <button style="margin-top: 300px; margin-left: 1000px" type="submit" class="btn btn-primary first"
           (click)="onSearchEntertainments()">
     Search
   </button>
+  </section>
 
   <div>
     <div class="row" *ngFor="let entertainment of entertainmentDataSource; index as i">

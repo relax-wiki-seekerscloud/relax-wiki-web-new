@@ -3,11 +3,11 @@
     <div class="col-md-6">
       <ng-container
         *ngIf="selectedHotelDataForBooking && selectedHotelDataForBooking.hotelImageList && selectedHotelDataForBooking.hotelImageList.length > 0">
-        <section class="image"><img src=" {{selectedHotelDataForBooking.hotelImageList[0].imageURL}}" alt="hotel image">
+        <section class="image" ><img src=" {{selectedHotelDataForBooking.hotelImageList[0].imageURL}}" alt="hotel image" style="top:5px; left:70px;">
         </section>
       </ng-container>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" style="left:0px; top:15px;">
       <!--  <section class="hotel_detail_inner">-->
       <h2>{{selectedHotelDataForBooking.hotelName}}</h2>
 
