@@ -107,9 +107,8 @@ import {MatDialog, MatDialogModule} from "@angular/material/dialog";
         StatusBarSteps4Component,
         BookingSummaryPersonalDetailsFormComponent,
         ChatIconComponent,
-        UserChatComponent
-        UploadTaskComponent,
-        BookingSummaryPersonnalDetailsFormComponent
+        UserChatComponent,
+        UploadTaskComponent
 
     ],
 

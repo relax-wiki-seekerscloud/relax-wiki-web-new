@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {LocalStorage} from "ngx-webstorage";
+import {LocalStorage} from 'ngx-webstorage';
 import {SETTINGS} from "../../../../../share/settings/commons.settings";
 import {EntertainmentBookingService} from "../../service/entertainment-booking.service";
 import {Subscription} from "rxjs";
