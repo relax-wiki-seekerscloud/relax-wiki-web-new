@@ -1,4 +1,4 @@
-.parent{
+.parent {
   overflow-x: hidden;
 }
 
@@ -14,7 +14,6 @@
   left: 0px;
   display: flex;
   flex-direction: row;
-  top: 40px;
 }
 
 .address {
@@ -32,7 +31,7 @@
   left: 50px;
   width: calc(100vw - 70px);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px,290px));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 290px));
   column-gap: 10px;
   row-gap: 10px;
 }
@@ -44,68 +43,74 @@ img {
   object-position: center;
 }
 
-.footer_two{
-  position:relative;
-  top:1400px;
+.footer_two {
+  position: relative;
+  top: 1400px;
 }
 
 .facility_type {
   display: inline-block;
+  margin-bottom: 5px;
   padding: 10px;
   border: 1px solid dimgrey;
-  width:250px;
+  width: 250px;
+  margin-left: 10px;
 }
 
-.facilities{
-  position:absolute;
-  top:900px;
-  left:100px;
+.facilities {
+  position: absolute;
+  margin-top: 500px;
+  left: 100px;
 }
 
-.facility_label{
-  position:absolute;
-  top:15px;
+.facility_label {
+  position: absolute;
+  top: 15px;
 }
 
-.facilities_linetwo{
-  position:absolute;
-  left:0px;
-  top:100px;
+.facilities_linetwo {
+  position: absolute;
+  left: 0px;
+  top: 100px;
 }
 
-.room_table{
-  position:absolute;
-  top:1150px;
-  left:180px;
+.room_table {
+  position: absolute;
+  margin-top: 700px;
+  left: 180px;
 }
 
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+
 td {
   padding: 10px;
-  width:200px;
+  width: 200px;
 }
+
 tr.big-row {
   height: 100px;
 }
 
-.numof_people{
-  padding:10px;
+.numof_people {
+  padding: 10px;
   font-size: 20px;
   font-weight: bolder;
 
 }
-th{
-  padding:10px;
+
+th {
+  padding: 10px;
 }
 
 ul {
   margin-top: 10px;
-  margin-left:-30px;
+  margin-left: -30px;
   list-style-type: none;
 }
+
 li:before {
   content: "\2713";
   color: black;
@@ -113,19 +118,19 @@ li:before {
   margin-right: 5px;
 }
 
-.price{
+.price {
   font-size: 20px;
   font-weight: bold;
 }
 
-.check{
+.check {
   left: 20px;
 }
 
-button{
+button {
 
-  width:200px;
-  height:40px;
+  width: 200px;
+  height: 40px;
   font-size: 14px;
 
 }

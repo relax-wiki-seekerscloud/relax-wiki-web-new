@@ -1,0 +1,99 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+  <div class="row hotel_secfive">
+
+    <ng-container
+      *ngIf="selectedEntertainment && selectedEntertainment.entertainmentImageDTOList && selectedEntertainment.entertainmentImageDTOList.length > 0">
+      <section class="image"><img src=" {{selectedEntertainment.entertainmentImageDTOList[0].imageURL}}"
+                                  alt="restaurant image">
+      </section>
+    </ng-container>
+    <section class="hotel_details"> <!--box to display entertainment details (1st act)-->
+      <h2>{{selectedEntertainment.title}}</h2>
+
+      <ng-container *ngIf="selectedEntertainment.starCategory !== 'NOT_RATED'">
+        <section class="stars">
+          <ng-container *ngIf="selectedEntertainment.starCategory === 'ONE'">
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="selectedEntertainment.starCategory === 'TWO'">
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="selectedEntertainment.starCategory === 'THREE'">
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="selectedEntertainment.starCategory === 'FOUR'">
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="selectedEntertainment.starCategory === 'FIVE'">
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+        </section>
+      </ng-container>
+
+      <p style="font-weight:bold;">By {{selectedEntertainment.owner}}</p>
+      <p>{{selectedEntertainment.address}}</p>
+      <p style="width: 500px">{{selectedEntertainment.mainDescription}}.</p>
+    </section>
+
+    <section class="price_details">
+      <p style="font-weight:bold; font-size: 14px;">${{selectedEntertainment.price}}</p>
+    </section>
+
+  </div>
+
+  <div class="card" style="margin-left: 150px; margin-right: 150px; margin-top: 80px">
+    <h1>Enter Personal Details</h1>
+
+    <form style="padding: 50px">
+      <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="firstName">
+      </div>
+
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="lastName">
+      </div>
+
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email">
+      </div>
+
+      <div class="form-group">
+        <label>Special Requests:</label>
+        <input type="text" [(ngModel)]="specialRequests" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="specialRequests">
+      </div>
+
+      <div class="form-group">
+        <label>Booking Date:</label>
+        <input type="date" [(ngModel)]="bookingDate" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="bookingDate">
+      </div>
+
+      <div class="form-group">
+        <label>Arrival Time:</label>
+        <input type="time" [(ngModel)]="arrivalTime" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="arrivalTime">
+      </div>
+
+      <button type="submit" class="btn btn-primary" (click)="addBookingPersonalDetails()">Submit</button>
+
+    </form>
+  </div>
+</div>

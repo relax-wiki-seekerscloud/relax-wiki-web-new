@@ -1,0 +1,84 @@
+.hotel_secone{
+  position: absolute;
+  left: 100px;
+  top: 170px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px;
+
+  color: #000000;
+
+}
+
+.hotel_secfive{
+  box-sizing: border-box;
+  position: relative;
+  width: 1100px;
+  height: 220px;
+  margin-left: 100px;
+  margin-top: 30px;
+  background: #FFFFFF;
+  border: 1px solid #1F3044;
+}
+
+.image{
+  position:absolute;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+img{
+  position:absolute;
+  width:195px;
+  height:195px;
+}
+
+.hotel_details{
+  position:absolute;
+  left:240px;
+  margin-top:10px;
+}
+
+.price_details{
+  position:absolute;
+  left:800px;
+  margin-top: 70px;
+}
+
+h2{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.stars {
+  position: absolute;
+  color: gold;
+  left: 480px;
+  display: flex;
+  flex-direction: row;
+  top:5px;
+}
+
+p{
+  font-size: 12px;
+}
+
+a{
+  color: grey;
+  text-decoration:none;
+}
+
+.footer_two{
+  position:relative;
+  top:1400px;
+}
+
+h1{
+  position:relative;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  left:-10px;
+}

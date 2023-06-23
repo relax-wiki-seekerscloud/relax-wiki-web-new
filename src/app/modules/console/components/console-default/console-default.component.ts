@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ConsoleDefaultComponent {
 
+ chat_trigger=true;
+
+  chat_view() {
+    if(!this.chat_trigger){
+      this.chat_trigger = true;
+    }
+
+  }
+
 }

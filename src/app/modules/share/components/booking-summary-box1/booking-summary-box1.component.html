@@ -1,31 +1,82 @@
 <section class="hotel_detail_box">
-  <img src="assets/hotelHilton.jpg" alt="image">
-  <section class="hotel_detail_inner">
-    <h2>Hilton Columbia Center</h2>
-    <section class="stars">
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-    </section>
-    <p>924 Senate St, Columbia, South Carolina</p>
-    <p>Good | <a href="">101 reviews</a></p>
-    <section class="hotel_detail_facilities">
-        <section class="facility_type">
-          <mat-icon>network_wifi</mat-icon> &nbsp; &nbsp;
-          <div class="facility_label" style="left:-5px; position:relative;">Free wifi</div>
+  <div class="row">
+    <div class="col-md-6">
+      <ng-container
+        *ngIf="selectedHotelDataForBooking && selectedHotelDataForBooking.hotelImageList && selectedHotelDataForBooking.hotelImageList.length > 0">
+        <section class="image"><img src=" {{selectedHotelDataForBooking.hotelImageList[0].imageURL}}" alt="hotel image">
         </section>
+      </ng-container>
+    </div>
+    <div class="col-md-6">
+      <!--  <section class="hotel_detail_inner">-->
+      <h2>{{selectedHotelDataForBooking.hotelName}}</h2>
 
-      <section class="facility_type2">
-        <mat-icon>apartment</mat-icon> &nbsp; &nbsp;
-        <div class="facility_label" style="left:-5px; position:relative;">City view</div>
+      <ng-container *ngIf="selectedHotelDataForBooking.starCategory !== 'NOT_RATED'">
+        <section class="stars">
+          <ng-container *ngIf="selectedHotelDataForBooking.starCategory === 'ONE'">
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="selectedHotelDataForBooking.starCategory === 'TWO'">
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="selectedHotelDataForBooking.starCategory === 'THREE'">
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="selectedHotelDataForBooking.starCategory === 'FOUR'">
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+          <ng-container *ngIf="selectedHotelDataForBooking.starCategory === 'FIVE'">
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+            <mat-icon>grade</mat-icon>
+          </ng-container>
+        </section>
+      </ng-container>
+
+      <p>{{selectedHotelDataForBooking.address}}</p>
+
+      <p>{{ hotelCondition[selectedHotelDataForBooking.hotelCondition] }} | <a
+        href="">{{selectedHotelDataForBooking.hotelReviewList.length}} reviews</a></p>
+
+      <section class="hotel_detail_facilities">
+        <ng-container *ngIf="selectedHotelDataForBooking.hasFreeWifi === 'Y'">
+          <section class="facility_type">
+            <mat-icon>network_wifi</mat-icon>
+            <span class="facility_label">Free wifi</span>
+          </section>
+        </ng-container>
+
+        <ng-container *ngIf="selectedHotelDataForBooking.hasCityView === 'Y'">
+          <section class="facility_type">
+            <mat-icon>apartment</mat-icon>
+            <span class="facility_label">City view</span>
+          </section>
+        </ng-container>
+
+        <ng-container *ngIf="selectedHotelDataForBooking.hasAirConditioning === 'Y'">
+          <section class="facility_type">
+            <mat-icon>ac_unit</mat-icon>
+            <span class="facility_label">Air conditioning</span>
+          </section>
+        </ng-container>
+
+        <ng-container *ngIf="selectedHotelDataForBooking.hasBathtub === 'Y'">
+          <section class="facility_type">
+            <mat-icon>bathtub</mat-icon>
+            <span class="facility_label">Bathtub</span>
+          </section>
+        </ng-container>
+
       </section>
-
-      <section class="facility_type3">
-        <mat-icon>ac_unit</mat-icon> &nbsp; &nbsp;
-        <div class="facility_label" style="left:-5px; position:relative;">Air conditioning</div>
-      </section>
-
-    </section>
-  </section>
+      <!--  </section>-->
+    </div>
+  </div>
 </section>

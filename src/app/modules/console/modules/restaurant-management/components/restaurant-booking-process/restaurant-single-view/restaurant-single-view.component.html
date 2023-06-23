@@ -1,56 +1,109 @@
 <router-outlet></router-outlet>
 <section class="head_details">
-  <h1 style="font-weight:bold;">DiPrato's</h1>
+  <h1 style="font-weight:bold;">{{restaurantDto.restaurantName}}</h1>
+
   <section class="stars">
-    <mat-icon>grade</mat-icon>
-    <mat-icon>grade</mat-icon>
-    <mat-icon>grade</mat-icon>
-    <mat-icon>grade</mat-icon>
-    &nbsp; &nbsp; &nbsp;
-    <section class="address">342 Pickens St, Columbia, SC 29205, United States</section>
+    <ng-container *ngIf="restaurantDto.starCategory !== 'NOT_RATED'">
+      <section class="stars">
+        <ng-container *ngIf="restaurantDto.starCategory === 'ONE'">
+          <mat-icon>grade</mat-icon>
+        </ng-container>
+        <ng-container *ngIf="restaurantDto.starCategory === 'TWO'">
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+        </ng-container>
+        <ng-container *ngIf="restaurantDto.starCategory === 'THREE'">
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+        </ng-container>
+        <ng-container *ngIf="restaurantDto.starCategory === 'FOUR'">
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+        </ng-container>
+        <ng-container *ngIf="restaurantDto.starCategory === 'FIVE'">
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+          <mat-icon>grade</mat-icon>
+        </ng-container>
+      </section>
+    </ng-container>
+    <section class="address" style="margin-left: 10px">{{restaurantDto.address}}</section>
+
+    <section class="menu_box">
+      <a (click)="onMenuClick($event)">View menu</a>
+    </section>
+    <section class="menu_box">
+      <a (click)="viewReviews($event)">Go to Review</a>
+    </section>
   </section>
 
 </section>
 
 <section class="gallery">
-  <img src="../../../../../../../../assets/DiPrato1.jpg" alt="image1">
-  <img src="../../../../../../../../assets/DiPrato2.jpg" alt="image2">
-  <img src="../../../../../../../../assets/DiPrato3.jpg" alt="image3">
-  <img src="../../../../../../../../assets/DiPrato4.jpg" alt="image4"><br/>
-  <img src="../../../../../../../../assets/DiPrato5.jpg" alt="image5">
-  <img src="../../../../../../../../assets/DiPrato6.jpg" alt="image6">
-
+  <ng-container
+    *ngIf="restaurantDto && restaurantDto.restaurantImageDTOList && restaurantDto.restaurantImageDTOList.length > 0">
+    <ng-container *ngFor="let restaurant of restaurantDto.restaurantImageDTOList">
+      <img src="{{restaurant.imageURL}}" alt="image1">
+    </ng-container>
+  </ng-container>
 </section>
 
-<section class="menu_box">
-  <a href="">View menu</a>
-</section>
+<!--<section class="detail_box">-->
+<!--  <section class="inner_details">-->
+<!--    <section class="topic"><h2>Restaurant Details</h2></section>-->
+<!--    <section class="inner_details2">-->
 
-<section class="detail_box">
-  <section class="inner_details">
-  <section class="topic"><h2>Restaurant Details</h2></section>
-    <section class="inner_details2">
-    <section class="cuisines">
-      <p style="font-weight: bold">Cuisines</p>
-      <p>American, Cafe</p>
-    </section>
+<!--      <ng-container *ngFor="let foodCategory of restaurantDto.restaurantFoodCategoryDTOList">-->
+<!--        <section class="cuisines">-->
+<!--          <h3 style="font-weight: bold">{{foodCategory.mainDescription}}</h3>-->
+<!--          <ng-container *ngFor="let food of foodCategory.foodDTOList">-->
+<!--            <p>{{food.description}}</p>-->
+<!--          </ng-container>-->
+<!--        </section>-->
+<!--      </ng-container>-->
 
-    <section class="special_diets">
-      <p style="font-weight: bold">Special diets</p>
-      <p>Vegetarian Friendly, Vegan Options, Gluten Free Options</p>
-    </section>
-
-    <section class="meals">
-      <p style="font-weight: bold">Meals</p>
-      <p>Breakfast, Lunch, Brunch</p>
-    </section>
-
-        <section class="reviews">
-        <a href="">Go to Reviews</a>
-        </section>
+<!--      <section class="reviews">-->
+<!--        <a (click)="viewReviews($event)">Go to Reviews</a>-->
+<!--      </section>-->
 
 
-  </section>
-  </section>
+<!--    </section>-->
+<!--  </section>-->
+<!--</section>-->
+
+<section class="room_table">
+  <table>
+    <thead>
+    <tr>
+      <th class="numof_people" colspan="5">Restaurant Details</th>
+    </tr>
+    <tr>
+      <th>Food Category</th>
+      <th>Items</th>
+    </tr>
+    </thead>
+    <ng-container
+      *ngIf="restaurantDto && restaurantDto.restaurantFoodCategoryDTOList && restaurantDto.restaurantFoodCategoryDTOList.length > 0">
+      <tbody>
+      <tr class="big-row" *ngFor="let restaurantFoodCategory of restaurantDto.restaurantFoodCategoryDTOList">
+        <td>{{restaurantFoodCategory.mainDescription}}</td>
+        <td>
+          <ul>
+            <ng-container
+              *ngIf="restaurantFoodCategory.foodDTOList && restaurantFoodCategory.foodDTOList.length > 0">
+              <li
+                *ngFor="let category of restaurantFoodCategory.foodDTOList">{{category.description}}</li>
+            </ng-container>
+          </ul>
+        </td>
+      </tr>
+      </tbody>
+    </ng-container>
+  </table>
 </section>
 

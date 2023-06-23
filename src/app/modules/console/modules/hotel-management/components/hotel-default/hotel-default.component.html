@@ -1,93 +1,75 @@
 <app-nav-bar></app-nav-bar>
 <router-outlet></router-outlet>
-<section class="hotel_secone">400 properties found</section>
+<section class="hotel_secone">{{hotelDataSource.length}} properties found</section>
 <section class="hotel_sectwo">
   <app-filter-by-budget></app-filter-by-budget>
   <app-filter-by-rating></app-filter-by-rating>
-  <app-hotel-search-small></app-hotel-search-small>
-<section class="hotel_secfive">
-   <section class="image"><img src="assets/hotelHilton.jpg" alt="hotel image"></section>
+  <div class="hotel_search">
+    <app-hotel-search-small></app-hotel-search-small>
+  </div>
 
-  <section class="hotel_details"> <!--box to display hotel details (1st hotel)-->
-    <h2>Hilton Columbia Center</h2>
-    <section class="stars">
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-    </section>
-    <p>924 Senate St, Columbia, South Carolina</p>
-    <p>Good | <a href="">101 reviews</a></p>
-    <p style="font-weight:bold;">2 x Deluxe Double Room  with View</p>
-    <p>2 double beds</p>
-    <p style="color:red;">Free cancellation</p>
+  <div style="margin-top: 100px">
+    <div class="row" *ngFor="let hotel of hotelDataSource; index as i">
+      <div class="row hotel_secfive">
 
-  </section>
+        <ng-container *ngIf="hotel && hotel.hotelImageList && hotel.hotelImageList.length > 0">
+          <section class="image"><img src=" {{hotel.hotelImageList[0].imageURL}}" alt="hotel image"></section>
+        </ng-container>
 
-  <section class="price_details">
-    <p>1 night 4 adults</p>
-    <p style="font-weight:bold; font-size: 14px;">$200</p>
-    <p>Tax and other charges included</p>
-  </section>
+        <section class="hotel_details"> <!--box to display hotel details (1st hotel)-->
+          <h2 (click)="onClickHotel($event, hotel)">{{hotel.hotelName}}</h2>
+          <ng-container *ngIf="hotel.starCategory !== 'NOT_RATED'">
+            <section class="stars">
+              <ng-container *ngIf="hotel.starCategory === 'ONE'">
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+              <ng-container *ngIf="hotel.starCategory === 'TWO'">
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+              <ng-container *ngIf="hotel.starCategory === 'THREE'">
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+              <ng-container *ngIf="hotel.starCategory === 'FOUR'">
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+              <ng-container *ngIf="hotel.starCategory === 'FIVE'">
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+                <mat-icon>grade</mat-icon>
+              </ng-container>
+            </section>
+          </ng-container>
+          <p>{{hotel.address}}</p>
+          <p>{{ hotelCondition[hotel.hotelCondition] }} | <a href="">{{hotel.hotelReviewList.length}} reviews</a></p>
+          <p style="font-weight:bold;">{{hotel.mainDescription}}</p>
+          <p>{{hotel.subDescriptionOne}}</p>
 
+          <p style="color:red;" *ngIf="hotel.hasFreeCancellation === 'Y'">Free cancellation</p>
+
+        </section>
+
+        <section class="price_details">
+          <p>{{hotel.subDescriptionTwo}}</p>
+          <p style="font-weight:bold; font-size: 14px;">${{hotel.price}}</p>
+          <p>Tax and other charges included</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
 </section>
-
-
-  <section class="hotel_secfive" style="top:860px;">
-    <section class="image"><img src="assets/Courtyard marriot.jpg" alt="hotel image"></section>
-    <section class="hotel_details"> <!--box to display hotel details (2nd hotel)-->
-    <h2>Courtyard by Marriot</h2>
-    <section class="stars">
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-      <mat-icon>grade</mat-icon>
-    </section>
-    <p>4165 Proton Dr, Addison, TX 75001, USA</p>
-    <p>Very Good | <a href="">200 reviews</a></p>
-    <p style="font-weight:bold;">2 x Deluxe Double Room  with View</p>
-    <p>2 double beds</p>
-    <p style="color:red;">Free cancellation</p>
-
-  </section>
-
-  <section class="price_details">
-    <p>1 night 4 adults</p>
-    <p style="font-weight:bold; font-size: 14px;">$250</p>
-    <p>Tax and other charges included</p>
-  </section>
-  </section>
-
-  <section class="hotel_secfive" style="top:1130px;">
-    <section class="image"><img src="assets/hotel trundle.jpg" alt="hotel image"></section>
-    <section class="hotel_details"> <!--box to display hotel details (3rd hotel)-->
-      <h2>Hotel Trundle</h2>
-      <section class="stars">
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-        <mat-icon>grade</mat-icon>
-      </section>
-      <p>1224 Taylor St, Columbia, SC 29201, United States</p>
-      <p>Good | <a href="">105 reviews</a></p>
-      <p style="font-weight:bold;">2 x Deluxe Double Room  with View</p>
-      <p>2 double beds</p>
-      <p style="color:red;">Free cancellation</p>
-
-    </section>
-
-    <section class="price_details">
-      <p>1 night 4 adults</p>
-      <p style="font-weight:bold; font-size: 14px;">$250</p>
-      <p>Tax and other charges included</p>
-    </section>
-  </section>
-
-
-
-  </section>
-<section class="paginator"><app-paginator></app-paginator></section>
-<section class="footer_two"><app-footer-two></app-footer-two></section>
+<!--<section class="paginator"><app-paginator></app-paginator></section>-->
+<section class="footer_two">
+  <app-footer-two></app-footer-two>
+</section>
 
 
 

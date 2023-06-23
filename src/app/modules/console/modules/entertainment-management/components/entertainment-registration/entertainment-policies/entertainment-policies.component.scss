@@ -1,0 +1,82 @@
+.header-area{
+  text-align: center;
+  h1{
+    font-weight: bold;
+    margin: 0;
+  }
+  p{
+    margin: 0;
+  }
+}
+.title-area{
+  text-align: center;
+  h1{
+    font-weight: 500;
+    margin: 2rem auto;
+  }
+}
+
+.policy-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  p{
+    font-weight: 400;
+  }
+}
+.policy-container-inner-left{
+  grid-column:span 3;
+}
+
+.policy-container-inner-right{
+  display:grid;
+  align-content:flex-end;
+  justify-items: right;
+  img{
+    height: 175px;
+    width: 175px;
+  }
+}
+
+.payments-inner{
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  padding: 0 2rem;
+  justify-content: center;
+  gap:  1rem;
+  .checkbox{
+    margin: 0 2rem;
+  }
+}
+.payments{
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: auto;
+}
+
+.rules-container{
+  max-width: 800px;
+  width:100%;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 2rem auto;
+}
+.rules{
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  a{
+    text-decoration: none;
+  }
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 2rem auto;
+  .button{
+    width: 100%;
+  }
+}
+

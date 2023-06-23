@@ -79,7 +79,7 @@
                 </td>
                 <td>
                   <mat-form-field appearance="fill">
-                    <input matInput type="text" #title>
+                    <input matInput type="text" name="advertisementTitle">
                   </mat-form-field>
                 </td>
               </tr>
@@ -89,7 +89,7 @@
                 </td>
                 <td>
                   <mat-form-field appearance="fill">
-                    <input matInput type="text" #businessAddress>
+                    <input matInput type="text" name="addressOfBusiness">
                   </mat-form-field>
                 </td>
               </tr>
@@ -100,7 +100,7 @@
                 </td>
                 <td>
                   <mat-form-field appearance="fill">
-                    <input matInput type="text" #description>
+                    <input matInput type="text" name="advertisementCaption">
                   </mat-form-field>
                 </td>
               </tr>
@@ -115,15 +115,14 @@
       <div class="advertisement-photo-wrap">
         <app-content-box-border boxName="Advertisement Photo">
           <div class="advertisement-photo-text">
-            Add a photo of your advertisement. Make sure to add quality photo at least the 720p resolution. You can add
-            only ONE photo.
+            Add a photo of your advertisement. Make sure to add quality photo at least the 720p resolution. You can add only ONE photo.
             The photo you add here will displayed to the guests.
           </div>
           <!--box-->
           <div class="advertisement-photo-inserter">
             <div class="advertisement-photo-dashed-box">
               <div class="image-insertion-button">
-                <input type="file" accept="image/*" (change)="onFileSelected($event)" #image>
+                <input type="file" id="img" name="img" accept="image/*">
               </div>
             </div>
           </div>
@@ -135,29 +134,32 @@
         <app-content-box-border boxName="Set Your Budget">
 
           <div class="daily-budget">
-            Days Count:
-            <mat-form-field appearance="fill">
-              <input type="number" matInput #expireDate min="1" max="30" (input)="setPrice()">
-
-            </mat-form-field>
-          </div>
-          <div class="daily-budget">
             Daily Budget:
             <mat-form-field appearance="fill">
-              <input type="number" matInput #budget min="1" max="15" (input)="setPrice()">
+              <mat-label>budget</mat-label>
+              <select matNativeControl required>
+                <option value="$1">$1</option>
+                <option value="$2">$2</option>
+                <option value="$3">$3</option>
+                <option value="$4">$4</option>
+              </select>
             </mat-form-field>
           </div>
-          <div style="margin-bottom: 10px;">
-            {{wholePriceText}}
+
+          <div class="daily-budget">
+            <div class="daily-budget-box">
+              $1 - conditions and duration <br>
+              $2 - conditions and duration <br>
+              $3 - conditions and duration <br>
+              $4 - conditions and duration <br>
+            </div>
           </div>
         </app-content-box-border>
-
       </div>
-
 
       <!--continue button-->
       <div class="button-wrap">
-        <input type="button" (click)="submitForm()" class="button" value="Continue">
+        <input type="button" class="button" value="Continue">
       </div>
 
     </form>

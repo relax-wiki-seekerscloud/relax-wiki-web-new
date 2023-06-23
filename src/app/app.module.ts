@@ -17,6 +17,9 @@ import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+
+
 
 
 
@@ -44,6 +47,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         SecurityModule,
         ConsoleModule,
         MatIconModule,
+        HttpClientModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideStorage(() => getStorage()),
 
