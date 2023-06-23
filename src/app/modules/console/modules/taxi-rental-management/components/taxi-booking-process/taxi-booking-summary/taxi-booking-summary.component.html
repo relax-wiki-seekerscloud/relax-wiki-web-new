@@ -1,1 +1,141 @@
-<p>taxi-booking-summary works!</p>
+<!--header-->
+<app-nav-bar></app-nav-bar>
+<div class="main-wrap">
+ <!-- <div class="stepper">
+
+  </div>-->
+  <h1 style="font-weight: bold; text-align: center">Booking Summary</h1>
+  <div class="sum-wrap-one">
+    <div class="sum-wrap-one-col">
+      <img src="http://localhost:8080/files/taxi/{{taxi.image }}" alt="nano car"
+        style="align-items: center; height: 90%; width: 95%; margin: 2% 2.5%">
+    </div>
+    <div class="sum-wrap-one-col">
+      <h2 *ngIf="dataLoaded" style="font-weight: bold; margin-left: 4%" id="vehCategory">
+        {{taxiCategory.name}}
+      </h2>
+      <table *ngIf="dataLoaded">
+        <h3>
+          <tr>
+            <th>Vehicle No:</th>
+            <td>{{taxi.vehicleNo}}</td>
+          </tr>
+          <tr>
+            <th>Color:</th>
+            <td>{{taxi.color}}</td>
+          </tr>
+        </h3>
+      </table>
+    </div>
+
+    <table style="margin-top: 5%">
+      <h3>
+        <tr>
+          <th>Owner Name:</th>
+          <td>{{taxi.ownerName}}</td>
+        </tr>
+        <tr>
+          <th>Contact No:</th>
+          <td>{{taxi.contact}}</td>
+        </tr>
+      </h3>
+    </table>
+  </div>
+  <div class="sum-wrap-two" *ngIf="dataLoaded">
+    <div class="inner-wrap">
+      <div class="inner-wrap-data">
+        <h3>
+          Destination
+        </h3>
+        <h3 style="font-weight: bold" id="destination">
+          {{booking.destination}}
+        </h3>
+      </div>
+      <div class="inner-wrap-data">
+        <h3>
+          Pickup Location
+        </h3>
+        <h3 style="font-weight: bold" id="distance">
+          {{booking.pickupLocation}}
+        </h3>
+      </div>
+      <div class="inner-wrap-data">
+        <h3>
+          Distance
+        </h3>
+        <h3 style="font-weight: bold" id="date">
+          {{booking.distance}} km
+        </h3>
+      </div>
+      <div class="inner-wrap-data">
+        <h3>
+          Price
+        </h3>
+        <h3 style="font-weight: bold" id="pickUpTime">
+          $ {{booking.price}}
+        </h3>
+      </div>
+      <div style="padding-left: 3%;">
+        <h3>
+          Num of People
+        </h3>
+        <h3 style="font-weight: bold" id="noOfPeople">
+          {{booking.peopleCount}}
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="sum-wrap-two" *ngIf="dataLoaded">
+    <div class="inner-wrap">
+      <div class="inner-wrap-data">
+        <h3>
+          First Name
+        </h3>
+        <h3 style="font-weight: bold" id="destination">
+          {{booking.firstName}}
+        </h3>
+      </div>
+      <div class="inner-wrap-data">
+        <h3>
+          Last Name
+        </h3>
+        <h3 style="font-weight: bold" id="distance">
+          {{booking.lastName}}
+        </h3>
+      </div>
+      <div class="inner-wrap-data">
+        <h3>
+          Date
+        </h3>
+        <h3 style="font-weight: bold" id="date">
+          {{booking.date}}
+        </h3>
+      </div>
+      <div class="inner-wrap-data">
+        <h3>
+          Pick up Time
+        </h3>
+        <h3 style="font-weight: bold" id="pickUpTime">
+          {{booking.pickupTime}}
+        </h3>
+      </div>
+      <div style="padding-left: 3%;">
+        <h3>
+          Email Address
+        </h3>
+        <h3 style="font-weight: bold" id="noOfPeople">
+          {{booking.email}}
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <button type="button" class="btn btn-primary" style="width:200px;">Continue to Payment</button>
+  </div>
+
+
+</div>
+
+<!--footer-->
+<app-footer-two></app-footer-two>

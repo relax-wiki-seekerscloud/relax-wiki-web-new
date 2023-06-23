@@ -1,0 +1,46 @@
+*{
+  font-family: Roboto;
+}
+.main-wrap{
+  height: auto;
+  margin: 1% 10%;
+
+}
+.stepper{
+  height: 60px/*20%*/;
+  margin: 1% 5%;
+  border: 1px solid black;
+}
+.sum-wrap-one{
+  height: 25%;
+  margin: 1% 15%;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+.sum-wrap-one-col{
+  flex-basis: 33%;
+}
+th,td{
+ padding: 15px;
+}
+.sum-wrap-two{
+  height: 15%;
+  margin: 4% 10%;
+  border: 1px solid black;
+}
+.inner-wrap{
+  height: 70%;
+  width: 96%;
+  margin: 2% 2%;
+  /*border: 1px solid skyblue;*/
+  display: flex;
+}
+.inner-wrap-data{
+  height: 100%;
+  flex-basis: 20%;
+  border-right: 2px solid black;
+  padding-left: 3%;
+}
+.border-right{
+  border-right: 2px solid black;
+}

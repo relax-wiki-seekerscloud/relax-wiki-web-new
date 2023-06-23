@@ -90,7 +90,8 @@ import { UploadTaskComponent } from './components/upload-task/upload-task.compon
         BookingSummaryBox2Component,
         BookingSummaryBox3Component,
         DropzoneDirective,
-        UploadTaskComponent
+        UploadTaskComponent,
+        BookingSummaryPersonnalDetailsFormComponent
 
     ],
 

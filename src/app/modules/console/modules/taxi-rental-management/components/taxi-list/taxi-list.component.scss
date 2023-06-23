@@ -11,7 +11,7 @@
   margin-top: 3%;
 }
 .list-main{
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   width: 80%;
   height: 1000px;
   margin: 3% 10%;
@@ -64,4 +64,9 @@
   text-align: center;
   font-size: 14px;
   font-weight: bold;
+}
+.images{
+  height: 100%;
+  width: 100%;
+  cursor:pointer;
 }

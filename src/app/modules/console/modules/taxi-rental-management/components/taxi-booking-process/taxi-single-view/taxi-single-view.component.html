@@ -1,1 +1,192 @@
-<p>taxi-single-view works!</p>
+<!--header-->
+<app-nav-bar></app-nav-bar>
+<!--middle content-->
+<div class="main-wrap">
+<!--  <div class="stepper">
+    &lt;!&ndash;stepper&ndash;&gt;
+  </div>-->
+  <div class="detailed-wrap" *ngIf="dataLoaded">
+    <div class="column">
+      <img src="http://localhost:8080/files/taxi/{{taxi.image }}" alt="nano car"
+        style="align-items: center; height: 65%; width: 60%; margin: 2% 20%">
+
+      <table>
+        <tr>
+          <td>
+            <h3>
+              Vehicle No: <br>
+              Colour: <br></h3>
+          </td>
+          <td>
+            <h3>
+              {{taxi.vehicleNo }} <br>
+              {{taxi.color }}<br></h3>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+    <div class="column">
+      <h3 style="font-weight: bold; text-align: center; margin-top: 5%; margin-bottom: 17%">
+        Base Fare - ${{category.baseFair}} <br> <br>
+        Waiting Fare Per Minute ${{category.waitingFair}} <br> <br>
+        Per km ${{category.fairPerKm}} <br>
+      </h3>
+      <table>
+        <tr>
+          <td>
+            <h3>
+              Contact No: <br>
+              Owner Name: <br></h3>
+          </td>
+          <td>
+            <h3>
+              {{taxi.contact }} <br>
+              {{taxi.ownerName }} <br></h3>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="form-wrap" style="height: auto; padding-bottom: 20px;">
+    <div class="h2-wrap">
+      <h2>
+        Insert Below Details of Your Journey
+      </h2>
+    </div>
+    <div class="form-wrap-details">
+      <form #rentalVehicleSearchForm="ngForm">
+        <div class="form-group">
+          <div style="display:flex;">
+            <div style="width:25%;">
+              <label for="carDestination">Pick Up Location:</label>
+              <select class="form-control" #pickupLocation (change)="setDistance()">
+                <option value="0">--Select--</option>
+                <option value="1">Ampara</option>
+                <option value="2">Anuradhapura</option>
+                <option value="3">Badulla</option>
+                <option value="4">Batticaloa</option>
+                <option value="5">Colombo</option>
+                <option value="6">Galle</option>
+                <option value="7">Gampaha</option>
+                <option value="8">Hambantota</option>
+                <option value="9">Jaffna</option>
+                <option value="10">Kalutara</option>
+                <option value="11">Kandy</option>
+                <option value="12">Kegalle</option>
+                <option value="13">Kilinochchi</option>
+                <option value="14">Kurunegala</option>
+                <option value="15">Mannar</option>
+                <option value="16">Matale</option>
+                <option value="17">Matara</option>
+                <option value="18">Monaragala</option>
+                <option value="19">Mullaitivu</option>
+                <option value="20">Nuwara Eliya</option>
+                <option value="21">Polonnaruwa</option>
+                <option value="22">Puttalam</option>
+                <option value="23">Ratnapura</option>
+                <option value="24">Trincomalee</option>
+                <option value="25">Vavuniya</option>
+              </select>
+            </div> &nbsp; &nbsp;
+            <div style="width:25%;">
+              <label for="carDestination">Destination:</label>
+              <select class="form-control" #destination (change)="setDistance()">
+                <option value="0">--Select--</option>
+                <option value="1">Ampara</option>
+                <option value="2">Anuradhapura</option>
+                <option value="3">Badulla</option>
+                <option value="4">Batticaloa</option>
+                <option value="5">Colombo</option>
+                <option value="6">Galle</option>
+                <option value="7">Gampaha</option>
+                <option value="8">Hambantota</option>
+                <option value="9">Jaffna</option>
+                <option value="10">Kalutara</option>
+                <option value="11">Kandy</option>
+                <option value="12">Kegalle</option>
+                <option value="13">Kilinochchi</option>
+                <option value="14">Kurunegala</option>
+                <option value="15">Mannar</option>
+                <option value="16">Matale</option>
+                <option value="17">Matara</option>
+                <option value="18">Monaragala</option>
+                <option value="19">Mullaitivu</option>
+                <option value="20">Nuwara Eliya</option>
+                <option value="21">Polonnaruwa</option>
+                <option value="22">Puttalam</option>
+                <option value="23">Ratnapura</option>
+                <option value="24">Trincomalee</option>
+                <option value="25">Vavuniya</option>
+              </select>
+            </div> &nbsp; &nbsp;
+            <div style="width:25%;">
+              <label for="carDate">Distance:</label>
+              <input type="text" class="form-control location-input" name="carDate" #distance style="width:100%;"
+                required value="{{dist}} km">
+            </div> &nbsp; &nbsp;
+            <div style="width:25%;">
+              <label for="carDate">Price:</label>
+              <input type="text" class="form-control location-input" name="carDate" #distance style="width:100%;"
+                required value="$ {{price}}">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div style="display:flex;">
+            <div style="width:50%;">
+              <label for="carDate">Date:</label>
+              <input type="date" class="form-control location-input" name="carDate" #date style="width:100%;" required>
+            </div> &nbsp; &nbsp;
+            <div style="width:50%;">
+              <label for="carPickupTime">Pickup time:</label>
+              <input type="time" class="form-control" id="carPickupTime" name="carPickupTime" #pickupTime required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div style="display:flex;">
+            <div style="width:50%;">
+              <label for="carPeople">Number of people:</label>
+              <input type="number" class="form-control location-input" name="carPeople" #peopleCount style="width:100%;"
+                required min="1" max="{{category.maxPeople}}">
+            </div> &nbsp; &nbsp;
+            <div style="width:50%;">
+              <label for="carDate">Email:</label>
+              <input type="email" class="form-control location-input" name="carDate" #email style="width:100%;"
+                required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div style="display:flex;">
+            <div style="width:50%;">
+              <label for="carDate">First Name:</label>
+              <input type="text" class="form-control location-input" name="carDate" #firstName style="width:100%;"
+                required>
+            </div> &nbsp; &nbsp;
+            <div style="width:50%;">
+              <label for="carPickupTime">Last Name:</label>
+              <input type="text" class="form-control" id="carPickupTime" name="carPickupTime" #lastName required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div style="display:flex;">
+            <div style="width:100%;">
+              <label for="carPickupTime">Special Requests (Optional):</label>
+              <input type="text" class="form-control" id="carPickupTime" name="carPickupTime" #request required>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div style="text-align:center;">
+    <button type="button" (click)="submitForm()" class="btn btn-primary" style="width:200px;">Conform Selection</button>
+  </div>
+
+</div>
+
+<!--footer-->
+<app-footer-two></app-footer-two>

@@ -8,9 +8,8 @@ describe('TaxiSingleViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TaxiSingleViewComponent ]
-    })
-    .compileComponents();
+      declarations: [TaxiSingleViewComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TaxiSingleViewComponent);
     component = fixture.componentInstance;

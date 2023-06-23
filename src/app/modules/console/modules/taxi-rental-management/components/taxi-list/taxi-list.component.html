@@ -9,119 +9,24 @@
 <div class="list-main">
   <div class="list-row">
     <!--nano-->
-    <div class="column">
-      <div class="box-main">
+    <div class="column" *ngFor="let vehical of dataList">
+      <div class="box-main" (click)="goToPage('/taxi-rental-management/taxi-list-by-category/' + vehical.id)">
         <div class="box-content">
           <div class="box-content-text">
-            Nano Car
+            {{ vehical.name }}
           </div>
         </div>
         <div class="photo-content">
-          <!--insert image here-->
+          <img src="http://localhost:8080/files/taxiCategory/{{vehical.image }}" alt="nano car" class="images">
         </div>
         <div class="photo-description">
-          <br> Base Fare (for 3km) - $10 <br><br>
-          Waiting Fare Per Minute $0.2 <br><br>
-          Per km $3 <br><br>
-        </div>
-      </div>
-    </div>
-
-    <!--mini-->
-    <div class="column">
-      <div class="box-main">
-        <div class="box-content">
-          <div class="box-content-text">
-            Mini Car
-          </div>
-        </div>
-        <div class="photo-content">
-          <!--insert image here-->
-        </div>
-        <div class="photo-description">
-          <br> Base Fare (for 3km) - $15 <br><br>
-          Waiting Fare Per Minute $0.3 <br><br>
-          Per km $5 <br><br>
-        </div>
-      </div>
-    </div>
-
-    <!--sedan-->
-    <div class="column">
-      <div class="box-main">
-        <div class="box-content">
-          <div class="box-content-text">
-            Sedan Car
-          </div>
-        </div>
-        <div class="photo-content">
-          <!--insert image here-->
-        </div>
-        <div class="photo-description">
-          <br> Base Fare (for 3km) - $17 <br><br>
-          Waiting Fare Per Minute $0.4 <br><br>
-          Per km $7 <br><br>
+          <br> Base Fare (for 3km) - ${{ vehical.baseFair }} <br><br>
+          Waiting Fare Per Minute ${{ vehical.waitingFair }} <br><br>
+          Per km ${{ vehical.fairPerKm }} <br><br>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="list-row">
-    <div class="column">
-      <div class="box-main">
-        <div class="box-content">
-          <div class="box-content-text">
-            Mini Van
-          </div>
-        </div>
-        <div class="photo-content">
-          <!--insert image here-->
-        </div>
-        <div class="photo-description">
-          <br> Base Fare (for 3km) - $18 <br><br>
-          Waiting Fare Per Minute $0.5 <br><br>
-          Per km $8 <br><br>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="box-main">
-        <div class="box-content">
-          <div class="box-content-text">
-            Non-AC Van
-          </div>
-        </div>
-        <div class="photo-content">
-          <!--insert image here-->
-        </div>
-        <div class="photo-description">
-          <br> Base Fare (for 3km) - $19 <br><br>
-          Waiting Fare Per Minute $0.6 <br><br>
-          Per km $9 <br><br>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="box-main">
-        <div class="box-content">
-          <div class="box-content-text">
-            Duel AC
-          </div>
-        </div>
-        <div class="photo-content">
-          <!--insert image here-->
-        </div>
-        <div class="photo-description">
-          <br> Base Fare (for 3km) - $20 <br><br>
-          Waiting Fare Per Minute $0.5 <br><br>
-          Per km $10 <br><br>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
 
 <!--footer-->

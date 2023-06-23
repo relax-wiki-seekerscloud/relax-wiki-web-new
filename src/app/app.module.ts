@@ -16,7 +16,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -33,6 +33,7 @@ import {FIREBASE_OPTIONS} from "@angular/fire/compat";
         MatFormFieldModule,
         MatInputModule,
         MatButtonModule,
+      MatSnackBarModule,
         FormsModule,
         SecurityModule,
         ConsoleModule,

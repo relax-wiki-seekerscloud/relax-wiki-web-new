@@ -1,5 +1,100 @@
 <app-nav-bar></app-nav-bar>
-dadadadads
+
+<!--middle content-->
+
+<div class="main-wrap">
+<!--  &lt;!&ndash;stepper&ndash;&gt;
+  <div class="stepper">
+    &lt;!&ndash;Insert stepper here&ndash;&gt;
+  </div>-->
+
+  <h1 *ngIf="dataLoaded" style="text-align: center; margin:1%; font-weight: bold">Choose a {{category.name}} as You
+    Prefer</h1>
+
+  <div class="detailed-wrap">
+    <div class="column">
+      <img *ngIf="dataLoaded" src="http://localhost:8080/files/taxiCategory/{{category.image }}" alt="name car"
+        style="align-items: center; height: 90%; width: 60%; margin: 2% 20%">
+    </div>
+    <div class="column">
+      <h3 *ngIf="dataLoaded" style="font-weight: bold; text-align: center; margin-top: 5%">
+        Base Fare - ${{category.baseFair}} <br> <br>
+        Waiting Fare Per Minute ${{category.waitingFair}} <br> <br>
+        Per km ${{category.fairPerKm}} <br>
+      </h3>
+    </div>
+  </div>
+  <h2 *ngIf="dataLoaded" style="font-weight: bold; margin: 2% 5%">
+    Available {{category.name}}s: Choose from the Given List
+  </h2>
+<!--  <div class="list-wrap">
+    <div class="row-list" *ngFor="let vehical of dataList">
+      <div class="list-col" (click)="goToPage('/taxi-rental-management/taxi-single-view/' + vehical.id)">
+        <table>
+          <tr>
+            <td>
+              Vehicle No: <br>
+              Owner Name: <br>
+              Colour: <br>
+              Contact No: <br>
+            </td>
+            <td>
+              {{vehical.vehicleNo}} <br>
+              {{vehical.ownerName}} <br>
+              {{vehical.color}} <br>
+              {{vehical.contact}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>-->
+<!--  <div class="list-wrap">
+    <div class="row-list">
+      <div class="list-col" *ngFor="let vehical of dataList" (click)="goToPage('/taxi-rental-management/taxi-single-view/' + vehical.id)">
+        <table>
+          <tr>
+            <td>
+              Vehicle No: <br>
+              Owner Name: <br>
+              Colour: <br>
+              Contact No: <br>
+            </td>
+            <td>
+              {{vehical.vehicleNo}} <br>
+              {{vehical.ownerName}} <br>
+              {{vehical.color}} <br>
+              {{vehical.contact}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>-->
+  <div class="list-wrap">
+    <div class="row-list">
+      <div class="list-col" *ngFor="let vehical of dataList" (click)="goToPage('/taxi-rental-management/taxi-single-view/' + vehical.id)">
+        <table>
+          <tr>
+            <td>
+              Vehicle No: <br>
+              Owner Name: <br>
+              Colour: <br>
+              Contact No: <br>
+            </td>
+            <td>
+              {{vehical.vehicleNo}} <br>
+              {{vehical.ownerName}} <br>
+              {{vehical.color}} <br>
+              {{vehical.contact}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <!--footer-->
 <app-footer-two></app-footer-two>

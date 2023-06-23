@@ -1,10 +1,6 @@
 <div>
   <app-nav-bar-two></app-nav-bar-two>
 </div>
-<!--step one two three-->
-<div class="ad-step-bar">
-
-</div>
 
 <!--title "Select an Advertisement Type"-->
 <div class="title-container">
@@ -18,10 +14,12 @@
 
   <!--left-part-->
   <div class="left">
+
     <div class="img-title">
       Promote Your Business with an Image Advertisement
     </div>
-    <img src="../../../../assets/Images/add-image.png" alt="nurturing-growing" class="centered-image-left" alt="imgAdd">
+    <img (click)="goToPage('/advertisement-image')" src="../../../../assets/Images/add-image.png"
+      alt="nurturing-growing" class="centered-image-left" alt="imgAdd">
 
   </div>
 
@@ -30,7 +28,8 @@
     <div class="img-title">
       Promote Your Business with a Video Advertisement
     </div>
-    <img src="../../../../assets/Images/add-video.png" alt="videoAdd" class="centered-image-right">
+    <img (click)="goToPage('/advertisement-video')" src="../../../../assets/Images/add-video.png" alt="videoAdd"
+      class="centered-image-right">
   </div>
 
 </div>
